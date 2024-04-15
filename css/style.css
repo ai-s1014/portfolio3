@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* 共通パーツ */
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", "YuGothic_Family", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 10px;
+  line-height: 2;
+  background-color: #fff;
+  color: #222;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@-webkit-keyframes nav-open {
+  0% {
+    -webkit-mask-position: left top;
+            mask-position: left top;
+  }
+  100% {
+    -webkit-mask-position: left center;
+            mask-position: left center;
+  }
+}
+
+@keyframes nav-open {
+  0% {
+    -webkit-mask-position: left top;
+            mask-position: left top;
+  }
+  100% {
+    -webkit-mask-position: left center;
+            mask-position: left center;
+  }
+}
+/* レイアウト */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.h-logo {
+  float: left;
+  width: 20rem;
+}
+
+.menu-btn {
+  display: block;
+  float: right;
+  padding-right: 80px;
+  margin: 30px 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.2667;
+  z-index: 100;
+  -webkit-transition: color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  position: relative;
+}
+.menu-btn::before, .menu-btn::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 1px;
+  right: 4rem;
+  background-color: #fff;
+}
+.menu-btn::before {
+  top: 6px;
+}
+.menu-btn::after {
+  top: 12px;
+}
+.menu-btn:hover::before, .menu-btn:hover::after {
+  top: 8px;
+}
+.menu-btn.open {
+  color: #231815;
+}
+.menu-btn.open::before {
+  top: 8px;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+  background-color: #231815;
+}
+.menu-btn.open::after {
+  top: 8px;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  background-color: #231815;
+}
+
+.nav-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  inset: 0 0 auto;
+  transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(21%, transparent), color-stop(39%, #000000), color-stop(61%, #000000), color-stop(79%, transparent));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
+  mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(21%, transparent), color-stop(39%, #000000), color-stop(61%, #000000), color-stop(79%, transparent));
+  mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
+  -webkit-mask-position: left bottom;
+  mask-position: left bottom;
+  -webkit-mask-size: 100% 500%;
+  mask-size: 100% 500%;
+  pointer-events: none;
+}
+.nav-wrapper::before {
+  position: absolute;
+  content: "";
+  background-image: url(/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: max(1920px, 100%) auto;
+  inset: 0;
+  z-index: -1;
+}
+.nav-wrapper.open {
+  -webkit-animation: nav-open 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  animation: nav-open 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-mask-position: left center;
+  mask-position: left center;
+  pointer-events: auto;
+}
+
+.nav-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.nav-images {
+  width: 50%;
+  height: 100vh;
+}
+
+.nav-swiper {
+  overflow: hidden;
+  position: absolute;
+  inset: 0 50% auto 0;
+  z-index: 1;
+  height: 100lvh;
+}
+
+.slide-image {
+  transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  -webkit-transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+}
+
+.slide-image img {
+  width: 100%;
+    height: 100lvh;
+    object-fit: cover;
+}
+
+.menu-wrapper {
+  width: 50%;
+  padding-left: 165px;
+}
+
+.nav-menu {
+  padding: 80px 50px 80px 0;
+}
+
+.nav-list {
+  margin-top: 40px;
+}
+.nav-list a {
+  font-family: "Tinos", serif;
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.nav-list-s {
+  margin-top: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+.nav-list-s:nth-child(7) {
+  margin-top: 10px;
+}
+.nav-list-s::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  top: 12px;
+  left: 9px;
+  background-color: #231815;
+  border-radius: 50%;
+}
+.nav-list-s a {
+  font-size: 1.4rem;
+  letter-spacing: 0.56px;
+  line-height: 20px;
+}
+
+.sns-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sns-list:not(:first-child) {
+  margin-left: 26px;
+}
+
+.sns-list a {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.header-link {
+  margin-top: 16px;
+}
+
+.link-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.link-list:not(:first-child) {
+  margin-left: 26px;
+}
+.link-list a {
+  font-family: "montserrat", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.56px;
+}
+
+/* レスポンシブ */

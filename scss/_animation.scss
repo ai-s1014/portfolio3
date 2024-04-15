@@ -1,0 +1,14 @@
+@use "variable" as v;
+@use "font" as f;
+@use "mixin" as m;
+
+
+@keyframes nav-open {
+    0% {
+        mask-position: left top
+    }
+
+    100% {
+        mask-position: left center
+    }
+}

@@ -1,0 +1,20 @@
+//font
+
+// Tinos（Google Fonts）
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// default
+$default-font-family: "yu-gothic-pr6n", sans-serif;
+// Tinos
+$tinos: "Tinos", serif;
+// portada
+$portada: "portada", serif;
+// montserrat
+$montserrat: "montserrat", sans-serif;
+
+
+// font-size
+$baseFontSize: 10;
+  @function rem($pixels) {
+    @return ($pixels / $baseFontSize) * 1rem;
+}
