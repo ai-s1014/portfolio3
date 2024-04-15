@@ -98,6 +98,13 @@ a {
 .h-logo {
   float: left;
   width: 20rem;
+  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  -webkit-transition-property: visibility, opacity;
+  transition-property: visibility, opacity;
+  position: absolute;
+  inset: 5rem auto auto 5rem;
+  z-index: 1;
 }
 
 .menu-btn {
@@ -206,26 +213,39 @@ a {
   height: 100lvh;
 }
 
-.slide-image {
-  transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
-  -webkit-transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
-  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
-  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
-}
-
 .slide-image img {
   width: 100%;
-    height: 100lvh;
-    object-fit: cover;
+  height: 100lvh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .menu-wrapper {
   width: 50%;
+  min-height: 100%;
+  padding-left: 165px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-left: 165px;
 }
 
 .nav-menu {
-  padding: 80px 50px 80px 0;
+  padding: 0 50px 80px 0;
 }
 
 .nav-list {
@@ -293,6 +313,11 @@ a {
   font-family: "montserrat", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.56px;
+}
+
+.main-img img {
+  width: 100%;
+  height: 100vh;
 }
 
 /* レスポンシブ */
