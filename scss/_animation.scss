@@ -2,7 +2,7 @@
 @use "font" as f;
 @use "mixin" as m;
 
-
+// header
 @keyframes nav-open {
     0% {
         mask-position: left top
@@ -12,11 +12,3 @@
         mask-position: left center
     }
 }
-
-@mixin animationDelay($quantity: 5, $speed: 150ms){
-    @for $i from 1 through $quantity{
-      &:nth-child(#{$i}){
-        animation-delay: ($i - 1) * $speed;
-      }
-    }
-  }

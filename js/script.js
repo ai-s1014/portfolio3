@@ -1,7 +1,10 @@
 // header
 $('.menu-btn').on('click', function() {
 	$(this).toggleClass('open');
-	$('.nav-toggle').toggleClass('open');
+	$('.header-nav').toggleClass('open');
+	$('.nav-wrapper').toggleClass('open');
+	$('.header').toggleClass('open');
+
 });
 
 

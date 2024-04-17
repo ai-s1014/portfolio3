@@ -3,14 +3,13 @@
 
 // main
 .main {
-
+    display: block;
+    position: relative;
+    z-index: 0;
+    height: 100lvh;
 }
 
-.main-logo {
-
-}
-
-.main-img img {
+.hero-image img {
     width: 100%;
     height: 100vh;
 }
