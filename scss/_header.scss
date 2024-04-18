@@ -21,13 +21,9 @@
     }
 }
 
-.header {
-    position: relative;
-}
-
 .header-logo {
     position: absolute;
-    display: block;
+    opacity: 0; // main要素スクロール時に表示
     top: 3rem;
     left: 4rem;
     z-index: 10;
@@ -41,6 +37,7 @@
     // position: absolute;
     // inset: 5rem auto auto 5rem;
     // z-index: 1;
+
 }
 
 .menu-btn {
@@ -103,7 +100,27 @@
 
 
 .header-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 100lvh;
+    z-index: 11;
     background-color: v.$color-h-bg;
+
+    &::before {
+        position: fixed;
+        content: "";
+        display: block;
+        height: 100vh;
+        background-image: url(/img/bg.jpg);
+        background-repeat: repeat-y;
+        background-size: max(1920px,100%) auto;
+        inset: 0 0 auto;
+        z-index: 0;
+        opacity: 0.2;
+    }
+}
+
+.nav-mask {
     transition: -webkit-mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, -webkit-mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -114,37 +131,22 @@
     -webkit-mask-size: 100% 500%;
     mask-size: 100% 500%;
     pointer-events: none;
+ }
 
-
-    &::before {
-        position: absolute;
-        content: "";
-        display: block;
-        background-image: url(/img/bg.jpg);
-        background-repeat: repeat-y;
-        background-size: max(1920px,100%) auto;
-        inset: 0 0 auto;
-        z-index: 0;
-    }
-
-    .open {
-        webkit-animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        transition: none;
-        -webkit-mask-position: left center;
-        mask-position: left center;
-        pointer-events: auto;
-    }
+.nav-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
 }
 
-.mask {
-    height: 100vh;
-    inset: 0 0 auto;
-    z-index: 11;
-    pointer-events: none;
+.nav-logo {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    margin: 0;
+    width: 23rem;
 }
-
-
 // height編集する
 .nav-flex {
     display: flex;
@@ -155,16 +157,16 @@
 
 
 .nav-images {
+    position: absolute;
     width: 50%;
+    z-index: 1;
     height: 100vh;
+    overflow: hidden;
 }
 
 .nav-swiper {
-    overflow: hidden;
-    position: absolute;
-    inset: 0 50% auto 0;
-    z-index: 1;
-    height: 100lvh;
+    width: 100%;
+    height: 100%;
 }
 
 .slide-image {
@@ -191,26 +193,28 @@
 
 }
 
-.pc-menu {
-
-}
-
-.menu-wrapper {
-    width: 50%;
+.menu {
     min-height: 100%;
-    padding-left: 165px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 50%;
     z-index: 1;
 }
 
+.menu-wrapper {
+    padding: 7rem 5rem 8rem 16.5rem;
+}
+
 .nav-menu {
-    padding: 0 50px 80px 0;
+
 }
 
 .nav-list {
-    margin-top: 40px;
+
+    &:not(:first-child) {
+        margin-top: 4rem;
+    }
 
     a {
         font-family: f.$tinos;
@@ -252,6 +256,7 @@
 
 .sns-flex {
     display: flex;
+    margin-top: 8.5rem;
 }
 
 .sns-list {
@@ -289,31 +294,44 @@
 }
 
 // menu アニメーション
-.nav-menu {
-    opacity: 0;
-}
 
-.nav-menu.open {
-    opacity: 1;
-}
-
-.fadeIn {
-    will-change: mask-image;
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
-    mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
-    -webkit-mask-position: center top;
-    mask-position: center top;
-    -webkit-mask-size: 100% 700%;
-    mask-size: 100% 700%;
-}
-.fadeIn {
-    @include m.fadeIn($quantity: 7, $speed: 0.4s);
-}
+// .fadeIn {
+//     will-change: mask-image;
+//     -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+//     mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+//     -webkit-mask-position: center top;
+//     mask-position: center top;
+//     -webkit-mask-size: 100% 700%;
+//     mask-size: 100% 700%;
+// }
+// .fadeIn {
+//     @include m.fadeIn($quantity: 7, $speed: 0.4s);
+// }
 
 
 
-.mask-obj {
-    transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
-    transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
-    transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
+// .mask-obj {
+//     transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
+//     transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
+//     transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) .9s;
+// }
+
+
+/* header openクラス付与 */
+.header {
+
+    &.open {
+
+        .nav-mask {
+            -webkit-animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            transition: none;
+            -webkit-mask-position: left center;
+            mask-position: left center;
+            pointer-events: auto;
+        }
+
+
+
+    }
 }
