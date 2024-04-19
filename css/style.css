@@ -190,18 +190,18 @@ a {
 }
 
 .nav-mask {
-  transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -webkit-transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(21%, transparent), color-stop(39%, #000000), color-stop(61%, #000000), color-stop(79%, transparent));
   -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
-  mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(21%, transparent), color-stop(39%, #000000), color-stop(61%, #000000), color-stop(79%, transparent));
-  mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(21%, transparent), color-stop(39%, #000000), color-stop(61%, #000000), color-stop(79%, transparent));
+          mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
   -webkit-mask-position: left bottom;
-  mask-position: left bottom;
+          mask-position: left bottom;
   -webkit-mask-size: 100% 500%;
-  mask-size: 100% 500%;
+          mask-size: 100% 500%;
   pointer-events: none;
 }
 
@@ -215,9 +215,12 @@ a {
   display: block;
   position: absolute;
   z-index: 2;
-  inset: 0;
-  margin: 0;
+  inset: calc(50% - 13.5rem) auto auto calc(50% - 13.5rem);
   width: 23rem;
+}
+.nav-logo img {
+  width: 100%;
+  height: auto;
 }
 
 .nav-flex {
@@ -344,15 +347,74 @@ a {
   letter-spacing: 0.56px;
 }
 
+.mask-obj {
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+          mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+  -webkit-transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  -webkit-mask-position: center top;
+          mask-position: center top;
+  -webkit-mask-size: 100% 700%;
+          mask-size: 100% 700%;
+}
+
 /* header openクラス付与 */
 .header.open .nav-mask {
   -webkit-animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  -webkit-transition: none;
-  transition: none;
+          animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -webkit-mask-position: left center;
-  mask-position: left center;
+          mask-position: left center;
   pointer-events: auto;
+}
+.header.open .mask-obj {
+  -webkit-mask-position: center center;
+          mask-position: center center;
+}
+.header.open .fadeIn:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+}
+.header.open .fadeIn:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+.header.open .fadeIn:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+}
+.header.open .fadeIn:nth-child(4) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-transition-duration: 0.9s;
+          transition-duration: 0.9s;
+}
+.header.open .fadeIn:nth-child(5) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-transition-duration: 1.2s;
+          transition-duration: 1.2s;
+}
+.header.open .fadeIn:nth-child(6) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-transition-duration: 1.5s;
+          transition-duration: 1.5s;
+}
+.header.open .fadeIn:nth-child(7) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+  -webkit-transition-duration: 1.8s;
+          transition-duration: 1.8s;
 }
 
 .main {

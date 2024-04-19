@@ -14,10 +14,11 @@ $breakpoints: (
 }
 
 // header menu open時のアニメーション
-@mixin fadeIn($quantity: 1, $speed: 0.6s) {
+@mixin fadeIn($quantity, $speed) {
     @for $i from 1 through $quantity{
       &:nth-child(#{$i}){
         animation-delay: ($i - 1) * $speed;
+        transition-duration: ($i - 1) * $speed;
       }
     }
   }
