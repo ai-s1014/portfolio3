@@ -17,8 +17,8 @@ $breakpoints: (
 @mixin fadeIn($quantity, $speed) {
     @for $i from 1 through $quantity{
       &:nth-child(#{$i}){
-        animation-delay: ($i - 1) * $speed;
-        transition-duration: ($i - 1) * $speed;
+        transition-duration: 1.2s;
+        transition-delay: ($i - 1) * $speed;
       }
     }
   }
