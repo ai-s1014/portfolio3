@@ -39,13 +39,14 @@
 }
 
 .main-text {
+    width: 522px;
     display: grid;
     grid-template-columns: 29.9rem 20.9rem;
     column-gap: 1.4rem;
     position: absolute;
     inset: auto 1rem 0.8rem auto;
     z-index: 1;
-    font-size: f.rem(10);
+    text-align: center;
 }
 
 .m-note {
@@ -53,16 +54,31 @@
 }
 
 .note-ttl {
+    height: 2.4rem;
+    font-size: f.rem(12);
+    color: v.$color-text;
     background-color: #fff;
 }
 
 .note-body {
+    height: 2.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 8px 0 0 0;
     border: 1px solid #fff;
 }
 
 .note-cap {
+    height: 1.7rem;
+    font-size: f.rem(11);
     border: 1px solid #fff;
+    padding: 0.5rem;
+}
 
+.cap-s{
+    font-size: f.rem(12);
 }
 
 .p-ttl {

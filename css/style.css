@@ -463,6 +463,7 @@ a {
 }
 
 .main-text {
+  width: 522px;
   display: grid;
   grid-template-columns: 29.9rem 20.9rem;
   -webkit-column-gap: 1.4rem;
@@ -471,19 +472,41 @@ a {
   position: absolute;
   inset: auto 1rem 0.8rem auto;
   z-index: 1;
-  font-size: 1rem;
+  text-align: center;
 }
 
 .note-ttl {
+  height: 2.4rem;
+  font-size: 1.2rem;
+  color: #231815;
   background-color: #fff;
 }
 
 .note-body {
+  height: 2.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 8px 0 0 0;
   border: 1px solid #fff;
 }
 
 .note-cap {
+  height: 1.7rem;
+  font-size: 1.1rem;
   border: 1px solid #fff;
+  padding: 0.5rem;
+}
+
+.cap-s {
+  font-size: 1.2rem;
 }
 
 /* レスポンシブ */
