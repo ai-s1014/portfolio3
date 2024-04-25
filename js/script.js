@@ -13,4 +13,9 @@ const swiper = new Swiper('.swiper', {
 	},
 	allowTouchMove: false,
 	followFinger: false,
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true,
+	  },
+	speed: 0,
 });

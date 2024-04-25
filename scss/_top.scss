@@ -13,7 +13,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    height: 100svh;
+    height: 100lvh;
 }
 
 .main-logo {
@@ -39,7 +39,6 @@
 }
 
 .main-text {
-    width: 522px;
     display: grid;
     grid-template-columns: 29.9rem 20.9rem;
     column-gap: 1.4rem;
@@ -61,24 +60,31 @@
 }
 
 .note-body {
-    height: 2.9rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    height: 2.9rem;
+    justify-content: center;
+    column-gap: 0.6rem;
+    align-items: center;
     margin: 8px 0 0 0;
     border: 1px solid #fff;
 }
 
 .note-cap {
+    display: flex;
     height: 1.7rem;
     font-size: f.rem(11);
     border: 1px solid #fff;
-    padding: 0.5rem;
+    align-items: center;
 }
 
 .cap-s{
     font-size: f.rem(12);
+}
+
+.note-flex {
+    display: flex;
+    justify-content: center;
 }
 
 .p-ttl {
@@ -86,6 +92,121 @@
 }
 
 .p-name {
+    margin-left: 0;
+}
+
+// scroll-contents
+.scroll-contents {
+    --sy: 0;
+    --scale: min(calc(0.6 + var(--sy) * 0.0005), 1);
+    --half-scale: calc((1 - var(--scale)) / 2);
+    position: relative;
+    z-index: 1;
+    padding-top: 26rem;
+
+    &::before {
+        content: "";
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        border: v.$color-text solid 2px;
+        border-bottom: none;
+        border-radius: 50vw;
+    }
+}
+
+.r-img {
+    position: relative;
+    z-index: 3;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url(/img/bottle-r.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 0;
+        right: 0;
+        width: 20.2rem;
+        transform: rotate(15deg);
+        filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+    }
+}
+
+.concept {
+    z-index: 3;
+}
+
+.section-ttl {
 
 }
 
+.c-ttl {
+
+}
+
+.c-subttl {
+
+}
+
+.sub-ttl {
+
+}
+
+.en {
+
+}
+
+.x {
+
+}
+
+.c-lead {
+
+}
+
+.c-desc {
+
+}
+
+.brand-text {
+
+}
+
+.name-s {
+
+}
+
+.brand-name {
+
+}
+
+.more-btn {
+
+}
+
+
+
+.concept {
+    position: relative;
+    margin: 0 auto;
+}
+
+.section-ttl {
+
+}
+
+// 背景画像
+.bg-wrapper {
+    overflow: clip;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50vw 50vw 0 0;
+
+    &::before {
+        @include m.sectionBg;
+    }
+}

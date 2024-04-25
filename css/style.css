@@ -107,6 +107,10 @@ a {
   opacity: 0.2;
 }
 
+.header {
+  overflow: hidden;
+}
+
 .header-logo {
   position: absolute;
   opacity: 0;
@@ -230,26 +234,6 @@ a {
   height: 100vh;
   z-index: 1;
   position: relative;
-}
-
-.nav-images {
-  position: absolute;
-  width: 50%;
-  z-index: 1;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.nav-swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.slide-image img {
-  width: 100%;
-  height: 100lvh;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .img-mask {
@@ -424,6 +408,65 @@ a {
           transition-delay: 0.6s;
 }
 
+.nav-images {
+  position: absolute;
+  width: 50%;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav-swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+.swiper-slide .swiper-fade {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.swiper-slide .swiper-fade .slide-image {
+  opacity: 0;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+          mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+  -webkit-transition: -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-mask-position: center top;
+          mask-position: center top;
+  -webkit-mask-size: 100% 700%;
+          mask-size: 100% 700%;
+}
+.swiper-slide .swiper-fade.swiper-slide-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.swiper-slide .swiper-fade.swiper-slide-active .slide-image {
+  opacity: 1;
+  -webkit-mask-position: center bottom;
+          mask-position: center bottom;
+}
+
+.slide-image {
+  height: 100lvh;
+  -webkit-mask-position: center center !important;
+          mask-position: center center !important;
+  overflow: hidden;
+}
+
+.slide-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .main {
   overflow: clip;
   position: relative;
@@ -434,7 +477,7 @@ a {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 100svh;
+  height: 100lvh;
 }
 
 .main-logo {
@@ -463,7 +506,6 @@ a {
 }
 
 .main-text {
-  width: 522px;
   display: grid;
   grid-template-columns: 29.9rem 20.9rem;
   -webkit-column-gap: 1.4rem;
@@ -483,30 +525,118 @@ a {
 }
 
 .note-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   height: 2.9rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 0.6rem;
+     -moz-column-gap: 0.6rem;
+          column-gap: 0.6rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px 0 0 0;
+  border: 1px solid #fff;
+}
+
+.note-cap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1.7rem;
+  font-size: 1.1rem;
+  border: 1px solid #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cap-s {
+  font-size: 1.2rem;
+}
+
+.note-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  margin: 8px 0 0 0;
-  border: 1px solid #fff;
 }
 
-.note-cap {
-  height: 1.7rem;
-  font-size: 1.1rem;
-  border: 1px solid #fff;
-  padding: 0.5rem;
+.p-name {
+  margin-left: 0;
 }
 
-.cap-s {
-  font-size: 1.2rem;
+.scroll-contents {
+  --sy: 0;
+  --scale: min(calc(0.6 + var(--sy) * 0.0005), 1);
+  --half-scale: calc((1 - var(--scale)) / 2);
+  position: relative;
+  z-index: 1;
+  padding-top: 26rem;
+}
+.scroll-contents::before {
+  content: "";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: #231815 solid 2px;
+  border-bottom: none;
+  border-radius: 50vw;
+}
+
+.r-img {
+  position: relative;
+  z-index: 3;
+}
+.r-img::before {
+  position: absolute;
+  content: "";
+  background-image: url(/img/bottle-r.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0;
+  right: 0;
+  width: 20.2rem;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  -webkit-filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+}
+
+.concept {
+  z-index: 3;
+}
+
+.concept {
+  position: relative;
+  margin: 0 auto;
+}
+
+.bg-wrapper {
+  overflow: clip;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50vw 50vw 0 0;
+}
+.bg-wrapper::before {
+  content: "";
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 100lvh;
+  background: url(/img/bg.jpg);
+  background-repeat: repeat-y;
+  background-size: max(1920px, 100%) auto;
 }
 
 /* レスポンシブ */
