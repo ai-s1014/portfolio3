@@ -136,11 +136,18 @@
 }
 
 .concept {
-    z-index: 3;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 5rem;
+    text-align: center;
 }
 
 .section-ttl {
-
+    font-size: f.rem(48);
+    font-family: f.$tinos;
+    color: v.$color-text2;
 }
 
 .c-ttl {
@@ -148,15 +155,30 @@
 }
 
 .c-subttl {
+    color: #000;
+    position: relative;
 
+    &::before,
+    ::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 12.7rem;
+        background-color: #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, -50%);
+    }
 }
 
 .sub-ttl {
-
+    font-size: f.rem(34);
 }
 
 .en {
-
+    display: flex;
+    justify-content: center;
+    font-size: f.rem(13);
 }
 
 .x {
@@ -189,14 +211,6 @@
 
 
 
-.concept {
-    position: relative;
-    margin: 0 auto;
-}
-
-.section-ttl {
-
-}
 
 // 背景画像
 .bg-wrapper {
