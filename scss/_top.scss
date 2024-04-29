@@ -256,11 +256,15 @@
 
 .brand-name {
     font-size: f.rem(56);
-
+    margin-top: 1.4rem;
 }
 
 .more-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5rem;
+    line-height: 1.1875;
 
     a  {
         font-family: f.$montserrat;
@@ -270,6 +274,15 @@
         &::after {
             position: absolute;
             content: "";
+        }
+
+        i {
+            width: 7rem;
+            aspect-ratio: 1/1;
+            padding: 2.4rem 0;
+            margin-left: 1.5rem;
+            border: 1px solid v.$color-text;
+            border-radius: 50%;
         }
     }
 }
