@@ -110,28 +110,10 @@
         display: block;
         position: absolute;
         inset: 0;
-        z-index: 2;
+        z-index: 0;
         border: v.$color-text solid 2px;
         border-bottom: none;
         border-radius: 50vw;
-    }
-}
-
-.r-img {
-    position: relative;
-    z-index: 3;
-
-    &::before {
-        position: absolute;
-        content: "";
-        background-image: url(/img/bottle-r.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        top: 0;
-        right: 0;
-        width: 20.2rem;
-        transform: rotate(15deg);
-        filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
     }
 }
 
@@ -140,7 +122,7 @@
     z-index: 1;
     width: 100%;
     max-width: 120rem;
-    padding: 0 5rem;
+    // padding: 0 5rem;
     text-align: center;
 }
 
@@ -283,9 +265,52 @@
             margin-left: 1.5rem;
             border: 1px solid v.$color-text;
             border-radius: 50%;
+            font-size: f.rem(21);
         }
     }
 }
+
+
+// ボトル サイドの画像
+.side-img {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -22.7rem;
+        width: 20.2rem;
+        height: auto;
+        filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+        z-index: 2;
+    }
+}
+
+.r-bottle {
+
+    img {
+        right: max(0px,50% - 61.5rem);
+        transform: rotate(12deg);
+    }
+}
+
+.l-bottle {
+
+    img {
+        left: max(0px,50% - 61.5rem);
+        transform: rotate(-12deg);
+    }
+}
+
+.c-image {
+    width: 62.4rem;
+    height: 53rem;
+    margin-top: 12rem;
+    margin-left: auto;
+    border-top-left-radius: 265px;
+    border-bottom-left-radius: 265px;
+    overflow: hidden;
+}
+
 
 
 

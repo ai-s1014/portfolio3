@@ -587,29 +587,10 @@ a {
   display: block;
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   border: #231815 solid 2px;
   border-bottom: none;
   border-radius: 50vw;
-}
-
-.r-img {
-  position: relative;
-  z-index: 3;
-}
-.r-img::before {
-  position: absolute;
-  content: "";
-  background-image: url(/img/bottle-r.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 0;
-  right: 0;
-  width: 20.2rem;
-  -webkit-transform: rotate(15deg);
-          transform: rotate(15deg);
-  -webkit-filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
-          filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
 }
 
 .concept {
@@ -617,7 +598,6 @@ a {
   z-index: 1;
   width: 100%;
   max-width: 120rem;
-  padding: 0 5rem;
   text-align: center;
 }
 
@@ -756,6 +736,42 @@ a {
   margin-left: 1.5rem;
   border: 1px solid #231815;
   border-radius: 50%;
+  font-size: 2.1rem;
+}
+
+.side-img {
+  position: relative;
+}
+.side-img img {
+  position: absolute;
+  top: -22.7rem;
+  width: 20.2rem;
+  height: auto;
+  -webkit-filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(3rem 6rem 5rem rgba(0, 0, 0, 0.2));
+  z-index: 2;
+}
+
+.r-bottle img {
+  right: max(0px, 50% - 61.5rem);
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.l-bottle img {
+  left: max(0px, 50% - 61.5rem);
+  -webkit-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+}
+
+.c-image {
+  width: 62.4rem;
+  height: 53rem;
+  margin-top: 12rem;
+  margin-left: auto;
+  border-top-left-radius: 265px;
+  border-bottom-left-radius: 265px;
+  overflow: hidden;
 }
 
 .bg-wrapper {
