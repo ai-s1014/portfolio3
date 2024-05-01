@@ -212,16 +212,27 @@
     }
 }
 
+.trouble {
+    margin-top: 8.8rem;
+}
+
+.scalp {
+    margin-top: 23.8rem;
+}
+
 .c-lead {
     font-size: f.rem(56);
     font-weight: 700;
     line-height: 1.4286;
     letter-spacing: 0.2px;
-    margin-top: 8.8rem;
 }
 
 .c-desc {
     letter-spacing: 0.04em;
+}
+
+.c-cap {
+    font-size: f.rem(6);
 }
 
 .brand-text {
@@ -298,6 +309,13 @@
     img {
         left: max(0px,50% - 61.5rem);
         transform: rotate(-12deg);
+    }
+}
+
+.s-bottle {
+
+    img {
+        width: 12.7rem;
     }
 }
 
