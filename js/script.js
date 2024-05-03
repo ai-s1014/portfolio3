@@ -6,7 +6,7 @@ $('.menu-btn').on('click', function() {
 
 
 // swiper
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.nav-swiper', {
 	loop: true,
 	autoplay: {
 		delay: 5000,
@@ -18,4 +18,8 @@ const swiper = new Swiper('.swiper', {
 		crossFade: true,
 	  },
 	speed: 0,
+});
+
+const swiper = new Swiper('.c-swiper', {
+	direction: 'vertical',
 });

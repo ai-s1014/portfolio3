@@ -16,17 +16,17 @@
     height: 100%;
 }
 
-.swiper-wrapper {
+.nav-swiper-wrapper {
 
 }
 
-.swiper-slide {
+.nav-swiper-slide {
     overflow: hidden;
     .swiper-fade {
         opacity: 0 !important;
         visibility: hidden !important;
 
-        .slide-image {
+        .nav-slide-image {
             opacity: 0;
             mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
             transition: mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;    
@@ -38,7 +38,7 @@
             opacity: 1 !important;
             visibility: visible !important;
 
-            .slide-image {
+            .nav-slide-image {
                 opacity: 1;
                 mask-position: center bottom;
             }
