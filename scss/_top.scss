@@ -348,16 +348,16 @@
 }
 
 .c-items {
-}
-
-.item {
     display: grid;
-    grid-column: 1/2;
-    grid-row: 1/2;
     position: sticky;
     top: calc(50lvh - 27rem);
     z-index: 1;
     margin-bottom: 10rem;
+}
+
+.item {
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 .scalp {
@@ -443,8 +443,7 @@
     // will-change: opacity;
     overflow: hidden;
     position: absolute;
-    z-index: 0;
-    width: var(--w);
+    z-index: 2;
     border-radius: 2rem;
     // opacity: 0;
     box-shadow: 4rem 6rem 8rem rgba(0,0,0,.2);

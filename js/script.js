@@ -20,6 +20,7 @@ const swiper = new Swiper('.nav-swiper', {
 	speed: 0,
 });
 
-const swiper = new Swiper('.c-swiper', {
+const swiper2 = new Swiper('.c-swiper', {
 	direction: 'vertical',
+	mousewheel: true,
 });
