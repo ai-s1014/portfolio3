@@ -64,3 +64,31 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+.circle {
+    border: 1px solid v.$color-text;
+    border-radius: 21.6rem;
+    box-shadow: 4rem 6rem 7.9rem rgba(0,0,0,.2);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url(/img/bg-fff.jpg);
+        background-repeat: no-repeat;
+        background-size: max(1920px,100%) auto;
+        border-radius: 21.6rem;
+        inset: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        inset: 1rem;
+        z-index: 0;
+        border: 1px solid v.$color-text;
+        border-radius: 20.6rem;
+    }
+
+}

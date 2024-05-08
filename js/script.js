@@ -6,7 +6,7 @@ $('.menu-btn').on('click', function() {
 
 
 // swiper
-const swiper = new Swiper('.nav-swiper', {
+const swiper1 = new Swiper('.swiper1', {
 	loop: true,
 	autoplay: {
 		delay: 5000,
@@ -20,7 +20,37 @@ const swiper = new Swiper('.nav-swiper', {
 	speed: 0,
 });
 
-const swiper2 = new Swiper('.c-swiper', {
+const swiper2 = new Swiper('.swiper2', {
 	direction: 'vertical',
+	slidesPerView: 1,
 	mousewheel: true,
+	autoHeight: true,
+	speed: 1000,
+	keyboard: {
+	  enabled: true,
+	},
+	mousewheel: {
+		releaseOnEdges: true,
+		forceToAxis: true,
+		sensitivity: 1,
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	on: {
+		slideChange: function () {
+		  setTimeout(function () {
+			swiper.params.mousewheel.releaseOnEdges = false;
+		  }, 500);
+		},
+		reachEnd: function() {
+		  setTimeout(function () {
+			swiper.params.mousewheel.releaseOnEdges = true;
+		  }, 750);
+		}
+	},
 });
+
+
+
