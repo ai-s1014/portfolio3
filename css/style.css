@@ -505,6 +505,8 @@ a {
 
 .swiper2 {
   position: relative;
+  -ms-touch-action: auto;
+      touch-action: auto;
 }
 
 .c-items {
@@ -577,7 +579,7 @@ a {
 .item-image {
   overflow: hidden;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   border-radius: 2rem;
   -webkit-box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);
           box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);

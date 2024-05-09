@@ -38,18 +38,8 @@ const swiper2 = new Swiper('.swiper2', {
 		el: ".swiper-pagination",
 		clickable: true,
 	},
-	on: {
-		slideChange: function () {
-		  setTimeout(function () {
-			swiper.params.mousewheel.releaseOnEdges = false;
-		  }, 500);
-		},
-		reachEnd: function() {
-		  setTimeout(function () {
-			swiper.params.mousewheel.releaseOnEdges = true;
-		  }, 750);
-		}
-	},
+	effect: 'fade',
+
 });
 
 
