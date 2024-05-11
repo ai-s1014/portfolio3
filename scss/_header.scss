@@ -2,16 +2,6 @@
 @use "font" as f;
 @use "mixin" as m;
 
-#wrapper {
-    position: relative;
-    background-color: v.$color-bg1;
-    z-index: 1;
-
-    &::before {
-        @include m.headerBg;
-    }
-}
-
 .header {
     overflow: hidden;
 }

@@ -2,6 +2,16 @@
 @use "font" as f;
 @use "mixin" as m;
 
+#wrapper {
+    position: relative;
+    background-color: v.$color-bg1;
+    z-index: -1;
+
+    &::before {
+        @include m.headerBg;
+    }
+}
+
 // main
 .main {
     overflow: clip;
@@ -348,11 +358,28 @@
     width: 100%;
     position: relative;
     padding: 22rem 5rem 10.6rem;
-    background: url(/img/bg-fff.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    inset: 0;
     z-index: 3;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        width: 54rem;
+        height: 51rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: -1;
+    }
+
+    &::before {
+        background-image: url(/img/bg-bl.png);
+        inset: 0 auto auto 0;
+    }
+
+    &::after {
+        background-image: url(/img/bg-br.png);
+        inset: auto 0 0 auto;
+    }
 }
 
 .section-ttl {
@@ -517,7 +544,93 @@
 
 }
 
+// gallery
+.gallery {
+    height: 300vh;
+    background-color: v.$color-text;
+    position: relative;
+    z-index: 3;
+}
 
+.gallery-wrapper {
+    position: absolute;
+    inset: 100lvh 0; // -100lvh 0
+}
+
+.gallery-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.galley-image {
+    display: flex;
+    justify-content: center;
+}
+
+// support
+.support {
+    padding: 20rem 0;
+    position: relative;
+    z-index: 3;
+}
+
+.support-wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.support-ttl {
+    font-size: f.rem(32);
+    font-weight: 700;
+}
+
+.support-flex {
+    display: flex;
+    column-gap: 5rem;
+    margin-top: 4rem;
+}
+
+.support-item {
+    background-image: url();
+}
+
+.s-item-text {
+
+}
+
+.item-en {
+
+}
+
+.item-ja {
+
+}
+
+.more-btn {
+
+}
+
+.item-btn {
+
+}
+
+.fa-solid {
+
+}
+
+.fa-arrow-right {
+
+}
+
+.arrow-color {
+
+}
 
 
 

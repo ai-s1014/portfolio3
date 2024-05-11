@@ -90,5 +90,13 @@ a {
         border: 1px solid v.$color-text;
         border-radius: 20.6rem;
     }
+}
 
+.bg-fff {
+    background: url(/img/bg-fff.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    inset: 0;
+    position: relative;
+    z-index: 0;
 }
