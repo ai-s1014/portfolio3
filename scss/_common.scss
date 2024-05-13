@@ -74,7 +74,7 @@ a {
     &::before {
         position: absolute;
         content: "";
-        background-image: url(/img/bg-fff.jpg);
+        background-image: url(../img/bg-fff.jpg);
         background-repeat: no-repeat;
         background-size: max(1920px,100%) auto;
         border-radius: 21.6rem;
@@ -92,8 +92,24 @@ a {
     }
 }
 
+.bg {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg.jpg);
+        background-repeat: repeat;
+        inset: 0;
+        z-index: -1;
+        border-radius: 50vw 50vw 0 0;
+        background-size: max(1920px,100%) auto;
+
+    }
+}
+
 .bg-fff {
-    background: url(/img/bg-fff.jpg);
+    background: url(../img/bg-fff.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     inset: 0;

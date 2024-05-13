@@ -1,2 +1,78 @@
 @use "variable" as v;
 @use "mixin" as m;
+@use "font" as f;
+
+
+.footer {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #cbcbc0;
+}
+
+.footer-wrapper {
+    max-width: 120rem;
+    display: grid;
+    align-items: center;
+    margin: 0 auto;
+    padding: 4.8rem 5rem;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: f.rem(12.5);
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+}
+
+.footer-sns {
+    padding-left: 15rem;
+}
+
+.sns-lists {
+    margin-top: 0;
+}
+
+.sns-list {
+
+}
+
+.f-sns-list {
+
+}
+
+.fa-brands {
+
+}
+
+.fa-instagram {
+
+}
+
+.fa-x-twitter {
+
+}
+
+.fa-solid {
+
+}
+
+.fa-link {
+
+}
+
+.link-lists {
+
+}
+
+.link-flex {
+
+}
+
+.link-list {
+
+}
+

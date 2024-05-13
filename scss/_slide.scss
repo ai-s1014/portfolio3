@@ -7,11 +7,11 @@
 
 // swiper1
 .nav-images {
-    position: absolute;
-    width: 50%;
-    z-index: 1;
-    height: 100vh;
     overflow: hidden;
+    position: absolute;
+    inset: 0 50% auto 0;
+    z-index: 1;
+    height: 100lvh;
 }
 
 .swiper1 {
@@ -84,6 +84,7 @@
 .swiper2 {
     position: relative;
     touch-action: auto;
+    margin-top: 23.8rem;
 }
 
 .c-items {
@@ -92,6 +93,11 @@
     top: calc(50lvh - 27rem);
     z-index: 1;
     margin-bottom: 10rem;
+
+    .swiper-backface-hidden {
+        transform: translateZ(0);
+        backface-visibility: hidden
+    }
 }
 
 .item {
@@ -180,4 +186,3 @@
     top: 0;
     left: calc(50% + 23rem);
 }
-

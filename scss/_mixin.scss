@@ -37,15 +37,3 @@ $breakpoints: (
     z-index: 0;
     opacity: 0.2;
 }
-
-// top
-@mixin sectionBg {
-    content: "";
-	display: block;
-	position: sticky;
-	top: 0;
-	height: 100lvh;
-	background: url(/img/bg.jpg);
-    background-repeat: repeat-y;
-	background-size: max(1920px,100%) auto;
-}
