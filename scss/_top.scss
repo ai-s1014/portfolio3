@@ -27,7 +27,7 @@
 }
 
 .main-logo {
-    position: absolute;
+    position: fixed;
     width: 20rem;
     inset: 5rem auto auto 5rem;
     z-index: 1;
@@ -46,19 +46,27 @@
     }
 
     .w-logo {
-        position: absolute;
+        position: fixed;
         width: 11.2rem;
         height: 13.3rem;
-        inset: 0;
+        top: 3rem;
+        left: 4rem;
         opacity: 0;
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
         transition-property: visibility,opacity;
+
+        @include m.mq(sp) {
+            width: 14rem;
+            top: 2rem;
+            left: 2rem;
+        }
 
     }
 
     &.scroll {
         .logo {
             opacity: 0;
+
         }
 
         .w-logo {
@@ -66,6 +74,11 @@
             transition-delay: .3s;
             visibility: visible;
         }
+    }
+
+    @include m.mq(sp) {
+        width: 23rem;
+        inset: 28rem auto auto calc(50% - 10.5rem);
     }
 }
 
@@ -434,19 +447,47 @@
 
 }
 
+.p-item-flex {
+    position: relative;
+    display: flex;
+    column-gap: 5rem;
+    padding-top: 7rem;
+}
+
+.p-pc {
+    @include m.mq(sp) {
+        display: none;
+    }
+}
+
+.p-item-body {
+}
 
 .p-item-box {
+    width: calc(50% - 2.5rem);
     height: 72.3rem;
     background: rgba(255,255,255,.7);
     position: relative;
     padding: 0 5rem;
     border: v.$color-text solid 1px;
+
+    @include m.mq(sp) {
+        width: calc(100vw - 5rem);
+        height: 55.5rem;
+        padding: 0 10.4rem;
+        border-radius: calc((100vw - 5rem)/2);
+    }
 }
 
 .p-item-body {
     height: 72.3rem;
     text-align: center;
     margin: 0 auto;
+
+    @include m.mq(sp) {
+        height: 55.5rem;
+        border-radius: calc((100vw - 5rem)/2);
+    }
 }
 
 .p-item-image {
@@ -540,7 +581,7 @@
 }
 
 .p-item-effect {
-    width: 100%;
+    width: calc(50% - 2.5rem);
     margin-top: 2rem;
     padding: 1.9rem 2rem 1.7rem;
     background: rgba(255,255,255,.5);
@@ -548,10 +589,6 @@
     line-height: 1.6;
     letter-spacing: 0;
     clip-path: polygon(0 1rem, calc(50% - 0.9rem) 1rem, 50% 0, calc(50% + 0.9rem) 1rem, 100% 1rem, 100% 100%, 0% 100%);
-
-    @include m.mq(sp) {
-        max-width: 43.9rem;
-    }
 }
 
 .effect-text {
