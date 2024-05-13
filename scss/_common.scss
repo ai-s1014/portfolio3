@@ -67,29 +67,22 @@ a {
 
 .circle {
     border: 1px solid v.$color-text;
-    border-radius: 21.6rem;
-    box-shadow: 4rem 6rem 7.9rem rgba(0,0,0,.2);
+    border-radius: min(26.3rem,(100vw - 15rem)/2);
+    background: rgba(255,255,255,.7);
     position: relative;
 
     &::before {
         position: absolute;
         content: "";
-        background-image: url(../img/bg-fff.jpg);
-        background-repeat: no-repeat;
-        background-size: max(1920px,100%) auto;
-        border-radius: 21.6rem;
-        inset: 0;
-        z-index: -1;
-    }
-
-    &::after {
-        position: absolute;
-        content: "";
         inset: 1rem;
         z-index: 0;
         border: 1px solid v.$color-text;
-        border-radius: 20.6rem;
+        border-radius: min(26.3rem,(100vw - 15rem)/2);
     }
+}
+
+.circle-shadow {
+    box-shadow: 4rem 6rem 7.9rem rgba(0,0,0,.2);
 }
 
 .bg {
@@ -104,15 +97,20 @@ a {
         z-index: -1;
         border-radius: 50vw 50vw 0 0;
         background-size: max(1920px,100%) auto;
-
     }
 }
 
 .bg-fff {
     background: url(../img/bg-fff.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
     inset: 0;
     position: relative;
     z-index: 0;
+}
+
+.wrapper-inner {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 5rem;
 }
