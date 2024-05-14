@@ -849,16 +849,17 @@
 
 // gallery
 .gallery {
-    height: 300vh;
+    height: 100vh;
     background-color: v.$color-text;
     position: relative;
-    z-index: 3;
+    z-index: 2;
 }
 
 .gallery-wrapper {
     position: absolute;
-    inset: 100lvh 0;
-    z-index: -1;
+    inset: 0;
+    z-index: 1;
+
 }
 
 .gallery-body {
@@ -869,12 +870,15 @@
     overflow: clip;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .galley-image {
+    height: 100vh;
     display: flex;
     justify-content: center;
+    position: absolute;
+    z-index: 3;
 }
 
 // support
