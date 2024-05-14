@@ -105,6 +105,10 @@
     height: 100vh;
     margin-top: 13.6rem;
     overflow: clip;
+
+    @include m.mq(sp) {
+        margin-top: 23.3rem;
+    }
 }
 
 .c-slider-wrapper {
@@ -129,6 +133,11 @@
         transform: translateZ(0);
         backface-visibility: hidden
     }
+
+    @include m.mq(sp) {
+        top: calc(50lvh - 15.5rem);
+        margin-bottom: 16.7rem
+    }
 }
 
 .item {
@@ -150,6 +159,12 @@
     margin: 0 auto;
     text-align: center;
     z-index: 2;
+
+    @include m.mq(sp) {
+        width: 25rem;
+        aspect-ratio: 250/310;
+        border-radius: 12rem;
+    }
 }
 
 .item-ttl {
@@ -158,6 +173,12 @@
     font-size: f.rem(56);
     line-height: 1.2143;
     letter-spacing: 0.03em;
+
+    @include m.mq(sp) {
+        margin-bottom: 1.4rem;
+        font-size: f.rem(24);
+        line-height: 1.25;
+    }
 }
 
 .item-text {
@@ -169,6 +190,11 @@
     line-height: 1.4167;
     font-weight: 700;
 
+    @include m.mq(sp) {
+        font-size: f.rem(13);
+        line-height: 1.3334;
+    }
+
     strong {
         display: block;
         margin-top: 0.6rem;
@@ -176,6 +202,11 @@
         font-size: 2.4rem;
         font-weight: 700;
         letter-spacing: 0.02em;
+
+        @include m.mq(sp) {
+            margin-top: 0.3rem;
+            font-size: f.rem(18);
+        }
     }
 }
 
@@ -199,28 +230,63 @@
     border-radius: 2rem;
     // opacity: 0;
     box-shadow: 4rem 6rem 8rem rgba(0,0,0,.2);
+
+    @include m.mq(sp) {
+        width: calc(100vw - 16rem);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .item-image1 {
     width: 48rem;
     top: 0;
     right: calc(50% + 10rem);
+
+    @include m.mq(sp) {
+        width: calc(100vw - 5rem);
+        height: 55.6rem;
+        top: auto;
+        right: 0;
+        bottom: calc(50% + 9.9rem);
+        left: auto;
+    }
 }
 
 .item-image2 {
     width: 44rem;
     left: calc(50% + 27rem);
+
+    @include m.mq(sp) {
+        width: calc(100vw - 25rem);
+        top: calc(50% + 7.8rem);
+        right: auto;
+        bottom: auto;
+        left: 0;
+    }
 }
 
 .item-image3 {
     width: 30rem;
     top: 0;
     left: calc(50% + 23rem);
+
+    @include m.mq(sp) {
+        width: calc(100vw - 16rem);
+        top: calc(50% + 14.6rem);
+        right: 0;
+        bottom: auto;
+        left: auto;
+    }
 }
 
 // swiper3
 .swiper3 {
     padding: 0 6.5rem;
+
+    @include m.mq(sp) {
+        padding: 0 2.5rem;
+    }
 }
 
 .p-sp {
@@ -245,4 +311,3 @@
     width: calc(100vw - 5rem);
     margin-right: 2.5rem;
 }
-

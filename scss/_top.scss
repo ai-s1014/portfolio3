@@ -6,6 +6,7 @@
     position: relative;
     background-color: v.$color-bg1;
     z-index: 0;
+    overflow: clip;
 
     &::before {
         @include m.headerBg;
@@ -34,6 +35,11 @@
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
     transition-property: visibility,opacity;
 
+    @include m.mq(sp) {
+        width: 17rem;
+        inset: 6rem auto auto calc(50% - 8.5rem);
+    }
+
     a {
         display: inline-block;
     }
@@ -42,6 +48,13 @@
         opacity: 1;
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
         transition-property: visibility,opacity;
+
+        img {
+            @include m.mq(sp) {
+                width: 17rem;
+                height: auto;
+            }
+        }
 
     }
 
@@ -52,13 +65,14 @@
         top: 3rem;
         left: 4rem;
         opacity: 0;
+        z-index: 100;
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
         transition-property: visibility,opacity;
 
         @include m.mq(sp) {
-            width: 14rem;
-            top: 2rem;
-            left: 2rem;
+            width: 7rem;
+            top: 1rem;
+            left: 1rem;
         }
 
     }
@@ -74,11 +88,6 @@
             transition-delay: .3s;
             visibility: visible;
         }
-    }
-
-    @include m.mq(sp) {
-        width: 23rem;
-        inset: 28rem auto auto calc(50% - 10.5rem);
     }
 }
 
@@ -103,6 +112,12 @@
     inset: auto 1rem 0.8rem auto;
     z-index: 1;
     text-align: center;
+
+    @include m.mq(sp) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+        left: 1rem;
+    }
 }
 
 .m-note {
@@ -114,6 +129,11 @@
     font-size: f.rem(12);
     color: v.$color-text;
     background-color: #fff;
+
+    @include m.mq(sp) {
+        height: 2.1rem;
+        font-size: f.rem(11);
+    }
 }
 
 .note-body {
@@ -125,6 +145,11 @@
     align-items: center;
     margin: 8px 0 0 0;
     border: 1px solid #fff;
+
+    @include m.mq(sp) {
+        height: 2.6rem;
+        column-gap: 0.4rem;
+    }
 }
 
 .note-cap {
@@ -133,6 +158,12 @@
     font-size: f.rem(11);
     border: 1px solid #fff;
     align-items: center;
+
+    @include m.mq(sp) {
+        height: 1.5rem;
+        font-size: f.rem(10);
+        padding: 0.5rem;
+    }
 }
 
 .cap-s{
@@ -145,11 +176,15 @@
 }
 
 .p-ttl {
-
+    @include m.mq(sp) {
+        font-size: f.rem(10);
+    }
 }
 
 .p-name {
-    margin-left: 0;
+    @include m.mq(sp) {
+        font-size: f.rem(10);
+    }
 }
 
 // scroll-contents
@@ -157,6 +192,10 @@
     position: relative;
     z-index: 0;
     padding-top: 26rem;
+
+    @include m.mq(sp) {
+        padding-top: 10rem;
+    }
 
     &::before {
         content: "";
@@ -183,11 +222,16 @@
     }
 }
 
+// concept
 .concept {
     position: relative;
     z-index: 1;
     width: 100%;
     text-align: center;
+
+    @include m.mq(sp) {
+        text-align: left;
+    }
 }
 
 .section-ttl {
@@ -198,7 +242,8 @@
     letter-spacing: 0.06em;
 
     @include m.mq(sp) {
-        font-size: f.rem(73);
+        font-size: f.rem(28);
+        line-height: 1.2143;
     }
 }
 
@@ -208,12 +253,18 @@
 
 .c-subttl {
     width: fit-content;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-left: 1px solid v.$color-accent;
+    border-right: 1px solid v.$color-accent;
     padding: 1rem 4.6rem;
     margin: 3rem auto 0;
-    color: #000;
+    color: v.$color-accent;
     position: relative;
+
+    @include m.mq(sp) {
+        text-align: center;
+        margin: 2rem auto 0;
+        padding: 0 0 0.5rem;
+    }
 }
 
 .border-length {
@@ -221,16 +272,21 @@
         position: absolute;
         content: "";
         width: 1px;
-        height: 18.9rem;
-        background-color: #000;
-        top: 50%;
-        transform: translate(50%, -50%);
+        background-color: v.$color-accent;
+        inset: 0 auto;
+
+        @include m.mq(sp) {
+        }
     }
 }
 
 .border-l {
     &::before {
         left: 0.5rem;
+
+        @include m.mq(sp) {
+            left: 0.3rem;
+        }
     }
 }
 
@@ -243,6 +299,10 @@
 .sub-ttl {
     font-size: f.rem(34);
     font-weight: 700;
+
+    @include m.mq(sp) {
+        font-size: f.rem(20);
+    }
 }
 
 .en {
@@ -250,11 +310,21 @@
     display: flex;
     justify-content: center;
     margin-left: 2rem;
-    font-size: f.rem(13);
 
-    // .p {
-    //     width: 8.1rem;
-    // }
+    @include m.mq(sp) {
+        grid-template-columns: 1fr 2.8rem 1fr;
+        margin: 0.7rem 0 1rem;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+    }
+
+    p {
+        font-size: f.rem(13);
+
+        @include m.mq(sp) {
+            font-size: f.rem(10);
+        }
+    }
 }
 
 .x {
@@ -284,10 +354,19 @@
 
 .trouble-text {
     margin-top: 8.8rem;
+
+    @include m.mq(sp) {
+        margin-top: 7.3rem;
+    }
 }
 
 .scalp-text {
     margin-top: 23.8rem;
+
+    @include m.mq(sp) {
+        overflow: clip;
+        margin-top: 12.7rem;
+    }
 }
 
 .c-lead {
@@ -295,15 +374,33 @@
     font-weight: 700;
     line-height: 1.4286;
     letter-spacing: 0.2px;
+
+    @include m.mq(sp) {
+        font-size: f.rem(22);
+        line-height: 1.6364;
+        text-align: left;
+    }
 }
 
 .c-desc {
     letter-spacing: 0.04em;
+
+    @include m.mq(sp) {
+        font-size: f.rem(14);
+        text-align: left;
+        letter-spacing: 0.02em;
+        margin-top: 1.6rem;
+    }
 }
 
 .c-cap {
     font-size: f.rem(6);
     margin-top: 0.8rem;
+    color: #4c4948;
+
+    @include m.mq(sp) {
+        margin-top: 0.3rem;
+    }
 }
 
 .brand-text {
@@ -311,25 +408,54 @@
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0.02rem;
+
+    @include m.mq(sp) {
+        width: 17rem;
+        margin: 3.7rem 0 0;
+        text-align: left;
+    }
 }
 
 .name-s {
     font-size: f.rem(15);
     font-weight: 700;
+
+    @include m.mq(sp) {
+        font-size: f.rem(11);
+    }
 }
 
 .brand-name {
     font-size: f.rem(56);
     margin-top: 1.4rem;
+
+    @include m.mq(sp) {
+        font-size: f.rem(24);
+    }
 }
 
-.more-btn {
+.c-btn {
     margin-top: 5rem;
     line-height: 1.1875;
 
+    @include m.mq(sp) {
+        text-align: right;
+        margin-top: 2.5rem;
+    }
+
+    a {
+        font-size: f.rem(18);
+
+        @include m.mq(sp) {
+            font-size: f.rem(14);
+        }
+    }
+}
+
+.more-btn {
+
     a  {
         font-family: f.$montserrat;
-        font-size: f.rem(18);
         position: relative;
         text-align: center;
 
@@ -346,6 +472,11 @@
             border: 1px solid v.$color-text;
             border-radius: 50%;
             font-size: f.rem(21);
+
+            @include m.mq(sp) {
+                width: 4rem;
+                padding: 0.8rem 0;
+            }
         }
     }
 }
@@ -354,6 +485,7 @@
 // ボトル サイドの画像
 .side-img {
     position: relative;
+    z-index: 2;
 
     img {
         position: absolute;
@@ -370,6 +502,13 @@
     img {
         right: max(0px,50% - 61.5rem);
         transform: rotate(12deg);
+
+        @include m.mq(sp) {
+            top: -8.4rem;
+            right: auto;
+            left: 2.6rem;
+            width: 3.8rem;
+        }
     }
 }
 
@@ -378,6 +517,13 @@
     img {
         left: max(0px,50% - 61.5rem);
         transform: rotate(-12deg);
+
+        @include m.mq(sp) {
+            top: -58.2rem;
+            left: auto;
+            right: -0.8rem;
+            width: 7rem;
+        }
     }
 }
 
@@ -385,6 +531,12 @@
 
     img {
         width: 12.7rem;
+
+        @include m.mq(sp) {
+            top: -26.2rem;
+            left: 2.1rem;
+            width: 7rem;
+        }
     }
 }
 
@@ -398,7 +550,10 @@
     z-index: 2;
 
     @include m.mq(sp) {
+        width: calc(100vw - 9rem);
         height: auto;
+        aspect-ratio: 300/177;
+        margin-top: 5rem
     }
 
     img {
@@ -413,6 +568,10 @@
     padding: 22rem 0 10.6rem;
     z-index: 2;
 
+    @include m.mq(sp) {
+        padding: 14rem 0 14rem;
+    }
+
     &::before,
     &::after {
         position: absolute;
@@ -422,6 +581,11 @@
         background-repeat: no-repeat;
         background-size: contain;
         z-index: -1;
+
+        @include m.mq(sp) {
+            width: 21rem;
+            height: 20rem;
+        }
     }
 
     &::before {
@@ -432,10 +596,9 @@
     &::after {
         background-image: url(../img/bg-br.png);
         inset: auto 0 0 auto;
-    }
 
-    @include m.mq(sp) {
-        padding: 36.7rem 0;
+        @include m.mq(sp) {
+        }
     }
 }
 
@@ -472,9 +635,9 @@
     border: v.$color-text solid 1px;
 
     @include m.mq(sp) {
-        width: calc(100vw - 5rem);
+        width: 100%;
         height: 55.5rem;
-        padding: 0 10.4rem;
+        padding: 0 4rem;
         border-radius: calc((100vw - 5rem)/2);
     }
 }
@@ -496,14 +659,28 @@
     column-gap: 1rem;
     margin: -7rem 0 0.3rem;
 
+    @include m.mq(sp) {
+        column-gap: 0.3rem;
+        margin: -4rem 0 0.1rem;
+    }
+
     img {
         width: 10.2rem;
         height: 33rem;
+
+        @include m.mq(sp) {
+            width: 7.2rem;
+            height: 22rem;
+        }
     }
 }
 
 .p-body-text {
     min-height: 33rem;
+
+    @include m.mq(sp) {
+        min-height: 26.5rem;
+    }
 }
 
 .p-item-ttl {
@@ -512,10 +689,21 @@
     font-weight: 700;
     line-height: 1.6364;
     letter-spacing: 0.02em;
+
+    @include m.mq(sp) {
+        min-height: 0;
+        margin-bottom: 1.2rem;
+        font-size: f.rem(16);
+        line-height: 1.5;
+    }
 }
 
 .p-item-text {
     margin-top: 1.3rem;
+
+    @include m.mq(sp) {
+        margin-top: 1.2rem;
+    }
 }
 
 .p-item-lead {
@@ -524,6 +712,11 @@
     font-weight: 700;
     line-height: 1.5556;
     letter-spacing: 0.02em;
+
+    @include m.mq(sp) {
+        font-size: f.rem(14);
+        line-height: 1.7143;
+    }
 }
 
 .p-item-cap {
@@ -532,6 +725,10 @@
     color: #4c4948;
     line-height: 1.8;
     letter-spacing: 0.02em;
+
+    @include m.mq(sp) {
+        margin-top: 0.4rem;
+    }
 }
 
 .p-item-price {
@@ -541,14 +738,30 @@
     letter-spacing: 0.04em;
     font-weight: 700;
     font-family: f.$montserrat;
+
+    @include m.mq(sp) {
+        margin-top: 2.6rem;
+        font-size: f.rem(12);
+        line-height: 1.2273;
+        letter-spacing: 0.02em;
+    }
 }
 
 .price {
     font-size: f.rem(26);
+
+    @include m.mq(sp) {
+        font-size: f.rem(22);
+        letter-spacing: .02em;
+    }
 }
 
 .price-cap {
     margin-top: 1.8rem;
+
+    @include m.mq(sp) {
+        margin-top: 1.4rem;
+    }
 }
 
 .volume {
@@ -589,6 +802,12 @@
     line-height: 1.6;
     letter-spacing: 0;
     clip-path: polygon(0 1rem, calc(50% - 0.9rem) 1rem, 50% 0, calc(50% + 0.9rem) 1rem, 100% 1rem, 100% 100%, 0% 100%);
+
+    @include m.mq(sp) {
+        width: 100%;
+        margin: 1rem 0 0;
+        padding: 1.7rem 1.6rem 1.3rem;
+    }
 }
 
 .effect-text {
@@ -598,6 +817,11 @@
         grid-template-columns: 41.573% 1fr;
         column-gap: 1.4rem;
         margin: 1rem 0 0 0;
+
+        @include m.mq(sp) {
+            grid-template-columns: 1fr;
+            row-gap: 0.8rem;
+        }
     }
 }
 
@@ -606,6 +830,10 @@
     text-align: center;
     padding-bottom: 0.7rem;
     border-bottom: #cbcbc0 dotted 1px;
+
+    @include m.mq(sp) {
+        font-size: f.rem(10);
+    }
 }
 
 .effect-name {
@@ -629,14 +857,16 @@
 
 .gallery-wrapper {
     position: absolute;
-    inset: 100lvh 0; // -100lvh 0
+    inset: 100lvh 0;
+    z-index: -1;
 }
 
 .gallery-body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: clip;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -652,17 +882,29 @@
     padding: 20rem 0;
     position: relative;
     z-index: 3;
+
+    @include m.mq(sp) {
+        padding: 8rem 0 10rem;
+    }
 }
 
 .support-wrapper {
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 5rem;
+
+    @include m.mq(sp) {
+        padding: 0 2.5rem;
+    }
 }
 
 .support-ttl {
     font-size: f.rem(32);
     font-weight: 700;
+
+    @include m.mq(sp) {
+        font-size: f.rem(20);
+    }
 }
 
 .support-items {
@@ -670,6 +912,12 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
     margin-top: 4rem;
+
+    @include m.mq(sp) {
+        grid-template-columns: 1fr;
+        row-gap: 1.4rem;
+        margin-top: 2rem;
+    }
 }
 
 .support-item {
@@ -700,18 +948,38 @@
     grid-row: 1/2;
     position: relative;
     z-index: 1;
+
+    @include m.mq(sp) {
+        row-gap: 0;
+    }
 }
 
 
 .item-en {
     font-size: f.rem(15);
     line-height: 1.2667;
+    font-weight: 700;
+
+
+    @include m.mq(sp) {
+        font-size: f.rem(12);
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+    }
 }
 
 .item-ja {
     font-size: f.rem(24);
     line-height: 1;
     margin-top: 1rem;
+    font-weight: 700;
+
+
+    @include m.mq(sp) {
+        font-size: f.rem(18);
+        letter-spacing: 0.02em;
+    }
+
 }
 
 .more-btn {

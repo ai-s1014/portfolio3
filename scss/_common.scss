@@ -12,7 +12,12 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-size: 10px;
+    font-size: 62.5%;
+
+    @include m.mq(sp) {
+        font-size: 2.5642vw;
+        line-height: 1.7143
+    }
 }
 
 body {
@@ -21,6 +26,10 @@ body {
     line-height: 2;
     background-color: #fff;
     color: #222;
+
+    @include m.mq(sp) {
+        font-size: 2.5642vw;
+    }
 }
 
 img {
@@ -42,7 +51,14 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form {
     display: block;
     padding: 0;
     margin: 0;
@@ -78,6 +94,11 @@ a {
         z-index: 0;
         border: 1px solid v.$color-text;
         border-radius: min(26.3rem,(100vw - 15rem)/2);
+
+        @include m.mq(sp) {
+            inset: 0.7rem;
+            border-radius: calc((100vw - 5rem - 1.4rem)/2);
+        }
     }
 }
 
@@ -113,4 +134,22 @@ a {
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 5rem;
+
+    @include m.mq(sp) {
+        padding: 0 2.5rem;
+    }
+}
+
+.br-pc {
+    @include m.mq(sp) {
+        display: none;
+    }
+}
+
+.br-sp {
+    display: none;
+
+    @include m.mq(sp) {
+        display: block;
+    }
 }
