@@ -18,11 +18,11 @@ $(window).on('scroll', function() {
 });
 
 //scroll-container 要素拡大
-const gallery = document.querySelector('.img-col-c');
+// const gallery = document.querySelector('.img-col-c');
 
-const keyframe = {
-	scale: [1, 2],
-}
+// const keyframe = {
+// 	scale: [1, 2],
+// }
 
 gallery.animate(keyframe, 2000);
 
