@@ -18,13 +18,25 @@ $(window).on('scroll', function() {
 });
 
 //scroll-container 要素拡大
-// const gallery = document.querySelector('.img-col-c');
-
-// const keyframe = {
-// 	scale: [1, 2],
-// }
-
-gallery.animate(keyframe, 2000);
+$('.gallery').each(function(){
+	var $win = $(window),
+		  $winH = $win.height(),
+		  $connect = $(this),
+		  position = $connect.offset().top,
+		  current = 0,
+		  scroll;
+	$win.on('load scroll', function(){
+		  scroll = $win.scrollTop();
+		  current = Math.max(0, (1 - (position - scroll) / $winH) * 2);
+		  
+      if (scroll > position - $winH) {
+			  $connect.css('transform', 'scale(' + current + ')');
+		  }
+		  if (current > 1) {
+			  current = 1;
+		  }
+	});
+});
 
 
 // swiper
