@@ -102,12 +102,14 @@
 
 // swiper2
 .c-slider {
+    --active: 1;
     height: 100vh;
-    margin-top: 13.6rem;
     overflow: clip;
+    margin-bottom: 10rem;
+    margin-top: 13.7rem;
 
     @include m.mq(sp) {
-        margin-top: 23.3rem;
+        margin-top: 23.4rem;
     }
 }
 
@@ -119,7 +121,16 @@
 .swiper2 {
     position: relative;
     touch-action: auto;
-    margin-top: 23.8rem;
+    padding-top: 23.7rem;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+    opacity: 0;
+}
+
+.swiper-slide-active {
+    opacity: 1;
 }
 
 .c-items {
@@ -127,12 +138,6 @@
     position: sticky;
     top: calc(50lvh - 27rem);
     z-index: 1;
-    margin-bottom: 10rem;
-
-    .swiper-backface-hidden {
-        transform: translateZ(0);
-        backface-visibility: hidden
-    }
 
     @include m.mq(sp) {
         top: calc(50lvh - 15.5rem);

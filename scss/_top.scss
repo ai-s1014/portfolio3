@@ -853,10 +853,10 @@
 
 // gallery
 .gallery {
-    height: 150vh;
+    width: 100%;
+    height: 100vh;
     background-color: v.$color-text;
     position: relative;
-    clip-path: inset(0);
 }
 
 .gallery-wrapper {
@@ -878,6 +878,7 @@
 }
 
 .galley-image {
+    min-width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -885,7 +886,7 @@
     top: 0;
     left: 0;
     column-gap: 2rem;
-    
+    transform: scale(1);
 }
 
 .gallery-col {
@@ -897,8 +898,12 @@
 .gallery-col-c {
     width: 100%;
     height: 100%;
-    transform: scale(1);
+
+    .center {
+        max-width: 100vw;
+    }
 }
+
 // support
 .support {
     padding: 20rem 0;

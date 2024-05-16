@@ -84,7 +84,7 @@ a {
 .circle {
     border: 1px solid v.$color-text;
     border-radius: min(26.3rem,(100vw - 15rem)/2);
-    background: rgba(255,255,255,.7);
+    background: #fff;
     position: relative;
 
     &::before {

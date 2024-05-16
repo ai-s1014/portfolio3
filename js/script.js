@@ -28,7 +28,7 @@ $('.gallery').each(function(){
 	$win.on('load scroll', function(){
 		  scroll = $win.scrollTop();
 		  current = Math.max(0, (1 - (position - scroll) / $winH) * 2);
-		  
+
       if (scroll > position - $winH) {
 			  $connect.css('transform', 'scale(' + current + ')');
 		  }
@@ -74,6 +74,19 @@ const swiper2 = new Swiper('.swiper2', {
 		clickable: true,
 	},
 	effect: 'fade',
+	fadeEffect: {
+		crossFade: true
+	  },
 });
 
-// gallery
+// c-sliderが範囲内に現れたら実行
+const showSlider = (entries) => {
+	const option = {
+		rootMargin: '100% 0% 1000% 0%',
+	}
+	entries[0].target;
+};
+
+const sliderObserve = new IntersectionObserver(showSlider);
+
+sliderObserve.observe(document.querySelector('.c-slider-wrapper'));
