@@ -35,6 +35,7 @@
 }
 
 .swiper1 {
+    height: 100vh;
     aspect-ratio: 390/197;
 }
 
@@ -102,11 +103,11 @@
 
 // swiper2
 .c-slider {
-    --active: 1;
-    height: 100vh;
+    max-height: 100vh !important;
     overflow: clip;
     margin-bottom: 10rem;
     margin-top: 13.7rem;
+    position: sticky;
 
     @include m.mq(sp) {
         margin-top: 23.4rem;
@@ -115,6 +116,7 @@
 
 .c-slider-wrapper {
     width: 100%;
+    height: 100vh;
 }
 
 

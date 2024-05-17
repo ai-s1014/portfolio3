@@ -1,3 +1,43 @@
+//lenis
+const lenis = new Lenis();
+
+// // モーダルを開くボタン
+// // Intersection Observerのコールバック関数
+// const callback = (entries, observer) => {
+// 	entries.forEach(entry => {
+// 	  if (entry.isIntersecting) {
+// 		// スクロールを止める
+// 		lenis.stop();
+// 	  } else {
+// 		// モーダルを再開
+// 		lenis.start();
+// 	  }
+// 	});
+//   };
+  
+//   // 監視対象の要素を取得
+//   const targetElement = document.querySelector('.c-slider');
+
+//   // Intersection Observerを作成
+//   const options = {
+// 	rootmargin: '-50% 0 0 -50%'
+// };
+//   const observer = new IntersectionObserver(callback, options);
+  
+//   // 要素を監視対象に登録
+//   observer.observe(targetElement);
+  
+
+function raf(time) {
+	lenis.raf(time);
+	requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+
+
+
 // header
 $('.menu-btn').on('click', function() {
 	$(this).toggleClass('open');
@@ -78,15 +118,3 @@ const swiper2 = new Swiper('.swiper2', {
 		crossFade: true
 	  },
 });
-
-// c-sliderが範囲内に現れたら実行
-const showSlider = (entries) => {
-	const option = {
-		rootMargin: '100% 0% 1000% 0%',
-	}
-	entries[0].target;
-};
-
-const sliderObserve = new IntersectionObserver(showSlider);
-
-sliderObserve.observe(document.querySelector('.c-slider-wrapper'));
