@@ -856,37 +856,21 @@
     width: 100%;
     height: 100vh;
     background-color: v.$color-text;
+    overflow: hidden;
     position: relative;
 }
 
 .gallery-wrapper {
-    position: absolute;
-    inset: 0;
+    width: 100%;
     z-index: 1;
-
-}
-
-.gallery-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: clip;
-    position: sticky;
-    top: 0;
-    z-index: 3;
+    transform: scale(1);
 }
 
 .galley-image {
-    min-width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
+    flex-shrink: 0;
     column-gap: 2rem;
-    transform: scale(1);
 }
 
 .gallery-col {
@@ -900,7 +884,6 @@
     height: 100%;
 
     .center {
-        max-width: 100vw;
     }
 }
 
