@@ -193,14 +193,27 @@ a {
 }
 
 .header-logo {
-  position: absolute;
-  opacity: 0;
-  top: 3rem;
-  left: 4rem;
+  position: fixed;
+  width: 9rem;
+  inset: 5rem auto auto 5rem;
   z-index: 100;
-  width: 20rem;
-  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  -webkit-transition-property: visibility, opacity;
+  transition-property: visibility, opacity;
+  opacity: 0;
+}
+@media (max-width: 1023px) {
+  .header-logo {
+    width: 6rem;
+    inset: 1rem auto auto 1rem;
+  }
+}
+.header-logo a {
+  display: inline-block;
+}
+.header-logo.scroll {
+  opacity: 1;
 }
 
 .menu-btn {
@@ -312,6 +325,8 @@ a {
 }
 
 .nav-mask {
+  -webkit-animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -webkit-transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -325,6 +340,7 @@ a {
   -webkit-mask-size: 100% 500%;
           mask-size: 100% 500%;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .nav-wrapper {
@@ -589,6 +605,7 @@ a {
   -webkit-mask-position: left center;
           mask-position: left center;
   pointer-events: auto;
+  visibility: visible;
 }
 .header.open .mask-obj {
   -webkit-mask-position: center center;
@@ -927,6 +944,7 @@ a {
 }
 @media (max-width: 1023px) {
   .swiper3 {
+    position: relative;
     padding: 0 2.5rem;
   }
 }
@@ -950,7 +968,32 @@ a {
 
 .p-swiper-slide {
   width: calc(100vw - 5rem);
-  margin-right: 2.5rem;
+}
+
+.thumb-wrapper {
+  position: absolute;
+  top: 17rem;
+  right: 2rem;
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  aspect-ratio: 1/1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid;
+}
+
+.thumb-slide img {
+  width: 5rem;
+  border-color: #231815;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 #wrapper {
@@ -989,7 +1032,7 @@ a {
   position: fixed;
   width: 20rem;
   inset: 5rem auto auto 5rem;
-  z-index: 1;
+  z-index: 100;
   -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
   -webkit-transition-property: visibility, opacity;
@@ -1017,34 +1060,8 @@ a {
     height: auto;
   }
 }
-.main-logo .w-logo {
-  position: fixed;
-  width: 11.2rem;
-  height: 13.3rem;
-  top: 3rem;
-  left: 4rem;
-  opacity: 0;
-  z-index: 100;
-  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
-  -webkit-transition-property: visibility, opacity;
-  transition-property: visibility, opacity;
-}
-@media (max-width: 1023px) {
-  .main-logo .w-logo {
-    width: 7rem;
-    top: 1rem;
-    left: 1rem;
-  }
-}
 .main-logo.scroll .logo {
   opacity: 0;
-}
-.main-logo.scroll .w-logo {
-  opacity: 1;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-  visibility: visible;
 }
 
 .hero-image {

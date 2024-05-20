@@ -33,9 +33,9 @@
 <body>
     <div id="wrapper">
         <header class="header">
-            <h1 class="header-logo">
-                <a href=""><img src="img/logo.png" width="90" height="107" alt="ロゴ"></a>
-            </h1>
+            <div class="header-logo">
+                <a href=""><img src="img/logo-w.png" alt=""></a>
+            </div>
             <button class="menu-btn">MENU</button>
             <nav class="header-nav nav-mask">
                 <div class="nav-wrapper">
@@ -101,10 +101,9 @@
         <main class="main">
             <div class="inner-sticky">
                 <div class="main-body">
-                    <h2 class="main-logo">
+                    <h1 class="main-logo">
                         <a href="" class="logo"><img src="img/logo.png" alt=""></a>
-                        <a href="" class="w-logo"><img src="img/logo-w.png" alt=""></a>
-                    </h2>
+                    </h1>
                     <div class="hero-image">
                         <img src="img/main1.jpg" alt="">
                     </div>
@@ -234,7 +233,6 @@
                                 <div class="slide-empty"></div>
                                 <div class="slide-empty"></div>
                             </div> -->
-                            <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
@@ -303,62 +301,70 @@
                     </div>
 
                     <!-- SP表示 -->
-                    <div class="swiper swiper3 p-sp">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper p-swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide p-swiper-slide">
-                            <div class="p-item-box circle">
-                                <div class="p-item-body">
-                                    <div class="p-item-image">
-                                        <img src="img/bottle-r.png" alt="">
-                                        <img src="img/bottle-r.png" alt="">
-                                    </div>
-                                    <div class="p-body-text">
-                                        <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
-                                        <div class="p-item-text">
-                                            <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
-                                            <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
+                    <div class="swiper-sp">
+                        <div class="swiperThumbnail">
+                            <div class="swiper-wrapper thumb-wrapper">
+                                <div class="swiper-slide thumb-slide thumb-slide-active"><img src="img/thumb1.png" alt=""></div>
+                                <div class="swiper-slide thumb-slide"><img src="img/thumb2.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="swiper swiper3 p-sp">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper p-swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide p-swiper-slide">
+                                    <div class="p-item-box circle">
+                                        <div class="p-item-body">
+                                            <div class="p-item-image">
+                                                <img src="img/bottle-r.png" alt="">
+                                                <img src="img/bottle-r.png" alt="">
+                                            </div>
+                                            <div class="p-body-text">
+                                                <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
+                                                <div class="p-item-text">
+                                                    <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
+                                                    <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
+                                                </div>
+                                                <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
+                                                <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
+                                            </div>
+                                            <div class="more-btn p-btn">
+                                                <a href="#">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                            </div>
                                         </div>
-                                        <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
-                                        <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
                                     </div>
-                                    <div class="more-btn p-btn">
-                                        <a href="#">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                    <div class="p-item-effect">
+                                        <dl class="effect-text">
+                                            <dt class="effect-ttl">効能・効果</dt>
+                                            <dd>
+                                                <p class="effect-cap">[シャンプー]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪・頭皮を清浄にする。毛髪・頭皮をすこやかに保つ。</p>
+                                                <p class="effect-cap">[トリートメント]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪の水分・脂肪を補い保つ。裂毛・切毛・枝毛を防ぐ。毛髪・頭皮をすこやかに保つ。</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide p-swiper-slide">
+                                    <div class="p-item-box circle">
+                                        <div class="p-item-body">
+                                            <div class="p-item-image">
+                                                <img src="img/bottle-s.png" alt="">
+                                            </div>
+                                            <div class="p-body-text">
+                                                <h3 class="p-item-ttl">スカルプケアローション</h3>
+                                                <div class="p-item-text">
+                                                    <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
+                                                    <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
+                                                </div>
+                                                <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
+                                                <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
+                                            </div>
+                                            <div class="more-btn p-btn">
+                                                <a href="#">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-item-effect">
-                                <dl class="effect-text">
-                                    <dt class="effect-ttl">効能・効果</dt>
-                                    <dd>
-                                        <p class="effect-cap">[シャンプー]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪・頭皮を清浄にする。毛髪・頭皮をすこやかに保つ。</p>
-                                        <p class="effect-cap">[トリートメント]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪の水分・脂肪を補い保つ。裂毛・切毛・枝毛を防ぐ。毛髪・頭皮をすこやかに保つ。</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                          </div>
-                          <div class="swiper-slide p-swiper-slide">
-                            <div class="p-item-box circle">
-                                <div class="p-item-body">
-                                    <div class="p-item-image">
-                                        <img src="img/bottle-s.png" alt="">
-                                    </div>
-                                    <div class="p-body-text">
-                                        <h3 class="p-item-ttl">スカルプケアローション</h3>
-                                        <div class="p-item-text">
-                                            <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
-                                            <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
-                                        </div>
-                                        <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
-                                        <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
-                                    </div>
-                                    <div class="more-btn p-btn">
-                                        <a href="#">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
                         </div>
                     </div>
                 </section>

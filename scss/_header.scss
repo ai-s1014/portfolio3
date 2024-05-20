@@ -12,13 +12,26 @@
 }
 
 .header-logo {
-    position: absolute;
-    opacity: 0; // main要素スクロール時に表示
-    top: 3rem;
-    left: 4rem;
+    position: fixed;
+    width: 9rem;
+    inset: 5rem auto auto 5rem;
     z-index: 100;
-    width: 20rem;
-    transition: all .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    transition-property: visibility,opacity;
+    opacity: 0;
+
+    @include m.mq(sp) {
+        width: 6rem;
+        inset: 1rem auto auto 1rem;
+    }
+
+    a {
+        display: inline-block;
+    }
+
+    &.scroll {
+        opacity: 1;
+    }
 }
 
 .menu-btn {
@@ -129,11 +142,13 @@
 }
 
 .nav-mask {
+    animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
     mask-position: left bottom;
     mask-size: 100% 500%;
     pointer-events: none;
+    visibility: hidden;
  }
 
 
@@ -403,6 +418,7 @@
             animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
             mask-position: left center;
             pointer-events: auto;
+            visibility: visible;
         }
 
         .mask-obj {

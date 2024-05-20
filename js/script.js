@@ -9,10 +9,12 @@ $(window).on('scroll', function() {
     if ($(window).scrollTop() > 0) {
         // スクロール位置が0より大きい場合、クラスを切り替える
         $('.main-logo').addClass('scroll');
+		$('.header-logo').addClass('scroll');
         $('.menu-btn').addClass('color-change');
     } else {
         // スクロール位置が0以下の場合、クラスを切り替える
         $('.main-logo').removeClass('scroll');
+		$('.header-logo').removeClass('scroll');
         $('.menu-btn').removeClass('color-change');
     }
 });
@@ -38,6 +40,35 @@ $(document).ready(function() {
 	  }
 	});
   });
+// // 監視対象の要素を選択
+// const targetElement = document.querySelector('.gallery');
+
+// // Intersection Observerの設定
+// const options = {
+//     root: null, // ビューポートを基準にする
+//     rootMargin: '0px', // マージンなし
+//     threshold: 0.5, // 50%以上が交差したら実行
+// };
+
+// // コールバック関数
+// const callback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             // 要素が画面内に入ったら拡大
+//             entry.target.style.transform = 'scale(1.2)';
+//         } else {
+//             // 要素が画面外に出たら元のサイズに戻す
+//             entry.target.style.transform = 'scale(1)';
+//         }
+//     });
+// };
+
+// // Intersection Observerを作成
+// const observer = new IntersectionObserver(callback, options);
+
+// // 要素を監視
+// observer.observe(targetElement);
+
   
 
 // swiper
@@ -79,3 +110,34 @@ const swiper2 = new Swiper('.swiper2', {
 		crossFade: true
 	  },
 });
+
+const thumb = document.querySelectorAll('.thumb-slide');
+
+const switchThumb = (index) => {
+  document.querySelector('.thumb-slide').classList.remove('thumb-slide-active');
+  thumb[index].classList.add('thumb-slide-active');
+};
+
+const swiper3 = new Swiper('.swiper3', {
+	allowTouchMove: true,
+	centeredSlides: true,
+	followFinger: true,
+	loop: true,
+	autoplay: {
+		delay: 6000,
+	},
+	on: {
+		afterInit: (swiper) => {
+		thumb[swiper.realIndex].classList.add('thumb-slide-active');
+		for (let i = 0; i < thumb.length; i++) {
+		thumb[i].onclick = () => {
+			swiper.slideTo(i);
+		};
+		}
+	},
+	slideChange: (swiper) => {
+		switchThumb(swiper.realIndex);
+	},
+	}
+});
+

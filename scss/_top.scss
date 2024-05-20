@@ -31,7 +31,7 @@
     position: fixed;
     width: 20rem;
     inset: 5rem auto auto 5rem;
-    z-index: 1;
+    z-index: 100;
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
     transition-property: visibility,opacity;
 
@@ -55,40 +55,13 @@
                 height: auto;
             }
         }
-
-    }
-
-    .w-logo {
-        position: fixed;
-        width: 11.2rem;
-        height: 13.3rem;
-        top: 3rem;
-        left: 4rem;
-        opacity: 0;
-        z-index: 100;
-        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
-        transition-property: visibility,opacity;
-
-        @include m.mq(sp) {
-            width: 7rem;
-            top: 1rem;
-            left: 1rem;
-        }
-
     }
 
     &.scroll {
-        .logo {
-            opacity: 0;
-
+            .logo {
+                opacity: 0;
+            }
         }
-
-        .w-logo {
-            opacity: 1;
-            transition-delay: .3s;
-            visibility: visible;
-        }
-    }
 }
 
 .hero-image {
