@@ -23,6 +23,7 @@
     @include m.mq(sp) {
         width: 6rem;
         inset: 1rem auto auto 1rem;
+        display: block;
     }
 
     a {
@@ -112,6 +113,13 @@
                 top: 1rem;
             }
         }
+
+        .header-logo {
+
+            @include m.mq(pc) {
+                display: none;
+            }
+        }
     }
 
     &.color-change {
@@ -148,7 +156,6 @@
     mask-position: left bottom;
     mask-size: 100% 500%;
     pointer-events: none;
-    visibility: hidden;
  }
 
 
@@ -160,10 +167,12 @@
 }
 
 .nav-logo {
+
     position: fixed;
     z-index: 2;
     inset: calc(50% - 16.5rem) auto auto calc(50% - 11.5rem);
     width: 23rem;
+    display: block;
 
     img {
         width: 100%;
@@ -171,8 +180,7 @@
     }
 
     @include m.mq(sp) {
-        width: 7rem;
-        inset: 1rem 0 0 1rem;
+        display: none;
     }
 }
 

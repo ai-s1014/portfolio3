@@ -19,6 +19,22 @@ $(window).on('scroll', function() {
     }
 });
 
+// c-slider 要素固定
+// const contactTop = $('.c-slider-wrapper').offset().top;
+// function scrollFixTop() {
+//   var scroll = $(window).scrollTop();
+//   if(scroll >= contactTop) {
+//     $('.c-slider-wrapper').addClass('fix');
+//   } else {
+//     if($('.c-slider-wrapper').hasClass('fix')) {
+//       $('.c-slider-wrapper').removeClass('fix');
+//     }
+//   }
+// };
+// $(window).scroll(function (){
+//   scrollFixTop();
+// });
+
 //scroll-container 要素拡大
 $(document).ready(function() {
 	var $win = $(window),
@@ -40,36 +56,6 @@ $(document).ready(function() {
 	  }
 	});
   });
-// // 監視対象の要素を選択
-// const targetElement = document.querySelector('.gallery');
-
-// // Intersection Observerの設定
-// const options = {
-//     root: null, // ビューポートを基準にする
-//     rootMargin: '0px', // マージンなし
-//     threshold: 0.5, // 50%以上が交差したら実行
-// };
-
-// // コールバック関数
-// const callback = (entries, observer) => {
-//     entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//             // 要素が画面内に入ったら拡大
-//             entry.target.style.transform = 'scale(1.2)';
-//         } else {
-//             // 要素が画面外に出たら元のサイズに戻す
-//             entry.target.style.transform = 'scale(1)';
-//         }
-//     });
-// };
-
-// // Intersection Observerを作成
-// const observer = new IntersectionObserver(callback, options);
-
-// // 要素を監視
-// observer.observe(targetElement);
-
-  
 
 // swiper
 const swiper1 = new Swiper('.swiper1', {
@@ -112,11 +98,22 @@ const swiper2 = new Swiper('.swiper2', {
 });
 
 const thumb = document.querySelectorAll('.thumb-slide');
-
 const switchThumb = (index) => {
-  document.querySelector('.thumb-slide').classList.remove('thumb-slide-active');
-  thumb[index].classList.add('thumb-slide-active');
+	// すべてのサムネイルから thumb-slide-active クラスを削除
+	thumb.forEach((element) => {
+	  element.classList.remove('thumb-slide-active');
+});
+
+	// クリックされたサムネイルに thumb-slide-active クラスを追加
+	thumb[index].classList.add('thumb-slide-active');
 };
+  
+  // サムネイル要素にクリックイベントリスナーを追加
+  thumb.forEach((element, index) => {
+	element.addEventListener('click', () => {
+	  switchThumb(index);
+	});
+  });
 
 const swiper3 = new Swiper('.swiper3', {
 	allowTouchMove: true,
