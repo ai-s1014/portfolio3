@@ -20,21 +20,34 @@ $(window).on('scroll', function() {
 });
 
 // c-slider 要素固定
-// const contactTop = $('.c-slider-wrapper').offset().top;
-// function scrollFixTop() {
-//   var scroll = $(window).scrollTop();
-//   if(scroll >= contactTop) {
-//     $('.c-slider-wrapper').addClass('fix');
-//   } else {
-//     if($('.c-slider-wrapper').hasClass('fix')) {
-//       $('.c-slider-wrapper').removeClass('fix');
-//     }
-//   }
-// };
-// $(window).scroll(function (){
-//   scrollFixTop();
-// });
+const options = {
+	root: null, // ビューポートを使用する場合はnull
+	rootMargin: '-50% 0% -50% 0%', // マージンを調整する場合は適切な値を設定
+	threshold: 0 // 交差判定の閾値を設定
+  };
 
+const observer = new IntersectionObserver(itemIntersect, options);
+
+const cSliderElements = document.querySelectorAll('.c-slider');
+
+cSliderElements.forEach(item => {
+  observer.observe(item);
+});
+
+
+
+function itemIntersect(entries) {
+	entries.forEach(entry => {
+	  if (entry.isIntersecting) {
+		// 要素が表示された時の処理
+		entry.target.classList.add('is-fixed'); // 例: 'is-fixed'クラスを追加
+	  } else {
+		// 要素が非表示になった時の処理
+		entry.target.classList.remove('is-fixed'); // 例: 'is-fixed'クラスを削除
+	  }
+	});
+  }
+  
 //scroll-container 要素拡大
 $(document).ready(function() {
 	var $win = $(window),
@@ -74,7 +87,6 @@ const swiper1 = new Swiper('.swiper1', {
 
 const swiper2 = new Swiper('.swiper2', {
 	direction: 'vertical',
-	slidesPerView: 1,
 	centeredSlides: true,
 	mousewheel: true,
 	autoHeight: true,
