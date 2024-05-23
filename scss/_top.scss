@@ -149,14 +149,21 @@
 }
 
 .p-ttl {
+    font-size: f.rem(10);
+
     @include m.mq(sp) {
         font-size: f.rem(10);
+        line-height: 1.4;
     }
 }
 
 .p-name {
+    font-size: f.rem(10);
+    
     @include m.mq(sp) {
         font-size: f.rem(10);
+        text-align: left;
+        line-height: 1.4;
     }
 }
 

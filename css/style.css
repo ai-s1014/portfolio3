@@ -1255,15 +1255,24 @@ a {
           justify-content: center;
 }
 
+.p-ttl {
+  font-size: 1rem;
+}
 @media (max-width: 1023px) {
   .p-ttl {
     font-size: 1rem;
+    line-height: 1.4;
   }
 }
 
+.p-name {
+  font-size: 1rem;
+}
 @media (max-width: 1023px) {
   .p-name {
     font-size: 1rem;
+    text-align: left;
+    line-height: 1.4;
   }
 }
 
