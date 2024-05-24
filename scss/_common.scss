@@ -1,5 +1,6 @@
 @use "variable" as v;
 @use "mixin" as m;
+@use "font" as f;
 
 // 共通項目
 *,
@@ -116,8 +117,7 @@ a {
         background-repeat: repeat;
         inset: 0;
         z-index: -1;
-        border-radius: 50vw 50vw 0 0;
-        background-size: max(1920px,100%) auto;
+        // border-radius: 50vw 50vw 0 0;
     }
 }
 
@@ -153,3 +153,4 @@ a {
         display: block;
     }
 }
+

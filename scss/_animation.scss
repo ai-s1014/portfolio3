@@ -3,12 +3,14 @@
 @use "mixin" as m;
 
 // header
-@keyframes nav-open {
+@keyframes nav-mask {
     0% {
+        -webkit-mask-position: left top;
         mask-position: left top
     }
 
     100% {
+        -webkit-mask-position: left center;
         mask-position: left center
     }
 }

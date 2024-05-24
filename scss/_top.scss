@@ -186,7 +186,7 @@
         z-index: 0;
         border: v.$color-text solid 2px;
         border-bottom: none;
-        border-radius: 50vw;
+        border-radius: 50vw 50vw 0 0;
     }
 
     &::after {
@@ -197,7 +197,7 @@
         z-index: 1;
         border: 2px solid #fff;
         border-bottom: none;
-        border-radius: 50vw;
+        border-radius: 50vw 50vw 0 0;
         pointer-events: none;
 
         @include m.mq(sp) {
@@ -418,52 +418,6 @@
     }
 }
 
-.c-btn {
-    margin-top: 5rem;
-    line-height: 1.1875;
-
-    @include m.mq(sp) {
-        text-align: right;
-        margin-top: 2.5rem;
-    }
-
-    a {
-        font-size: f.rem(18);
-
-        @include m.mq(sp) {
-            font-size: f.rem(14);
-        }
-    }
-}
-
-.more-btn {
-
-    a  {
-        font-family: f.$montserrat;
-        position: relative;
-        text-align: center;
-
-        &::after {
-            position: absolute;
-            content: "";
-        }
-
-        i {
-            width: 7rem;
-            aspect-ratio: 1/1;
-            padding: 2.4rem 0;
-            margin-left: 1.5rem;
-            border: 1px solid v.$color-text;
-            border-radius: 50%;
-            font-size: f.rem(21);
-
-            @include m.mq(sp) {
-                width: 4rem;
-                padding: 0.8rem 0;
-            }
-        }
-    }
-}
 
 
 // ボトル サイドの画像
@@ -756,23 +710,6 @@
 
 }
 
-.p-btn {
-    font-size: f.rem(16);
-    margin-top: 1.5rem;
-
-    a {
-
-        .arrow-color {
-            width: 4rem;
-            padding: 0.8rem 0;
-            color: #fff;
-            background-color: v.$color-bg2;
-            border-radius: 50%;
-            border: 1px solid v.$color-bg2;
-        }
-    }
-}
-
 .fa-arrow-right {
 
 }
@@ -972,29 +909,6 @@
 
 }
 
-.more-btn {
-
-}
-
-.item-btn {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    position: relative;
-    z-index: 2;
-
-    a {
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 1.1875;
-        letter-spacing: 0.03em;
-
-        i {
-            width: 4rem;
-            padding: 0.8rem 0;
-        }
-    }
-}
-
 .fa-solid {
 
 }
@@ -1009,14 +923,12 @@
 
 
 
-// 背景画像
+
 .bg-wrapper {
     overflow: clip;
     position: absolute;
-    height: 100vh;
-    inset: 0;
+    height: 100%;
     z-index: -1;
-    border-radius: 50vw 50vw 0 0;
     background-image: url(../img/bg.jpg);
     background-size: max(1920px,100%) auto;
     background-repeat: no-repeat;

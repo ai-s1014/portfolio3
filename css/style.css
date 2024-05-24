@@ -122,8 +122,6 @@ a {
   background-repeat: repeat;
   inset: 0;
   z-index: -1;
-  border-radius: 50vw 50vw 0 0;
-  background-size: max(1920px, 100%) auto;
 }
 
 .bg-fff {
@@ -161,25 +159,103 @@ a {
   }
 }
 
-@-webkit-keyframes nav-open {
-  0% {
-    -webkit-mask-position: left top;
-            mask-position: left top;
-  }
-  100% {
-    -webkit-mask-position: left center;
-            mask-position: left center;
+.more-btn a {
+  font-family: "montserrat", sans-serif;
+  position: relative;
+  text-align: center;
+}
+.more-btn a::after {
+  position: absolute;
+  content: "";
+}
+.more-btn a i {
+  width: 7rem;
+  aspect-ratio: 1/1;
+  padding: 2.4rem 0;
+  margin-left: 1.5rem;
+  border: 1px solid #231815;
+  border-radius: 50%;
+  font-size: 2.1rem;
+}
+@media (max-width: 1023px) {
+  .more-btn a i {
+    width: 4rem;
+    padding: 0.8rem 0;
   }
 }
 
-@keyframes nav-open {
+.c-btn {
+  margin-top: 5rem;
+  line-height: 1.1875;
+}
+@media (max-width: 1023px) {
+  .c-btn {
+    text-align: right;
+    margin-top: 2.5rem;
+  }
+}
+.c-btn a {
+  font-size: 1.8rem;
+}
+@media (max-width: 1023px) {
+  .c-btn a {
+    font-size: 1.4rem;
+  }
+}
+
+.s-btn {
+  position: absolute;
+}
+
+.p-btn {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+}
+.p-btn a .arrow-color {
+  width: 4rem;
+  padding: 0.8rem 0;
+  color: #fff;
+  background-color: #9ab49f;
+  border-radius: 50%;
+  border: 1px solid #9ab49f;
+}
+
+.item-btn {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+  z-index: 2;
+}
+.item-btn a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.1875;
+  letter-spacing: 0.03em;
+}
+.item-btn a i {
+  width: 4rem;
+  padding: 0.8rem 0;
+}
+
+@-webkit-keyframes nav-mask {
   0% {
     -webkit-mask-position: left top;
-            mask-position: left top;
+    mask-position: left top;
   }
   100% {
     -webkit-mask-position: left center;
-            mask-position: left center;
+    mask-position: left center;
+  }
+}
+
+@keyframes nav-mask {
+  0% {
+    -webkit-mask-position: left top;
+    mask-position: left top;
+  }
+  100% {
+    -webkit-mask-position: left center;
+    mask-position: left center;
   }
 }
 /* レイアウト */
@@ -293,7 +369,7 @@ a {
     top: 1rem;
   }
 }
-@media (min-width: 10240px) {
+@media (min-width: 1024px) {
   .menu-btn.open .header-logo {
     display: none;
   }
@@ -331,8 +407,8 @@ a {
 }
 
 .nav-mask {
-  -webkit-animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-          animation: nav-mask 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-animation: nav-close 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          animation: nav-close 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   -webkit-transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: -webkit-mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transition: mask-position 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -610,7 +686,6 @@ a {
   -webkit-mask-position: left center;
           mask-position: left center;
   pointer-events: auto;
-  visibility: visible;
 }
 .header.open .mask-obj {
   -webkit-mask-position: center center;
@@ -657,6 +732,11 @@ a {
           transition-duration: 1.2s;
   -webkit-transition-delay: 0.6s;
           transition-delay: 0.6s;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 1023px) {
@@ -755,7 +835,7 @@ a {
   width: 100%;
   height: 100vh;
   overflow: clip;
-  margin-bottom: 10rem;
+  padding-bottom: 10rem;
   margin-top: 13.7rem;
 }
 @media (max-width: 1023px) {
@@ -764,10 +844,8 @@ a {
   }
 }
 .c-slider.is-fixed {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
+  position: sticky;
+  inset: 0;
 }
 
 .c-slider-wrapper {
@@ -779,7 +857,7 @@ a {
   position: relative;
   -ms-touch-action: auto;
       touch-action: auto;
-  padding-top: 23.7rem;
+  padding-top: 18.7rem;
 }
 
 .swiper-slide-next,
@@ -796,6 +874,7 @@ a {
   position: sticky;
   top: calc(50lvh - 27rem);
   z-index: 1;
+  padding-bottom: 10rem;
 }
 @media (max-width: 1023px) {
   .c-items {
@@ -1296,7 +1375,7 @@ a {
   z-index: 0;
   border: #231815 solid 2px;
   border-bottom: none;
-  border-radius: 50vw;
+  border-radius: 50vw 50vw 0 0;
 }
 .scroll-contents::after {
   position: absolute;
@@ -1307,7 +1386,7 @@ a {
   z-index: 1;
   border: 2px solid #fff;
   border-bottom: none;
-  border-radius: 50vw;
+  border-radius: 50vw 50vw 0 0;
   pointer-events: none;
 }
 @media (max-width: 1023px) {
@@ -1532,50 +1611,6 @@ a {
 @media (max-width: 1023px) {
   .brand-name {
     font-size: 2.4rem;
-  }
-}
-
-.c-btn {
-  margin-top: 5rem;
-  line-height: 1.1875;
-}
-@media (max-width: 1023px) {
-  .c-btn {
-    text-align: right;
-    margin-top: 2.5rem;
-  }
-}
-.c-btn a {
-  font-size: 1.8rem;
-}
-@media (max-width: 1023px) {
-  .c-btn a {
-    font-size: 1.4rem;
-  }
-}
-
-.more-btn a {
-  font-family: "montserrat", sans-serif;
-  position: relative;
-  text-align: center;
-}
-.more-btn a::after {
-  position: absolute;
-  content: "";
-}
-.more-btn a i {
-  width: 7rem;
-  aspect-ratio: 1/1;
-  padding: 2.4rem 0;
-  margin-left: 1.5rem;
-  border: 1px solid #231815;
-  border-radius: 50%;
-  font-size: 2.1rem;
-}
-@media (max-width: 1023px) {
-  .more-btn a i {
-    width: 4rem;
-    padding: 0.8rem 0;
   }
 }
 
@@ -1861,19 +1896,6 @@ a {
   }
 }
 
-.p-btn {
-  font-size: 1.6rem;
-  margin-top: 1.5rem;
-}
-.p-btn a .arrow-color {
-  width: 4rem;
-  padding: 0.8rem 0;
-  color: #fff;
-  background-color: #9ab49f;
-  border-radius: 50%;
-  border: 1px solid #9ab49f;
-}
-
 .p-item-effect {
   width: calc(50% - 2.5rem);
   margin-top: 2rem;
@@ -2091,30 +2113,11 @@ a {
   }
 }
 
-.item-btn {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  position: relative;
-  z-index: 2;
-}
-.item-btn a {
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.1875;
-  letter-spacing: 0.03em;
-}
-.item-btn a i {
-  width: 4rem;
-  padding: 0.8rem 0;
-}
-
 .bg-wrapper {
   overflow: clip;
   position: absolute;
-  height: 100vh;
-  inset: 0;
+  height: 100%;
   z-index: -1;
-  border-radius: 50vw 50vw 0 0;
   background-image: url(../img/bg.jpg);
   background-size: max(1920px, 100%) auto;
   background-repeat: no-repeat;

@@ -150,7 +150,7 @@
 }
 
 .nav-mask {
-    animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    animation: nav-close .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     transition: mask-position .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
     mask-image: linear-gradient(to top, transparent 0%, transparent 21%, #000000 39%, #000000 61%, transparent 79%);
     mask-position: left bottom;
@@ -426,7 +426,7 @@
             animation: nav-mask .9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
             mask-position: left center;
             pointer-events: auto;
-            visibility: visible;
+            // visibility: visible;
         }
 
         .mask-obj {

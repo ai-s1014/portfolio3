@@ -1,2 +1,95 @@
 @use "variable" as v;
+@use "font" as f;
 @use "mixin" as m;
+
+
+// more-btn
+
+.more-btn {
+
+    a  {
+        font-family: f.$montserrat;
+        position: relative;
+        text-align: center;
+
+        &::after {
+            position: absolute;
+            content: "";
+        }
+
+        i {
+            width: 7rem;
+            aspect-ratio: 1/1;
+            padding: 2.4rem 0;
+            margin-left: 1.5rem;
+            border: 1px solid v.$color-text;
+            border-radius: 50%;
+            font-size: f.rem(21);
+
+            @include m.mq(sp) {
+                width: 4rem;
+                padding: 0.8rem 0;
+            }
+        }
+    }
+}
+
+
+.c-btn {
+    margin-top: 5rem;
+    line-height: 1.1875;
+
+    @include m.mq(sp) {
+        text-align: right;
+        margin-top: 2.5rem;
+    }
+
+    a {
+        font-size: f.rem(18);
+
+        @include m.mq(sp) {
+            font-size: f.rem(14);
+        }
+    }
+}
+
+.s-btn {
+    position: absolute;
+}
+
+.p-btn {
+    font-size: f.rem(16);
+    margin-top: 1.5rem;
+
+    a {
+
+        .arrow-color {
+            width: 4rem;
+            padding: 0.8rem 0;
+            color: #fff;
+            background-color: v.$color-bg2;
+            border-radius: 50%;
+            border: 1px solid v.$color-bg2;
+        }
+    }
+}
+
+.item-btn {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    position: relative;
+    z-index: 2;
+
+    a {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.1875;
+        letter-spacing: 0.03em;
+
+        i {
+            width: 4rem;
+            padding: 0.8rem 0;
+        }
+    }
+}
+
