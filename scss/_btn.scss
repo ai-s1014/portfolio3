@@ -77,19 +77,46 @@
 .item-btn {
     grid-column: 1/2;
     grid-row: 1/2;
-    position: relative;
-    z-index: 2;
-
-    a {
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 1.1875;
-        letter-spacing: 0.03em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2.5rem;
+    z-index: 3;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.1875;
+    letter-spacing: 0.03em;
 
         i {
             width: 4rem;
             padding: 0.8rem 0;
+            aspect-ratio: 1/1;
+            margin-left: 1.5rem;
+            border: 1px solid #FFF;
+            border-radius: 50%;
+            font-size: f.rem(21);
+            text-align: center;
+
+            @include m.mq(sp) {
+                width: 3rem;
+                padding: 0.7rem 0;
+                font-size: f.rem(14);
+
+
+            }
         }
+
+    @include m.mq(sp) {
+        font-size: f.rem(14);
     }
+}
+
+.btn-p {
+    padding: 2.8rem;
+
+    @include m.mq(sp) {
+        padding: 2.5rem;
+    }
+
 }
 

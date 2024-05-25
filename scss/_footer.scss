@@ -86,11 +86,7 @@
     }
 
     a {
-        font-size: f.rem(15);
-
-        @include m.mq(sp) {
-            font-size: f.rem(12);
-        }
+        font-size: f.rem(12);
     }
 }
 

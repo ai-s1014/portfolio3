@@ -154,3 +154,27 @@ a {
     }
 }
 
+.hover-line {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: v.$color-text;
+        bottom: 2px;
+        left: 0;
+        transform: scale(0, 1);
+        transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+        transition: transform 0.4s; /*変形の時間*/
+    }
+
+    &:hover {
+
+        &::before {
+            transform: scale(1, 1);      /*ホバー後、x軸方向に1（相対値）伸長*/
+            transform-origin: left top; /*右から左に向かう*/
+        }
+    }
+}
