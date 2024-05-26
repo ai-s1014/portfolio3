@@ -155,6 +155,7 @@ a {
 }
 
 .hover-line {
+    display: inline-block;
     position: relative;
 
     &::before {

@@ -160,6 +160,7 @@ a {
 }
 
 .hover-line {
+  display: inline-block;
   position: relative;
 }
 .hover-line::before {
@@ -191,10 +192,6 @@ a {
   position: relative;
   text-align: center;
 }
-.more-btn a::after {
-  position: absolute;
-  content: "";
-}
 .more-btn a i {
   width: 7rem;
   aspect-ratio: 1/1;
@@ -209,6 +206,10 @@ a {
     width: 4rem;
     padding: 0.8rem 0;
   }
+}
+.more-btn a:hover i::before {
+  -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
 .c-btn {
@@ -311,6 +312,42 @@ a {
   100% {
     -webkit-mask-position: left center;
     mask-position: left center;
+  }
+}
+@-webkit-keyframes btn-arw {
+  0% {
+    translate: 0 0;
+    opacity: 1;
+  }
+  50% {
+    translate: 50% 0;
+    opacity: 0;
+  }
+  50.1% {
+    translate: -50% 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+@keyframes btn-arw {
+  0% {
+    translate: 0 0;
+    opacity: 1;
+  }
+  50% {
+    translate: 50% 0;
+    opacity: 0;
+  }
+  50.1% {
+    translate: -50% 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
   }
 }
 /* レイアウト */

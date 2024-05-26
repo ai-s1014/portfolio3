@@ -12,11 +12,6 @@
         position: relative;
         text-align: center;
 
-        &::after {
-            position: absolute;
-            content: "";
-        }
-
         i {
             width: 7rem;
             aspect-ratio: 1/1;
@@ -29,6 +24,16 @@
             @include m.mq(sp) {
                 width: 4rem;
                 padding: 0.8rem 0;
+            }
+        }
+
+        &:hover {
+
+            i {
+
+                &::before {
+                    animation: btn-arw .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+                }
             }
         }
     }
@@ -101,8 +106,6 @@
                 width: 3rem;
                 padding: 0.7rem 0;
                 font-size: f.rem(14);
-
-
             }
         }
 
