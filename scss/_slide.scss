@@ -109,11 +109,12 @@
 
 // swiper2
 .c-slider {
+    position: sticky;
     width: 100%;
-    height: 100vh;
+    height: 101vh;
     overflow: clip;
-    padding-bottom: 10rem;
-    margin-top: 13.7rem;
+    margin-top: 23.8rem;
+    padding-bottom: 20rem;
 
     @include m.mq(sp) {
         margin-top: 23.4rem;
@@ -122,18 +123,21 @@
     &.is-fixed {
         position: sticky;
         inset: 0;
+
+        .bg-wrapper {
+            height: 300vh;
+        }
     }
 }
 
 .c-slider-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .swiper2 {
     position: relative;
     touch-action: auto;
-    padding-top: 18.7rem;
 }
 
 .swiper-slide-next,
@@ -174,7 +178,7 @@
     justify-content: center;
     width: 43.2rem;
     aspect-ratio: 432/540;
-    margin: 0 auto;
+    margin: 5rem auto;
     text-align: center;
     z-index: 2;
 
@@ -273,6 +277,7 @@
 
 .item-image2 {
     width: 44rem;
+    top: 0;
     left: calc(50% + 27rem);
 
     @include m.mq(sp) {
@@ -286,8 +291,10 @@
 
 .item-image3 {
     width: 30rem;
+    height: 28rem;
     top: 0;
     left: calc(50% + 23rem);
+    object-fit: cover;
 
     @include m.mq(sp) {
         width: calc(100vw - 16rem);

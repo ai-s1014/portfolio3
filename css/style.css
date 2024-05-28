@@ -175,10 +175,10 @@ a {
           transform: scale(0, 1);
   -webkit-transform-origin: right top;
           transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s; /*変形の時間*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
 }
 .hover-line:hover::before {
   -webkit-transform: scale(1, 1);
@@ -188,6 +188,7 @@ a {
 }
 
 .more-btn a {
+  display: inline-block;
   font-family: "montserrat", sans-serif;
   position: relative;
   text-align: center;
@@ -261,6 +262,29 @@ a {
   line-height: 1.1875;
   letter-spacing: 0.03em;
 }
+.item-btn::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 9rem;
+  background-color: #fff;
+  bottom: 34px;
+  left: 24px;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
+}
+.item-btn:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  -webkit-transform-origin: left top;
+          transform-origin: left top; /*右から左に向かう*/
+}
 .item-btn i {
   width: 4rem;
   padding: 0.8rem 0;
@@ -278,6 +302,10 @@ a {
     font-size: 1.4rem;
   }
 }
+.item-btn:hover i::before {
+  -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
 @media (max-width: 1023px) {
   .item-btn {
     font-size: 1.4rem;
@@ -291,6 +319,60 @@ a {
   .btn-p {
     padding: 2.5rem;
   }
+}
+
+.btn-line {
+  position: relative;
+}
+.btn-line::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 10.5rem;
+  background-color: #231815;
+  bottom: 33%;
+  left: 0;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
+}
+.btn-line:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  -webkit-transform-origin: left top;
+          transform-origin: left top; /*右から左に向かう*/
+}
+
+.btn-line2 {
+  position: relative;
+}
+.btn-line2::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 9.4rem;
+  background-color: #231815;
+  bottom: 10px;
+  left: 0;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
+}
+.btn-line2:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  -webkit-transform-origin: left top;
+          transform-origin: left top; /*右から左に向かう*/
 }
 
 @-webkit-keyframes nav-mask {
@@ -520,6 +602,7 @@ a {
   position: relative;
   z-index: 1;
   height: 100%;
+  visibility: hidden;
 }
 
 .nav-logo {
@@ -687,11 +770,16 @@ a {
 .sns-list a {
   font-size: 1.6rem;
   line-height: 20px;
+  -webkit-transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 @media (max-width: 1023px) {
   .sns-list a {
     padding: 0 1.5rem;
   }
+}
+.sns-list a:hover {
+  opacity: 0.5;
 }
 
 .header-link {
@@ -798,6 +886,9 @@ a {
   -webkit-transition-delay: 0.6s;
           transition-delay: 0.6s;
 }
+.header.open .nav-wrapper {
+  visibility: visible;
+}
 
 .swiper {
   width: 100%;
@@ -899,11 +990,12 @@ a {
 }
 
 .c-slider {
+  position: sticky;
   width: 100%;
-  height: 100vh;
+  height: 101vh;
   overflow: clip;
-  padding-bottom: 10rem;
-  margin-top: 13.7rem;
+  margin-top: 23.8rem;
+  padding-bottom: 20rem;
 }
 @media (max-width: 1023px) {
   .c-slider {
@@ -914,17 +1006,19 @@ a {
   position: sticky;
   inset: 0;
 }
+.c-slider.is-fixed .bg-wrapper {
+  height: 300vh;
+}
 
 .c-slider-wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .swiper2 {
   position: relative;
   -ms-touch-action: auto;
       touch-action: auto;
-  padding-top: 18.7rem;
 }
 
 .swiper-slide-next,
@@ -971,7 +1065,7 @@ a {
           justify-content: center;
   width: 43.2rem;
   aspect-ratio: 432/540;
-  margin: 0 auto;
+  margin: 5rem auto;
   text-align: center;
   z-index: 2;
 }
@@ -1069,6 +1163,7 @@ a {
 
 .item-image2 {
   width: 44rem;
+  top: 0;
   left: calc(50% + 27rem);
 }
 @media (max-width: 1023px) {
@@ -1083,8 +1178,11 @@ a {
 
 .item-image3 {
   width: 30rem;
+  height: 28rem;
   top: 0;
   left: calc(50% + 23rem);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 1023px) {
   .item-image3 {
@@ -2134,6 +2232,9 @@ a {
   position: relative;
   z-index: 0;
 }
+.support-item:hover img {
+  scale: 1.1;
+}
 
 .s-item-text {
   display: -webkit-box;
@@ -2190,7 +2291,6 @@ a {
 .bg-wrapper {
   overflow: clip;
   position: absolute;
-  height: 100%;
   z-index: -1;
   background-image: url(../img/bg.jpg);
   background-size: max(1920px, 100%) auto;

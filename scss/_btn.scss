@@ -8,6 +8,7 @@
 .more-btn {
 
     a  {
+        display: inline-block;
         font-family: f.$montserrat;
         position: relative;
         text-align: center;
@@ -92,6 +93,27 @@
     line-height: 1.1875;
     letter-spacing: 0.03em;
 
+    &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 9rem;
+        background-color: #fff;
+        bottom: 34px;
+        left: 24px;
+        transform: scale(0, 1);
+        transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+        transition: transform 0.5s; /*変形の時間*/
+    }
+
+    &:hover {
+
+        &::before {
+            transform: scale(1, 1);      /*ホバー後、x軸方向に1（相対値）伸長*/
+            transform-origin: left top; /*右から左に向かう*/
+        }
+    }
+
         i {
             width: 4rem;
             padding: 0.8rem 0;
@@ -109,9 +131,19 @@
             }
         }
 
-    @include m.mq(sp) {
-        font-size: f.rem(14);
-    }
+        &:hover {
+
+            i {
+
+                &::before {
+                    animation: btn-arw .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+                }
+            }
+        }
+
+        @include m.mq(sp) {
+            font-size: f.rem(14);
+        }
 }
 
 .btn-p {
@@ -122,4 +154,57 @@
     }
 
 }
+
+// hover時アニメーション
+.btn-line {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 10.5rem;
+        background-color: v.$color-text;
+        bottom: 33%;
+        left: 0;
+        transform: scale(0, 1);
+        transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+        transition: transform 0.5s; /*変形の時間*/
+    }
+
+    &:hover {
+
+        &::before {
+            transform: scale(1, 1);      /*ホバー後、x軸方向に1（相対値）伸長*/
+            transform-origin: left top; /*右から左に向かう*/
+        }
+    }
+}
+
+.btn-line2 {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 9.4rem;
+        background-color: v.$color-text;
+        bottom: 10px;
+        left: 0;
+        transform: scale(0, 1);
+        transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+        transition: transform 0.5s; /*変形の時間*/
+    }
+
+    &:hover {
+
+        &::before {
+            transform: scale(1, 1);      /*ホバー後、x軸方向に1（相対値）伸長*/
+            transform-origin: left top; /*右から左に向かう*/
+        }
+    }
+
+}
+
 
