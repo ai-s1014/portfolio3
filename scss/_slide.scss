@@ -109,36 +109,46 @@
 
 // swiper2
 .c-slider {
-    position: sticky;
     width: 100%;
-    height: 101vh;
-    overflow: clip;
-    margin-top: 23.8rem;
+    height: 160vh;
+    margin-top: 13.6rem;
     padding-bottom: 20rem;
+    overflow-y:auto;
 
     @include m.mq(sp) {
         margin-top: 23.4rem;
     }
+}
+
+.c-wrapper {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.c-sticky {
+    width: 100%;
+    height: 100vh;
+    // position: sticky;
+    // top: 0;
 
     &.is-fixed {
         position: sticky;
-        inset: 0;
-
-        .bg-wrapper {
-            height: 300vh;
-        }
+        top: 0;
     }
 }
 
-.c-slider-wrapper {
+.item {
     width: 100%;
-    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    position: relative;
+    // top: calc(50lvh - 27rem);
+    top: 0;
+    z-index : 1;
+    margin-bottom: 10rem;
 }
 
-.swiper2 {
-    position: relative;
-    touch-action: auto;
-}
 
 .swiper-slide-next,
 .swiper-slide-prev {
@@ -147,28 +157,6 @@
 
 .swiper-slide-active {
     opacity: 1;
-}
-
-.c-items {
-    display: grid;
-    position: sticky;
-    top: calc(50lvh - 27rem);
-    z-index: 1;
-    padding-bottom: 10rem;
-
-    @include m.mq(sp) {
-        top: calc(50lvh - 15.5rem);
-        margin-bottom: 16.7rem
-    }
-}
-
-.item {
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-
-.scalp {
-
 }
 
 .item-container {
@@ -204,10 +192,11 @@
 }
 
 .item-text {
-    margin-top: 2.6rem;
+    animation: home-efficacy-hidden var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
 .item-desc {
+    margin-top: 2.6rem;
     font-size: f.rem(18);
     line-height: 1.4167;
     font-weight: 700;
@@ -292,7 +281,7 @@
 .item-image3 {
     width: 30rem;
     height: 28rem;
-    top: 0;
+    top: 34rem;
     left: calc(50% + 23rem);
     object-fit: cover;
 
@@ -307,6 +296,10 @@
 
 .empty {
     padding-bottom: 50rem;
+}
+
+.slide-empty {
+    height: 100vh;
 }
 
 .c-pagination {
@@ -326,6 +319,10 @@
         border: #231815 solid 1px;
         border-radius: 0.8rem;
         background-color: inherit;
+
+        &:nth-child(4) {
+            display: none;
+        }
     }
 
     .swiper-pagination-bullet-active {
@@ -334,9 +331,18 @@
 }
 
 .swiper-pagination-vertical, .swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
-    top: 37rem;
+    top: 100%;
     right: 3rem;
     margin: 0;
+}
+
+.bg-wrapper {
+    overflow: clip;
+    position: absolute;
+    z-index: -1;
+    background-image: url(../img/bg.jpg);
+    background-size: max(1920px,100%) auto;
+    background-repeat: no-repeat;
 }
 
 // swiper3

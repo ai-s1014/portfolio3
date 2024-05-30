@@ -233,7 +233,12 @@ a {
 }
 
 .s-btn {
-  position: absolute;
+  text-align: right;
+  margin-top: 10rem;
+  padding: 0 5rem;
+}
+.s-btn a {
+  font-size: 1.8rem;
 }
 
 .p-btn {
@@ -279,11 +284,13 @@ a {
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
 }
-.item-btn:hover::before {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
-  -webkit-transform-origin: left top;
-          transform-origin: left top; /*右から左に向かう*/
+@media (min-width: 1024px) {
+  .item-btn:hover::before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+    -webkit-transform-origin: left top;
+            transform-origin: left top; /*右から左に向かう*/
+  }
 }
 .item-btn i {
   width: 4rem;
@@ -302,9 +309,11 @@ a {
     font-size: 1.4rem;
   }
 }
-.item-btn:hover i::before {
-  -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-          animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+@media (min-width: 1024px) {
+  .item-btn i:hover {
+    -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  }
 }
 @media (max-width: 1023px) {
   .item-btn {
@@ -990,35 +999,43 @@ a {
 }
 
 .c-slider {
-  position: sticky;
   width: 100%;
-  height: 101vh;
-  overflow: clip;
-  margin-top: 23.8rem;
+  height: 160vh;
+  margin-top: 13.6rem;
   padding-bottom: 20rem;
+  overflow-y: auto;
 }
 @media (max-width: 1023px) {
   .c-slider {
     margin-top: 23.4rem;
   }
 }
-.c-slider.is-fixed {
-  position: sticky;
-  inset: 0;
-}
-.c-slider.is-fixed .bg-wrapper {
-  height: 300vh;
+
+.c-wrapper {
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.c-slider-wrapper {
+.c-sticky {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+}
+.c-sticky.is-fixed {
+  position: sticky;
+  top: 0;
 }
 
-.swiper2 {
+.item {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
   position: relative;
-  -ms-touch-action: auto;
-      touch-action: auto;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 10rem;
 }
 
 .swiper-slide-next,
@@ -1028,25 +1045,6 @@ a {
 
 .swiper-slide-active {
   opacity: 1;
-}
-
-.c-items {
-  display: grid;
-  position: sticky;
-  top: calc(50lvh - 27rem);
-  z-index: 1;
-  padding-bottom: 10rem;
-}
-@media (max-width: 1023px) {
-  .c-items {
-    top: calc(50lvh - 15.5rem);
-    margin-bottom: 16.7rem;
-  }
-}
-
-.item {
-  grid-column: 1/2;
-  grid-row: 1/2;
 }
 
 .item-container {
@@ -1093,10 +1091,12 @@ a {
 }
 
 .item-text {
-  margin-top: 2.6rem;
+  -webkit-animation: home-efficacy-hidden var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          animation: home-efficacy-hidden var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
 .item-desc {
+  margin-top: 2.6rem;
   font-size: 1.8rem;
   line-height: 1.4167;
   font-weight: 700;
@@ -1179,7 +1179,7 @@ a {
 .item-image3 {
   width: 30rem;
   height: 28rem;
-  top: 0;
+  top: 34rem;
   left: calc(50% + 23rem);
   -o-object-fit: cover;
      object-fit: cover;
@@ -1196,6 +1196,10 @@ a {
 
 .empty {
   padding-bottom: 50rem;
+}
+
+.slide-empty {
+  height: 100vh;
 }
 
 .c-pagination {
@@ -1224,14 +1228,26 @@ a {
   border-radius: 0.8rem;
   background-color: inherit;
 }
+.c-pagination .swiper-pagination-bullet:nth-child(4) {
+  display: none;
+}
 .c-pagination .swiper-pagination-bullet-active {
   background-color: #231815;
 }
 
 .swiper-pagination-vertical, .swiper-pagination-bullets, .swiper-vertical > .swiper-pagination-bullets {
-  top: 37rem;
+  top: 100%;
   right: 3rem;
   margin: 0;
+}
+
+.bg-wrapper {
+  overflow: clip;
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/bg.jpg);
+  background-size: max(1920px, 100%) auto;
+  background-repeat: no-repeat;
 }
 
 .swiper3 {
@@ -1353,7 +1369,7 @@ a {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 100lvh;
+  height: 100vh;
 }
 
 .main-logo {
@@ -1537,7 +1553,7 @@ a {
   display: block;
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   border: #231815 solid 2px;
   border-bottom: none;
   border-radius: 50vw 50vw 0 0;
@@ -2286,15 +2302,6 @@ a {
     font-size: 1.8rem;
     letter-spacing: 0.02em;
   }
-}
-
-.bg-wrapper {
-  overflow: clip;
-  position: absolute;
-  z-index: -1;
-  background-image: url(../img/bg.jpg);
-  background-size: max(1920px, 100%) auto;
-  background-repeat: no-repeat;
 }
 
 .footer {

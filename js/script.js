@@ -21,40 +21,27 @@ $(window).on('scroll', function() {
 
 // c-slider 要素固定
 const options = {
-	root: null, // ビューポートを使用する場合はnull
-	rootMargin: '-50% 0% -50% 0%', // マージンを調整する場合は適切な値を設定
-	threshold: 0, // 交差判定の閾値を設定
-  };
+	root: null,
+	rootMargin: '-50% 0% -50% 0%',
+	threshold: 0
+}
 
-const observer = new IntersectionObserver(itemIntersect, options);
+const target = document.querySelector('.c-sticky');
 
-const cSliderElements = document.querySelectorAll('.c-slider');
-
-cSliderElements.forEach(item => {
-  observer.observe(item);
-});
-
-function itemIntersect(entries) {
+const c =function(entries, observer) {
 	entries.forEach(entry => {
-	  if (entry.isIntersecting) {
-		// 要素が表示された時の処理
-		entry.target.classList.add('is-fixed');
-	  } else {
-		// 要素が非表示になった時の処理
-		entry.target.classList.remove('is-fixed');
-	  }
+		if(entry.isIntersecting) {
+			entry.target.classList.add('is-fixed');
+		} else {
+			entry.target.classList.remove('is-fixed');
+		}
 	});
- }
+}
 
-function noscroll(e){
-	e.preventDefault();
- }
+const io = new IntersectionObserver(c, options);
+io.observe(target);
 
- $('.is-fixed').on('scroll', function(){
-	document.removeEventListener('touchmove', noscroll);
-	document.removeEventListener('wheel', noscroll);
- });
-
+// スクロールイベントを監視
 
 
 //scroll-container 要素拡大
@@ -113,9 +100,9 @@ const swiper2 = new Swiper('.swiper2', {
 		clickable: true,
 	},
 	effect: 'fade',
-	fadeEffect: {
-		crossFade: true
-	  },
+	// fadeEffect: {
+	// 	crossFade: true
+	//   },
 });
 
 const thumb = document.querySelectorAll('.thumb-slide');
