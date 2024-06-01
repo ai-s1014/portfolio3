@@ -234,8 +234,10 @@ a {
 
 .s-btn {
   text-align: right;
-  margin-top: 10rem;
   padding: 0 5rem;
+  position: absolute;
+  bottom: 10rem;
+  right: 0;
 }
 .s-btn a {
   font-size: 1.8rem;
@@ -439,6 +441,26 @@ a {
   100% {
     translate: 0 0;
     opacity: 1;
+  }
+}
+@-webkit-keyframes bgScale {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bgScale {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 /* レイアウト */
@@ -1000,23 +1022,14 @@ a {
 
 .c-slider {
   width: 100%;
-  height: 160vh;
+  height: 150vh;
   margin-top: 13.6rem;
   padding-bottom: 20rem;
-  overflow-y: auto;
 }
 @media (max-width: 1023px) {
   .c-slider {
     margin-top: 23.4rem;
   }
-}
-
-.c-wrapper {
-  display: grid;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .c-sticky {
@@ -1028,12 +1041,20 @@ a {
   top: 0;
 }
 
+.c-wrapper {
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .item {
   width: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
   position: relative;
-  top: 0;
+  top: calc(50lvh - 27rem);
   z-index: 1;
   margin-bottom: 10rem;
 }
@@ -1045,6 +1066,11 @@ a {
 
 .swiper-slide-active {
   opacity: 1;
+}
+.swiper-slide-active .item-image {
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .item-container {
@@ -1130,10 +1156,14 @@ a {
 }
 
 .item-image {
+  -webkit-transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  will-change: opacity;
   overflow: hidden;
   position: absolute;
   z-index: 1;
   border-radius: 2rem;
+  opacity: 0;
   -webkit-box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);
           box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);
 }
@@ -1543,6 +1573,11 @@ a {
 }
 @media (max-width: 1023px) {
   .scroll-contents {
+    padding-top: 18rem;
+  }
+}
+@media (max-width: 1023px) {
+  .scroll-contents {
     padding-top: 10rem;
   }
 }
@@ -1798,6 +1833,10 @@ a {
 .side-img {
   position: relative;
   z-index: 2;
+}
+.side-img.scroll-up {
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
 }
 .side-img img {
   position: absolute;

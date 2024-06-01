@@ -19,16 +19,41 @@ $(window).on('scroll', function() {
     }
 });
 
-// c-slider 要素固定
-const options = {
+// scroll-contents 拡大
+let options1 = {
 	root: null,
-	rootMargin: '-50% 0% -50% 0%',
+	rootMargin: '0px 0px 0px 0px',
 	threshold: 0
 }
 
-const target = document.querySelector('.c-sticky');
+const target1 = document.querySelector('.side-img');
 
-const c =function(entries, observer) {
+const c1 =function(entries, observer) {
+	entries.forEach(entry => {
+		if(entry.isIntersecting) {
+			entry.target.classList.add('scroll-up');
+		} else {
+			entry.target.classList.remove('scroll-up');
+		}
+	});
+}
+
+const io1 = new IntersectionObserver(c1, options1);
+io1.observe(target1);
+
+
+
+
+// c-slider 要素固定
+let options2 = {
+	root: null,
+	rootMargin: '-50% 0px -50% 0px',
+	threshold: 0
+}
+
+const target2 = document.querySelector('.c-sticky');
+
+const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
 			entry.target.classList.add('is-fixed');
@@ -38,10 +63,9 @@ const c =function(entries, observer) {
 	});
 }
 
-const io = new IntersectionObserver(c, options);
-io.observe(target);
+const io2 = new IntersectionObserver(c2, options2);
+io2.observe(target2);
 
-// スクロールイベントを監視
 
 
 //scroll-container 要素拡大

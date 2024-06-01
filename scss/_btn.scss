@@ -61,8 +61,10 @@
 
 .s-btn {
     text-align: right;
-    margin-top: 10rem;
     padding: 0 5rem;
+    position: absolute;
+    bottom: 10rem;
+    right: 0;
 
     a {
         font-size: f.rem(18);
