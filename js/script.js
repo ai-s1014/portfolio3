@@ -19,28 +19,31 @@ $(window).on('scroll', function() {
     }
 });
 
+
+
 // scroll-contents 拡大
 let options1 = {
 	root: null,
 	rootMargin: '0px 0px 0px 0px',
-	threshold: 0
+	threshold: 1
 }
 
-const target1 = document.querySelector('.side-img');
+const targets = document.querySelectorAll('.side-img');
 
 const c1 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
-			entry.target.classList.add('scroll-up');
+			entry.target.classList.add('scrollUp');
 		} else {
-			entry.target.classList.remove('scroll-up');
+			entry.target.classList.remove('scrollUp');
 		}
 	});
 }
 
 const io1 = new IntersectionObserver(c1, options1);
-io1.observe(target1);
-
+targets.forEach(target => {
+	io1.observe(target);
+});
 
 
 
@@ -94,7 +97,7 @@ $(document).ready(function() {
 const swiper1 = new Swiper('.swiper1', {
 	loop: true,
 	autoplay: {
-		delay: 5000,
+		delay: 3000,
 	},
 	allowTouchMove: false,
 	followFinger: false,
