@@ -961,19 +961,11 @@ a {
   position: relative;
 }
 
-.swiper1,
 .swiper-fade {
   opacity: 0 !important;
-  visibility: hidden !important;
 }
-.swiper1.swiper-slide-active,
 .swiper-fade.swiper-slide-active {
   opacity: 1 !important;
-  visibility: visible !important;
-  -webkit-transition: -webkit-mask-position 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  transition: -webkit-mask-position 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  transition: mask-position 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  transition: mask-position 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, -webkit-mask-position 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
 .nav-swiper-slide {

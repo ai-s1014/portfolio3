@@ -19,6 +19,29 @@ $(window).on('scroll', function() {
     }
 });
 
+// header スクロール無効化
+// ナビゲーションがクリックされたかどうかのフラグ
+let navClicked = false;
+
+// ナビゲーション要素を取得
+const navElement = document.querySelector('.menu-btn'); // ここに適切なセレクタを指定してください
+
+// ナビゲーションがクリックされたときの処理
+navElement.addEventListener('click', () => {
+  // フラグを反転させる
+  navClicked = !navClicked;
+
+  // クリックされたらスクロールを無効化
+  if (navClicked) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    // クリックされなかったらスクロールを有効化
+    document.body.style.overflow = 'auto';
+  }
+});
+
+
+
 
 
 // scroll-contents 拡大
@@ -107,6 +130,7 @@ const swiper1 = new Swiper('.swiper1', {
 	  },
 	speed: 0,
 });
+
 
 const swiper2 = new Swiper('.swiper2', {
 	direction: 'vertical',
