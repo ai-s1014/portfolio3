@@ -169,9 +169,11 @@
 
 // scroll-contents
 .scroll-contents {
+    inset: 0 calc(var(--sy)* 100%);
     position: relative;
     z-index: 0;
     padding-top: 26rem;
+    margin: 0 auto;
 
     @include m.mq(sp) {
         padding-top: 18rem;

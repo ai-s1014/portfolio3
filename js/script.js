@@ -19,12 +19,24 @@ $(window).on('scroll', function() {
     }
 });
 
+// scroll-contents 拡大
+const sc = document.querySelector('.scroll-contents');
+
+const scStyle = window.getComputedStyle(sc);
+
+const scStyleVal = scStyle.getPropertyValue('--sy');
+
+window.addEventListener('scroll', () => {
+    const scrollAmount = window.scrollY;
+    sc.style.setProperty('--sy', `${scrollAmount}`);
+});
+
 // header スクロール無効化
 // ナビゲーションがクリックされたかどうかのフラグ
 let navClicked = false;
 
 // ナビゲーション要素を取得
-const navElement = document.querySelector('.menu-btn'); // ここに適切なセレクタを指定してください
+const navElement = document.querySelector('.menu-btn');
 
 // ナビゲーションがクリックされたときの処理
 navElement.addEventListener('click', () => {

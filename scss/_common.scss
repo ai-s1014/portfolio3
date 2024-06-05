@@ -2,6 +2,10 @@
 @use "mixin" as m;
 @use "font" as f;
 
+
+//変数
+$y: 0; //初期値は0
+
 // 共通項目
 *,
 *::before,
@@ -80,6 +84,10 @@ a {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+}
+
+:root {
+    --sy: 0;
 }
 
 .circle {
