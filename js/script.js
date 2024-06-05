@@ -28,7 +28,7 @@ const scStyleVal = scStyle.getPropertyValue('--sy');
 
 window.addEventListener('scroll', () => {
     const scrollAmount = window.scrollY;
-    sc.style.setProperty('--sy', `${scrollAmount}`);
+    sc.style.setProperty('--sy', `${scrollAmount}px`);
 });
 
 // header スクロール無効化
