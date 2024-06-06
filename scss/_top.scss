@@ -169,13 +169,17 @@
 
 // scroll-contents
 .scroll-contents {
-    width: var(--sy);
-    min-width: 80%;
-    max-width: 100%;
     position: relative;
     z-index: 0;
     padding-top: 26rem;
     margin: 0 auto;
+    width: 80%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+
+
+    &.scale {
+        width: 100%;;
+    }
 
     @include m.mq(sp) {
         padding-top: 18rem;

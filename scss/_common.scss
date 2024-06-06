@@ -117,13 +117,14 @@ a {
 
 .bg {
     position: relative;
+    
 
     &::before {
         content: "";
         position: absolute;
         background-image: url(../img/bg.jpg);
         background-repeat: repeat;
-        inset: 0;
+        // inset: 0;
         z-index: -1;
         // border-radius: 50vw 50vw 0 0;
     }

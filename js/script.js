@@ -19,18 +19,6 @@ $(window).on('scroll', function() {
     }
 });
 
-// scroll-contents 拡大
-const sc = document.querySelector('.scroll-contents');
-
-const scStyle = window.getComputedStyle(sc);
-
-const scStyleVal = scStyle.getPropertyValue('--sy');
-
-window.addEventListener('scroll', () => {
-    const scrollAmount = window.scrollY;
-    sc.style.setProperty('--sy', `${scrollAmount}px`);
-});
-
 // header スクロール無効化
 // ナビゲーションがクリックされたかどうかのフラグ
 let navClicked = false;
@@ -42,19 +30,28 @@ const navElement = document.querySelector('.menu-btn');
 navElement.addEventListener('click', () => {
   // フラグを反転させる
   navClicked = !navClicked;
+  const hl = document.querySelector('.header-logo')
 
   // クリックされたらスクロールを無効化
   if (navClicked) {
     document.body.style.overflow = 'hidden';
+	document.hl.style.display = 'none';
   } else {
     // クリックされなかったらスクロールを有効化
     document.body.style.overflow = 'auto';
   }
 });
 
+// scroll-contents 拡大
+window.addEventListener('scroll', function() {
+	const sc = document.querySelector('.scroll-contents');
 
-
-
+	if (window.scrollY > 350) {
+	  sc.classList.add('scale');
+	} else {
+	  sc.classList.remove('scale');
+	}
+});
 
 // scroll-contents 拡大
 let options1 = {
