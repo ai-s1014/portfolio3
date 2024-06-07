@@ -1,25 +1,39 @@
-// header
+
+  // scroll-contents ボトルの画像 アニメーション
+	const options1 = {
+		root: null,
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 1
+	};
+
+	const targets = document.querySelectorAll('.side-img');
+	const matchMedia = window.matchMedia('(min-width:1024px)');
+
+
+	const c1 = function(entries, observer) {
+		entries.forEach(entry => {
+			if (entry.isIntersecting && matchMedia.matches) {
+			entry.target.classList.add('scrollUp');
+			} else if(!matchMedia.matches) {
+			entry.target.classList.remove('scrollUp');
+			}
+		});
+	};
+
+	const io1 = new IntersectionObserver(c1, options1);
+
+	targets.forEach(target => {
+		io1.observe(target);
+	});
+
+
+// header ハンバーガーメニュー
 $('.menu-btn').on('click', function() {
 	$(this).toggleClass('open');
 	$('.header').toggleClass('open');
 });
 
-// ロゴとメニューボタン スクロールで色変更
-$(window).on('scroll', function() {
-    if ($(window).scrollTop() > 0) {
-        // スクロール位置が0より大きい場合、クラスを切り替える
-        $('.main-logo').addClass('scroll');
-		$('.header-logo').addClass('scroll');
-        $('.menu-btn').addClass('color-change');
-    } else {
-        // スクロール位置が0以下の場合、クラスを切り替える
-        $('.main-logo').removeClass('scroll');
-		$('.header-logo').removeClass('scroll');
-        $('.menu-btn').removeClass('color-change');
-    }
-});
-
-// header スクロール無効化
+// header ハンバーガメニュースクロール無効化
 // ナビゲーションがクリックされたかどうかのフラグ
 let navClicked = false;
 
@@ -42,6 +56,22 @@ navElement.addEventListener('click', () => {
   }
 });
 
+
+// ロゴとメニューボタン スクロールで色変更
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 0) {
+        // スクロール位置が0より大きい場合、クラスを切り替える
+        $('.main-logo').addClass('scroll');
+		$('.header-logo').addClass('scroll');
+        $('.menu-btn').addClass('color-change');
+    } else {
+        // スクロール位置が0以下の場合、クラスを切り替える
+        $('.main-logo').removeClass('scroll');
+		$('.header-logo').removeClass('scroll');
+        $('.menu-btn').removeClass('color-change');
+    }
+});
+
 // scroll-contents 拡大
 window.addEventListener('scroll', function() {
 	const sc = document.querySelector('.scroll-contents');
@@ -53,29 +83,6 @@ window.addEventListener('scroll', function() {
 	}
 });
 
-// scroll-contents 拡大
-let options1 = {
-	root: null,
-	rootMargin: '0px 0px 0px 0px',
-	threshold: 1
-}
-
-const targets = document.querySelectorAll('.side-img');
-
-const c1 =function(entries, observer) {
-	entries.forEach(entry => {
-		if(entry.isIntersecting) {
-			entry.target.classList.add('scrollUp');
-		} else {
-			entry.target.classList.remove('scrollUp');
-		}
-	});
-}
-
-const io1 = new IntersectionObserver(c1, options1);
-targets.forEach(target => {
-	io1.observe(target);
-});
 
 
 
