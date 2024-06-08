@@ -1,32 +1,3 @@
-
-  // scroll-contents ボトルの画像 アニメーション
-	const options1 = {
-		root: null,
-		rootMargin: '0px 0px 0px 0px',
-		threshold: 1
-	};
-
-	const targets = document.querySelectorAll('.side-img');
-	const matchMedia = window.matchMedia('(min-width:1024px)');
-
-
-	const c1 = function(entries, observer) {
-		entries.forEach(entry => {
-			if (entry.isIntersecting && matchMedia.matches) {
-			entry.target.classList.add('scrollUp');
-			} else if(!matchMedia.matches) {
-			entry.target.classList.remove('scrollUp');
-			}
-		});
-	};
-
-	const io1 = new IntersectionObserver(c1, options1);
-
-	targets.forEach(target => {
-		io1.observe(target);
-	});
-
-
 // header ハンバーガーメニュー
 $('.menu-btn').on('click', function() {
 	$(this).toggleClass('open');
@@ -83,8 +54,32 @@ window.addEventListener('scroll', function() {
 	}
 });
 
+// scroll-contents ボトルの画像 アニメーション
+const options1 = {
+	root: null,
+	rootMargin: '0px 0px 0px 0px',
+	threshold: 1
+};
+
+const targets1 = document.querySelectorAll('.side-img');
+const matchMedia = window.matchMedia('(min-width:1024px)');
 
 
+const c1 = function(entries, observer) {
+	entries.forEach(entry => {
+		if (entry.isIntersecting && matchMedia.matches) {
+		entry.target.classList.add('scrollUp');
+		} else if(!matchMedia.matches) {
+		entry.target.classList.remove('scrollUp');
+		}
+	});
+};
+
+const io1 = new IntersectionObserver(c1, options1);
+
+targets1.forEach(target => {
+	io1.observe(target);
+});
 
 // c-slider 要素固定
 let options2 = {
@@ -109,6 +104,29 @@ const io2 = new IntersectionObserver(c2, options2);
 io2.observe(target2);
 
 
+// 表示時のアニメーション
+let options3 = {
+	root: null,
+	rootMargin: '0px 0px 0px 0px',
+	threshold: 0
+}
+
+const targets3 = document.querySelectorAll('.scroll-effect');
+
+const c3 =function(entries, observer) {
+	entries.forEach(entry => {
+		if(entry.isIntersecting) {
+			entry.target.classList.add('animation');
+		} else {
+			entry.target.classList.remove('animation');
+		}
+	});
+}
+
+const io3 = new IntersectionObserver(c3, options3);
+targets3.forEach(target => {
+	io3.observe(target);
+});
 
 //scroll-container 要素拡大
 $(document).ready(function() {
@@ -118,11 +136,11 @@ $(document).ready(function() {
 		position = $connect.offset().top,
 		current = 0,
 		scroll;
-  
+
 	$win.on('scroll', function() {
 	  scroll = $win.scrollTop();
 	  current = Math.max(1, (1 - (position - scroll) / $winH) * 2);
-  
+
 	  if (scroll > position - $winH) {
 		$connect.css('transform', 'scale(' + current + ')');
 	  }

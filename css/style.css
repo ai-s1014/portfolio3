@@ -190,6 +190,30 @@ a {
           transform-origin: left top; /*右から左に向かう*/
 }
 
+.scroll-effect {
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(15%, transparent), color-stop(42%, #000000), color-stop(58%, #000000), color-stop(85%, transparent));
+          mask-image: linear-gradient(to top, transparent 0%, transparent 15%, #000000 42%, #000000 58%, transparent 85%);
+  -webkit-transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  transition: mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s, -webkit-mask-position 0s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  -webkit-mask-position: center top;
+          mask-position: center top;
+  -webkit-mask-size: 100% 700%;
+          mask-size: 100% 700%;
+}
+
+.animation {
+  -webkit-transition: -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-mask-position 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-mask-position: center center;
+          mask-position: center center;
+}
+
 .more-btn a {
   display: display;
   font-family: "montserrat", sans-serif;
@@ -1555,8 +1579,8 @@ a {
   padding-top: 26rem;
   margin: 0 auto;
   width: 80%;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -webkit-transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 .scroll-contents.scale {
   width: 100%;
@@ -1811,7 +1835,10 @@ a {
 }
 
 .brand-name {
-  font-size: 5.6rem;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 7rem;
   margin-top: 1.4rem;
 }
 @media (max-width: 1023px) {
