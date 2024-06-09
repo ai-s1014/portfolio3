@@ -140,6 +140,8 @@ $(document).ready(function() {
 	$win.on('scroll', function() {
 	  scroll = $win.scrollTop();
 	  current = Math.max(1, (1 - (position - scroll) / $winH) * 2);
+	  $scrollUp = $('.scroll-up');
+	  $scrollDown = $('.scroll-down');
 
 	  if (scroll > position - $winH) {
 		$connect.css('transform', 'scale(' + current + ')');
@@ -149,6 +151,16 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+const scrollUp = document.querySelector('.scroll-up'); //要素取得
+const scrollDown = document.querySelector('.scroll-down'); //要素取得
+
+window.addEventListener('scroll', () => { //eventlistener定義
+	scrollUp.style.setProperty('--scroll',window.scrollY + 'px');
+	//カスタムプロパティ --scroll の値にy軸方向のスクロール量を代入
+	scrollDown.style.setProperty('--scroll',window.scrollY + 'px');
+	//カスタムプロパティ --scroll の値にy軸方向のスクロール量を代入
+})
 
 // swiper
 const swiper1 = new Swiper('.swiper1', {

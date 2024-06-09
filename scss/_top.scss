@@ -828,6 +828,12 @@
     }
 }
 
+.scroll-down {
+    position: relative;
+    --scroll: 6213; /*カスタムプロパティ（変数）宣言*/
+    bottom: var(--scroll);
+}
+
 // support
 .support {
     padding: 20rem 0;
