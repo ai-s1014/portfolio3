@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    <script src="https://kit.fontawesome.com/10f7c298e7.js" crossorigin="anonymous" defer></script>
+    <script src="SmoothScrollAnimations-master/js/imagesloaded.pkgd.min.js"></script>
+    <script src="SmoothScrollAnimations-master/js/demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/10f7c298e7.js" crossorigin="anonymous" defer></script>
     <script src="js/script.js" defer></script>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,7 +95,7 @@
             </nav>
         </header>
 
-        <main class="main">
+        <div class="main">
             <div class="inner-sticky">
                 <div class="main-body">
                     <h1 class="main-logo">
@@ -126,198 +129,155 @@
                 </div>
             </div>
 
-            <div class="scroll-contents bg">
-                <div class="side-img r-bottle">
-                    <img src="img/bottle-r.png" alt="">
-                </div>
-                <section class="concept">
-                    <div class="concept-wrapper wrapper-inner">
-                        <h2 class="section-ttl c-ttl scroll-effect">CONCEPT</h2>
-                        <div class="c-subttl border-length border-l">
-                            <p class="sub-ttl">ハーブ</p>
-                            <div class="en">
-                                <p>Herbal</p>
-                                <span class="x"></span>
-                                <p>Scalp care</p>
-                            </div>
-                            <p class="sub-ttl border-length border-r">皮膚科学処方</p>
-                        </div>
-                        <div class="c-text trouble-text">
-                            <h3 class="c-lead scroll-effect">頭皮トラブルに悩む<br>人々の心身の美に寄り添う。</h3>
-                            <p class="c-desc">ハーブの魅力を追求した処方で、<br>フケ・かゆみを抑え、毛髪ケアも叶える。<br>頭皮トラブルに悩む方の毎日が前向きになりますように。</p>
-                            <div class="brand-text">
-                                <p class="name-s">ハーバルウェルネスブランド</p>
-                                <p class="brand-name">PORTFOLIO</p>
-                            </div>
-                            <div class="more-btn c-btn">
-                                <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="side-img l-bottle">
-                            <img src="img/bottle-l.png" alt="">
-                        </div>
-                    </div>
-                    <div class="c-image">
-                        <img src="img/concept.jpg" alt="">
-                    </div>
-                    <div class="concept-wrapper wrapper-inner">
-                        <div class="side-img r-bottle s-bottle">
+            <main>
+                <div data-scroll>
+                    <div class="scroll-contents bg">
+                        <div class="side-img r-bottle">
                             <img src="img/bottle-r.png" alt="">
                         </div>
-                        <div class="c-text scalp-text">
-                            <h3 class="c-lead scroll-effect">頭皮ケアも毛髪ケアも叶える<br>ハーバルスカルプケア</h3>
-                            <p class="c-desc">アロマティック・ウッディー調の心地いいフレグランス設計で上質なバスタイムへ誘い、<br>乾燥によるフケ・かゆみを防ぎ<sup>※</sup>健やかな頭皮環境と、なめらかな髪へ導く。</p>
-                            <p class="c-cap">※シャンプーとトリートメントのみ <span>医薬部外品</span> ＜販売名＞薬用ＩシャンプーMA　＜販売名＞薬用ＩトリートメントMA</p>
-                        </div>
-                    </div>
-                    <div class="c-slider">
-                        <div class="c-sticky">
-                            <div class="swiper swiper2">
-                                <div class="swiper-wrapper c-wrapper">
-                                    <div class="swiper-slide">
-                                        <!-- scalp -->
-                                        <div class="item scalp">
-                                            <div class="item-container circle circle-shadow">
-                                                <div class="item-text">
-                                                    <h2 class="item-ttl">SCALP CARE</h2>
-                                                    <p class="item-desc">フケ・かゆみを防ぐ<sup>※</sup><br><strong>ハーブ×皮膚科学処方</strong></p>
-                                                    <p class="item-cap c-cap">※シャンプーとトリートメントのみ <span>医薬部外品</span><br> ＜販売名＞薬用ＩシャンプーMA　＜販売名＞薬用ＩトリートメントMA</p>
+                        <section class="concept">
+                            <div class="concept-wrapper wrapper-inner">
+                                <h2 class="section-ttl c-ttl scroll-effect">CONCEPT</h2>
+                                <div class="c-subttl border-length border-l">
+                                    <p class="sub-ttl">ハーブ</p>
+                                    <div class="en">
+                                        <p>Herbal</p>
+                                        <span class="x"></span>
+                                        <p>Scalp care</p>
+                                    </div>
+                                    <p class="sub-ttl border-length border-r">皮膚科学処方</p>
+                                </div>
+                                <div class="c-text trouble-text">
+                                    <h3 class="c-lead scroll-effect">頭皮トラブルに悩む<br>人々の心身の美に寄り添う。</h3>
+                                    <p class="c-desc">ハーブの魅力を追求した処方で、<br>フケ・かゆみを抑え、毛髪ケアも叶える。<br>頭皮トラブルに悩む方の毎日が前向きになりますように。</p>
+                                    <div class="brand-text">
+                                        <p class="name-s">ハーバルウェルネスブランド</p>
+                                        <p class="brand-name">PORTFOLIO</p>
+                                    </div>
+                                    <div class="more-btn c-btn">
+                                        <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="side-img l-bottle">
+                                    <img src="img/bottle-l.png" alt="">
+                                </div>
+                            </div>
+                            <div class="c-image">
+                                <img src="img/concept.jpg" alt="">
+                            </div>
+                            <div class="concept-wrapper wrapper-inner">
+                                <div class="side-img r-bottle s-bottle">
+                                    <img src="img/bottle-r.png" alt="">
+                                </div>
+                                <div class="c-text scalp-text">
+                                    <h3 class="c-lead scroll-effect">頭皮ケアも毛髪ケアも叶える<br>ハーバルスカルプケア</h3>
+                                    <p class="c-desc">アロマティック・ウッディー調の心地いいフレグランス設計で上質なバスタイムへ誘い、<br>乾燥によるフケ・かゆみを防ぎ<sup>※</sup>健やかな頭皮環境と、なめらかな髪へ導く。</p>
+                                    <p class="c-cap">※シャンプーとトリートメントのみ <span>医薬部外品</span> ＜販売名＞薬用ＩシャンプーMA　＜販売名＞薬用ＩトリートメントMA</p>
+                                </div>
+                            </div>
+                            <div class="c-slider">
+                                <div class="c-sticky">
+                                    <div class="swiper swiper2">
+                                        <div class="swiper-wrapper c-wrapper">
+                                            <div class="swiper-slide">
+                                                <!-- scalp -->
+                                                <div class="item scalp">
+                                                    <div class="item-container circle circle-shadow">
+                                                        <div class="item-text">
+                                                            <h2 class="item-ttl">SCALP CARE</h2>
+                                                            <p class="item-desc">フケ・かゆみを防ぐ<sup>※</sup><br><strong>ハーブ×皮膚科学処方</strong></p>
+                                                            <p class="item-cap c-cap">※シャンプーとトリートメントのみ <span>医薬部外品</span><br> ＜販売名＞薬用ＩシャンプーMA　＜販売名＞薬用ＩトリートメントMA</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-image item-image1"><img src="img/item1.jpg" alt=""></div>
+                                                    <div class="item-image item-image2"><img src="img/item2.jpg" alt=""></div>
+                                                    <div class="item-image item-image3"><img src="img/item3.jpg" alt=""></div>
                                                 </div>
                                             </div>
-                                            <div class="item-image item-image1"><img src="img/item1.jpg" alt=""></div>
-                                            <div class="item-image item-image2"><img src="img/item2.jpg" alt=""></div>
-                                            <div class="item-image item-image3"><img src="img/item3.jpg" alt=""></div>
+                                            <div class="swiper-slide">
+                                                <!-- hair care -->
+                                                <div class="item hair">
+                                                    <div class="item-container circle circle-shadow">
+                                                        <div class="item-text">
+                                                            <h2 class="item-ttl">HAIR CARE</h2>
+                                                            <p class="item-desc">なめらか髪へ導く<br><strong>毛髪補修成分<sup>※</sup><br class="br-pc"> 配合</strong></p>
+                                                            <p class="item-cap c-cap">※ヒアルロン酸ナトリウム(2)、ヒアルロン酸ヒドロキシプロピルとリモニウム<br>L-グルタミン酸、Lアルギニン(全て保湿成分)、加水分解シルク液(毛髪保護成分)<br>
+                                                                                    シャンプーとトリートメントのみ<br><span class="span-box">医薬部外品</span><br>＜販売名＞薬用ＩシャンプーＭＡ<br>＜販売名＞薬用ＩトリートメントＭＡ</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-image item-image1"><img src="img/item4.jpg" alt=""></div>
+                                                    <div class="item-image item-image2"><img src="img/item5.jpg" alt=""></div>
+                                                    <div class="item-image item-image3"><img src="img/item6.jpg" alt=""></div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <!-- FRAGRANCE -->
+                                                <div class="item fragrance">
+                                                    <div class="item-container circle circle-shadow">
+                                                        <div class="item-text">
+                                                            <h2 class="item-ttl">FRAGRANCE</h2>
+                                                            <p class="item-desc">上質なバスタイムへ誘う<br><strong>爽やかで心地いい<br>フレグランス設計</strong></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-image item-image1"><img src="img/item1.jpg" alt=""></div>
+                                                    <div class="item-image item-image2"><img src="img/item2.jpg" alt=""></div>
+                                                    <div class="item-image item-image3"><img src="img/item3.jpg" alt=""></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <!-- hair care -->
-                                        <div class="item hair">
-                                            <div class="item-container circle circle-shadow">
-                                                <div class="item-text">
-                                                    <h2 class="item-ttl">HAIR CARE</h2>
-                                                    <p class="item-desc">なめらか髪へ導く<br><strong>毛髪補修成分<sup>※</sup><br class="br-pc"> 配合</strong></p>
-                                                    <p class="item-cap c-cap">※ヒアルロン酸ナトリウム(2)、ヒアルロン酸ヒドロキシプロピルとリモニウム<br>L-グルタミン酸、Lアルギニン(全て保湿成分)、加水分解シルク液(毛髪保護成分)<br>
-                                                                            シャンプーとトリートメントのみ<br><span class="span-box">医薬部外品</span><br>＜販売名＞薬用ＩシャンプーＭＡ<br>＜販売名＞薬用ＩトリートメントＭＡ</p>
-                                                </div>
-                                            </div>
-                                            <div class="item-image item-image1"><img src="img/item4.jpg" alt=""></div>
-                                            <div class="item-image item-image2"><img src="img/item5.jpg" alt=""></div>
-                                            <div class="item-image item-image3"><img src="img/item6.jpg" alt=""></div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <!-- FRAGRANCE -->
-                                        <div class="item fragrance">
-                                            <div class="item-container circle circle-shadow">
-                                                <div class="item-text">
-                                                    <h2 class="item-ttl">FRAGRANCE</h2>
-                                                    <p class="item-desc">上質なバスタイムへ誘う<br><strong>爽やかで心地いい<br>フレグランス設計</strong></p>
-                                                </div>
-                                            </div>
-                                            <div class="item-image item-image1"><img src="img/item1.jpg" alt=""></div>
-                                            <div class="item-image item-image2"><img src="img/item2.jpg" alt=""></div>
-                                            <div class="item-image item-image3"><img src="img/item3.jpg" alt=""></div>
-                                        </div>
+                                    <div class="swiper-pagination c-pagination"></div>
+                                    <div class="more-btn s-btn">
+                                        <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-pagination c-pagination"></div>
-                            <div class="more-btn s-btn">
-                                <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-                <section class="product bg-fff">
-                    <div class="p-wrapper wrapper-inner">
-                        <h2 class="section-ttl product-ttl scroll-effect">PRODUCT</h2>
-                        <!-- PC表示 -->
-                        <div class="p-pc">
-                            <div class="p-item-flex">
-                                <div class="p-item-box circle">
-                                    <div class="p-item-body">
-                                        <div class="p-item-image">
-                                            <img src="img/bottle-r.png" alt="" class="scroll-effect">
-                                            <img src="img/bottle-r.png" alt="" class="scroll-effect">
-                                        </div>
-                                        <div class="p-body-text">
-                                            <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
-                                            <div class="p-item-text">
-                                                <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
-                                                <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
-                                            </div>
-                                            <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
-                                            <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
-                                        </div>
-                                        <div class="more-btn p-btn">
-                                            <a href="#" class="btn-line2">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-item-box circle">
-                                    <div class="p-item-body">
-                                        <div class="p-item-image">
-                                            <img src="img/bottle-s.png" alt="" class="scroll-effect">
-                                        </div>
-                                        <div class="p-body-text">
-                                            <h3 class="p-item-ttl">スカルプケアローション</h3>
-                                            <div class="p-item-text">
-                                                <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
-                                                <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
-                                            </div>
-                                            <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
-                                            <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
-                                        </div>
-                                        <div class="more-btn p-btn">
-                                            <a href="#" class="btn-line2">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-item-effect">
-                                <dl class="effect-text">
-                                    <dt class="effect-ttl">効能・効果</dt>
-                                    <dd>
-                                        <p class="effect-cap">[シャンプー]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪・頭皮を清浄にする。毛髪・頭皮をすこやかに保つ。</p>
-                                        <p class="effect-cap">[トリートメント]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪の水分・脂肪を補い保つ。裂毛・切毛・枝毛を防ぐ。毛髪・頭皮をすこやかに保つ。</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
+                        </section>
                     </div>
 
-                    <!-- SP表示 -->
-                    <div class="swiper-sp">
-                        <div class="swiperThumbnail">
-                            <div class="swiper-wrapper thumb-wrapper">
-                                <div class="swiper-slide thumb-slide thumb-slide-active"><img src="img/thumb1.png" alt=""></div>
-                                <div class="swiper-slide thumb-slide"><img src="img/thumb2.png" alt=""></div>
-                            </div>
-                        </div>
-                        <div class="swiper swiper3 p-sp">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper p-swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide p-swiper-slide">
-                                    <div class="p-item-box circle">
-                                        <div class="p-item-body">
-                                            <div class="p-item-image">
-                                                <img src="img/bottle-r.png" alt="">
-                                                <img src="img/bottle-r.png" alt="">
-                                            </div>
-                                            <div class="p-body-text">
-                                                <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
-                                                <div class="p-item-text">
-                                                    <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
-                                                    <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
+                        <section class="product bg-fff">
+                            <div class="p-wrapper wrapper-inner">
+                                <h2 class="section-ttl product-ttl scroll-effect">PRODUCT</h2>
+                                <!-- PC表示 -->
+                                <div class="p-pc">
+                                    <div class="p-item-flex">
+                                        <div class="p-item-box circle">
+                                            <div class="p-item-body">
+                                                <div class="p-item-image">
+                                                    <img src="img/bottle-r.png" alt="" class="scroll-effect">
+                                                    <img src="img/bottle-r.png" alt="" class="scroll-effect">
                                                 </div>
-                                                <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
-                                                <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
+                                                <div class="p-body-text">
+                                                    <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
+                                                    <div class="p-item-text">
+                                                        <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
+                                                        <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
+                                                    </div>
+                                                    <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
+                                                    <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
+                                                </div>
+                                                <div class="more-btn p-btn">
+                                                    <a href="#" class="btn-line2">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                                </div>
                                             </div>
-                                            <div class="more-btn p-btn">
-                                                <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                        </div>
+                                        <div class="p-item-box circle">
+                                            <div class="p-item-body">
+                                                <div class="p-item-image">
+                                                    <img src="img/bottle-s.png" alt="" class="scroll-effect">
+                                                </div>
+                                                <div class="p-body-text">
+                                                    <h3 class="p-item-ttl">スカルプケアローション</h3>
+                                                    <div class="p-item-text">
+                                                        <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
+                                                        <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
+                                                    </div>
+                                                    <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
+                                                    <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
+                                                </div>
+                                                <div class="more-btn p-btn">
+                                                    <a href="#" class="btn-line2">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -331,83 +291,130 @@
                                         </dl>
                                     </div>
                                 </div>
-                                <div class="swiper-slide p-swiper-slide">
-                                    <div class="p-item-box circle">
-                                        <div class="p-item-body">
-                                            <div class="p-item-image">
-                                                <img src="img/bottle-s.png" alt="">
-                                            </div>
-                                            <div class="p-body-text">
-                                                <h3 class="p-item-ttl">スカルプケアローション</h3>
-                                                <div class="p-item-text">
-                                                    <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
-                                                    <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
+                            </div>
+
+                            <!-- SP表示 -->
+                            <div class="swiper-sp">
+                                <div class="swiperThumbnail">
+                                    <div class="swiper-wrapper thumb-wrapper">
+                                        <div class="swiper-slide thumb-slide thumb-slide-active"><img src="img/thumb1.png" alt=""></div>
+                                        <div class="swiper-slide thumb-slide"><img src="img/thumb2.png" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="swiper swiper3 p-sp">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper p-swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide p-swiper-slide">
+                                            <div class="p-item-box circle">
+                                                <div class="p-item-body">
+                                                    <div class="p-item-image">
+                                                        <img src="img/bottle-r.png" alt="">
+                                                        <img src="img/bottle-r.png" alt="">
+                                                    </div>
+                                                    <div class="p-body-text">
+                                                        <h3 class="p-item-ttl">薬用スカルプケア<br>シャンプー/トリートメント<br><span>[モイスト]</span></h3>
+                                                        <div class="p-item-text">
+                                                            <p class="p-item-lead">ハーブ×皮膚科学処方で、<br>フケ・かゆみを防ぎ<sup>※</sup>、なめらか髪へ</p>
+                                                            <p class="p-item-cap">※シャンプーとトリートメントのみ</p>
+                                                        </div>
+                                                        <p class="p-item-price">各<span class="price">¥1,540</span>(税込) <span class="volume">370mL/370g</span></p>
+                                                        <p class="p-item-cap price-cap"><span class="span-box">医薬部外品</span>＜販売名＞薬用ＩシャンプーＭＡ  ＜販売名＞薬用ＩトリートメントＭＡ </p>
+                                                    </div>
+                                                    <div class="more-btn p-btn">
+                                                        <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                                    </div>
                                                 </div>
-                                                <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
-                                                <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
                                             </div>
-                                            <div class="more-btn p-btn">
-                                                <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                            <div class="p-item-effect">
+                                                <dl class="effect-text">
+                                                    <dt class="effect-ttl">効能・効果</dt>
+                                                    <dd>
+                                                        <p class="effect-cap">[シャンプー]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪・頭皮を清浄にする。毛髪・頭皮をすこやかに保つ。</p>
+                                                        <p class="effect-cap">[トリートメント]<br>フケ・かゆみを防ぐ。毛髪・頭皮の汗臭を防ぐ。毛髪の水分・脂肪を補い保つ。裂毛・切毛・枝毛を防ぐ。毛髪・頭皮をすこやかに保つ。</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide p-swiper-slide">
+                                            <div class="p-item-box circle">
+                                                <div class="p-item-body">
+                                                    <div class="p-item-image">
+                                                        <img src="img/bottle-s.png" alt="">
+                                                    </div>
+                                                    <div class="p-body-text">
+                                                        <h3 class="p-item-ttl">スカルプケアローション</h3>
+                                                        <div class="p-item-text">
+                                                            <p class="p-item-lead">8種のハーブ由来成分<sup>※1</sup>で<br>頭皮を潤いで満たし健やかな頭皮環境へ</p>
+                                                            <p class="p-item-cap">※1 ローズマリー葉水、ローズマリー葉エキス、カミツレ花エキス、マヨラナ葉エキス、アシタバ葉/茎エキス、ユーカリ葉エキス、ゼニアオイ花エキス、ユキノシタエキス(全て保湿成分)</p>
+                                                        </div>
+                                                        <p class="p-item-price"><span class="price">¥1,540</span>(税込) <span class="volume">120mL</span></p>
+                                                        <p class="p-item-cap price-cap"><span class="span-box">化粧品</span>＜販売名＞ＷスカルプローションＡ</p>
+                                                    </div>
+                                                    <div class="more-btn p-btn">
+                                                        <a href="#" class="btn-line">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <div class="gallery">
-                    <div class="gallery-wrapper">
-                        <div class="galley-image">
-                            <div class="gallery-col img-col-l scroll-down">
-                                <img src="img/item1.jpg" alt="">
-                                <img src="img/item6.jpg" alt="">
-                                <img src="img/item5.jpg" alt="">
-                                <img src="img/item1.jpg" alt="">
-                                <img src="img/item6.jpg" alt="">
-                                <img src="img/item5.jpg" alt="">
-                            </div>
-                            <div class="gallery-col img-col-c">
-                                <img src="img/item2.jpg" alt="">
-                                <img src="img/item7.jpg" alt="">
-                                <img src="img/main1.jpg" alt="" class="center-image">
-                            </div>
-                            <div class="gallery-col img-col-r scroll-up">
-                                <img src="img/item3.jpg" alt="">
-                                <img src="img/item4.jpg" alt="">
-                                <img src="img/h-slider2.jpg" alt="">
-                                <img src="img/item3.jpg" alt="">
-                                <img src="img/item4.jpg" alt="">
-                                <img src="img/h-slider2.jpg" alt="">
+                    <div class="gallery">
+                        <div class="gallery-wrapper">
+                            <div class="galley-image">
+                                <div class="gallery-col img-col-l scroll-down">
+                                    <img src="img/item1.jpg" alt="">
+                                    <img src="img/item6.jpg" alt="">
+                                    <img src="img/item5.jpg" alt="">
+                                    <img src="img/item1.jpg" alt="">
+                                    <img src="img/item6.jpg" alt="">
+                                    <img src="img/item5.jpg" alt="">
+                                </div>
+                                <div class="gallery-col img-col-c">
+                                    <img src="img/item2.jpg" alt="">
+                                    <img src="img/item7.jpg" alt="">
+                                    <img src="img/main1.jpg" alt="" class="center-image">
+                                </div>
+                                <div class="gallery-col img-col-r scroll-up">
+                                    <img src="img/item3.jpg" alt="">
+                                    <img src="img/item4.jpg" alt="">
+                                    <img src="img/h-slider2.jpg" alt="">
+                                    <img src="img/item3.jpg" alt="">
+                                    <img src="img/item4.jpg" alt="">
+                                    <img src="img/h-slider2.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <section class="support bg-fff">
+                        <div class="support-wrapper">
+                            <h2 class="section-ttl support-ttl">SUPPORT</h2>
+                            <div class="support-items">
+                                <a href="" class="support-item">
+                                    <img src="img/s-item1.jpg" alt="">
+                                    <div class="s-item-text">
+                                        <p class="item-en">SHOP LIST</p>
+                                        <p class="item-ja">お取り扱い店舗</p>
+                                    </div>
+                                    <div class="more-btn item-btn">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></div>
+                                </a>
+                                <a href="" class="support-item">
+                                    <img src="img/s-item2.jpg" alt="">
+                                    <div class="s-item-text">
+                                        <p class="item-en">FAQ</p>
+                                        <p class="item-ja">よくあるご質問</p>
+                                    </div>
+                                    <div class="more-btn item-btn btn-p">Learn more<i class="fa-solid fa-arrow-right arrow-color arrow-h"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <section class="support bg-fff">
-                    <div class="support-wrapper">
-                        <h2 class="section-ttl support-ttl">SUPPORT</h2>
-                        <div class="support-items">
-                            <a href="" class="support-item">
-                                <img src="img/s-item1.jpg" alt="">
-                                <div class="s-item-text">
-                                    <p class="item-en">SHOP LIST</p>
-                                    <p class="item-ja">お取り扱い店舗</p>
-                                </div>
-                                <div class="more-btn item-btn">Learn more<i class="fa-solid fa-arrow-right arrow-color"></i></div>
-                            </a>
-                            <a href="" class="support-item">
-                                <img src="img/s-item2.jpg" alt="">
-                                <div class="s-item-text">
-                                    <p class="item-en">FAQ</p>
-                                    <p class="item-ja">よくあるご質問</p>
-                                </div>
-                                <div class="more-btn item-btn btn-p">Learn more<i class="fa-solid fa-arrow-right arrow-color arrow-h"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-        </main>
+            </main>
+        </div>
         <footer class="footer bg-fff">
             <div class="footer-wrapper">
                 <div class="footer-flex">

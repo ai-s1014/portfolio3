@@ -794,7 +794,7 @@
 
 // gallery
 .gallery {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: v.$color-text;
     overflow: hidden;
@@ -802,9 +802,9 @@
 }
 
 .gallery-wrapper {
-    width: 100%;
+    position: absolute;
     z-index: 1;
-    transform: scale(1);
+
 }
 
 .galley-image {

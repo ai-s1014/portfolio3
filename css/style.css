@@ -2191,7 +2191,7 @@ a {
 }
 
 .gallery {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #231815;
   overflow: hidden;
@@ -2199,10 +2199,8 @@ a {
 }
 
 .gallery-wrapper {
-  width: 100%;
+  position: absolute;
   z-index: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 .galley-image {

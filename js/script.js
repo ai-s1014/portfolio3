@@ -52,6 +52,8 @@ window.addEventListener('scroll', function() {
 	} else {
 	  sc.classList.remove('scale');
 	}
+
+	console.log(window.scrollY);
 });
 
 // scroll-contents ボトルの画像 アニメーション
@@ -81,27 +83,44 @@ targets1.forEach(target => {
 	io1.observe(target);
 });
 
-// c-slider 要素固定
-let options2 = {
-	root: null,
-	rootMargin: '-50% 0px -50% 0px',
-	threshold: 0
-}
+// // c-slider 要素固定
+let set_position = 0;
+window.addEventListener('scroll', function () {
+	const cSlide = document.querySelector('.swiper2');
 
-const target2 = document.querySelector('.c-sticky');
+	if (set_position < document.documentElement.scrollTop) {
+		cSlide.classList.add('down');
+		cSlide.classList.remove('up');
 
-const c2 =function(entries, observer) {
-	entries.forEach(entry => {
-		if(entry.isIntersecting) {
-			entry.target.classList.add('is-fixed');
-		} else {
-			entry.target.classList.remove('is-fixed');
-		}
-	});
-}
+	} else {
+		cSlide.classList.add('up');
+		cSlide.classList.remove('down');
+	}
 
-const io2 = new IntersectionObserver(c2, options2);
-io2.observe(target2);
+	set_position = document.documentElement.scrollTop;
+});
+
+
+// let options2 = {
+// 	root: null,
+// 	rootMargin: '-50% 0px -50% 0px',
+// 	threshold: 0
+// }
+
+// const target2 = document.querySelector('.c-sticky');
+
+// const c2 =function(entries, observer) {
+// 	entries.forEach(entry => {
+// 		if(entry.isIntersecting) {
+// 			entry.target.classList.add('is-fixed');
+// 		} else {
+// 			entry.target.classList.remove('is-fixed');
+// 		}
+// 	});
+// }
+
+// const io2 = new IntersectionObserver(c2, options2);
+// io2.observe(target2);
 
 
 // 表示時のアニメーション
@@ -129,38 +148,61 @@ targets3.forEach(target => {
 });
 
 //scroll-container 要素拡大
-$(document).ready(function() {
-	var $win = $(window),
-		$winH = $win.height(),
-		$connect = $('.gallery-wrapper'),
-		position = $connect.offset().top,
-		current = 0,
-		scroll;
+const gallery = document.querySelector('.gallery');
 
-	$win.on('scroll', function() {
-	  scroll = $win.scrollTop();
-	  current = Math.max(1, (1 - (position - scroll) / $winH) * 2);
-	  $scrollUp = $('.scroll-up');
-	  $scrollDown = $('.scroll-down');
+gallery.addEventListener('scroll', function() {
+// 画像要素を取得
+const imageElement = document.querySelector('.galley-image');
 
-	  if (scroll > position - $winH) {
-		$connect.css('transform', 'scale(' + current + ')');
-	  }
-	  if (current > 1) {
-		current = 1;
-	  }
-	});
-  });
+// 画像の初期スケールと位置を設定
+imageElement.style.transform = 'scale(1)'; // 初期スケール
 
-const scrollUp = document.querySelector('.scroll-up'); //要素取得
-const scrollDown = document.querySelector('.scroll-down'); //要素取得
+// 画像がすべて表示されたらスケール変動
+imageElement.onload = () => {
+  // 画像のサイズを取得
+  const imageWidth = imageElement.width;
+  const imageHeight = imageElement.height;
 
-window.addEventListener('scroll', () => { //eventlistener定義
-	scrollUp.style.setProperty('--scroll',window.scrollY + 'px');
-	//カスタムプロパティ --scroll の値にy軸方向のスクロール量を代入
-	scrollDown.style.setProperty('--scroll',window.scrollY + 'px');
-	//カスタムプロパティ --scroll の値にy軸方向のスクロール量を代入
-})
+  // 画像が表示される領域のサイズを取得
+  const wrapperWidth = document.querySelector('.gallery-wrapper').clientWidth; // 表示領域のIDを指定してください
+  const wrapperHeight = document.querySelector('.gallery-wrapper').clientHeight;
+
+  // スケールを計算
+  const scaleX = wrapperWidth / imageWidth;
+  const scaleY = wrapperWidth / imageHeight;
+  const scale = Math.min(scaleX, scaleY);
+
+  // 画像をスケーリング
+  imageElement.style.transform = `scale(${scale})`;
+
+  // 画像を中央に配置
+  const leftOffset = (wrapperWidth - imageWidth * scale) / 2;
+  const topOffset = (wrapperWidth - imageHeight * scale) / 2;
+  imageElement.style.left = `${leftOffset}px`;
+  imageElement.style.top = `${topOffset}px`;
+};
+});
+
+
+// const win = window;
+// const winH = win.innerHeight;
+// const connect = document.querySelector('.gallery-wrapper');
+// const position = connect.offsetTop;
+// let current = 0;
+// let scroll;
+
+// win.addEventListener('scroll', function() {
+// scroll = win.scrollY;
+// current = Math.max(1, (1 - (position - scroll) / winH) * 50);
+
+// if (scroll > position - winH) {
+// 	connect.style.transform = `scale(${current})`;
+// }
+// if (current > 1) {
+// 	current = 1;
+// }
+// });
+
 
 // swiper
 const swiper1 = new Swiper('.swiper1', {
@@ -197,9 +239,27 @@ const swiper2 = new Swiper('.swiper2', {
 		clickable: true,
 	},
 	effect: 'fade',
-	// fadeEffect: {
-	// 	crossFade: true
-	//   },
+	on: {
+		// スライドの切り替わりアニメーションが終了した時に実行
+		slideChangeTransitionEnd: function() {
+			let num = this.realIndex + 1;
+			const cSlide = document.querySelector('.swiper2');
+
+			 if(cSlide.classList.contains('up')) {
+				if(num == 1) {
+					$('body').css('overflow', 'auto');
+				 } else {
+					$('body').css('overflow', 'hidden');
+				 }
+			} else if(cSlide.classList.contains('down')) {
+				if(num == 3) {
+					$('body').css('overflow', 'auto');
+				 } else {
+					$('body').css('overflow', 'hidden');
+				 }
+			}
+		}
+	}
 });
 
 const thumb = document.querySelectorAll('.thumb-slide');
