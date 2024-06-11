@@ -85,6 +85,7 @@ targets1.forEach(target => {
 
 // // c-slider 要素固定
 let set_position = 0;
+
 window.addEventListener('scroll', function () {
 	const cSlide = document.querySelector('.swiper2');
 
