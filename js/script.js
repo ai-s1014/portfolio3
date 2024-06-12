@@ -52,8 +52,6 @@ window.addEventListener('scroll', function() {
 	} else {
 	  sc.classList.remove('scale');
 	}
-
-	console.log(window.scrollY);
 });
 
 // scroll-contents ボトルの画像 アニメーション
@@ -133,7 +131,7 @@ let options3 = {
 
 const targets3 = document.querySelectorAll('.scroll-effect');
 
-const c3 =function(entries, observer) {
+const c3 = function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
 			entry.target.classList.add('animation');
@@ -148,62 +146,25 @@ targets3.forEach(target => {
 	io3.observe(target);
 });
 
-//scroll-container 要素拡大
-const gallery = document.querySelector('.gallery');
+// gallery-wrapper 拡大
+window.addEventListener('scroll', function() {
+	if (window.scrollY > 5297) {
+		console.log(window.scrollY);
 
-gallery.addEventListener('scroll', function() {
-// 画像要素を取得
-const imageElement = document.querySelector('.galley-image');
+        //左右のスクロールを取得
+	    const left = document.querySelector('.img-col-l');
+        const right = document.querySelector('.img-col-r');
 
-// 画像の初期スケールと位置を設定
-imageElement.style.transform = 'scale(1)'; // 初期スケール
+        // それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
+        left.style.transform = "translateY("+ window.scrollY/80 +"px)";
+        right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
-// 画像がすべて表示されたらスケール変動
-imageElement.onload = () => {
-  // 画像のサイズを取得
-  const imageWidth = imageElement.width;
-  const imageHeight = imageElement.height;
-
-  // 画像が表示される領域のサイズを取得
-  const wrapperWidth = document.querySelector('.gallery-wrapper').clientWidth; // 表示領域のIDを指定してください
-  const wrapperHeight = document.querySelector('.gallery-wrapper').clientHeight;
-
-  // スケールを計算
-  const scaleX = wrapperWidth / imageWidth;
-  const scaleY = wrapperWidth / imageHeight;
-  const scale = Math.min(scaleX, scaleY);
-
-  // 画像をスケーリング
-  imageElement.style.transform = `scale(${scale})`;
-
-  // 画像を中央に配置
-  const leftOffset = (wrapperWidth - imageWidth * scale) / 2;
-  const topOffset = (wrapperWidth - imageHeight * scale) / 2;
-  imageElement.style.left = `${leftOffset}px`;
-  imageElement.style.top = `${topOffset}px`;
-};
+        if(window.scrollY > 5370) {
+            const gallery = document.querySelector('.gallery-image');
+            gallery.style.transform = "scale("+ window.scrollY/5000 +")";
+        }
+	}
 });
-
-
-// const win = window;
-// const winH = win.innerHeight;
-// const connect = document.querySelector('.gallery-wrapper');
-// const position = connect.offsetTop;
-// let current = 0;
-// let scroll;
-
-// win.addEventListener('scroll', function() {
-// scroll = win.scrollY;
-// current = Math.max(1, (1 - (position - scroll) / winH) * 50);
-
-// if (scroll > position - winH) {
-// 	connect.style.transform = `scale(${current})`;
-// }
-// if (current > 1) {
-// 	current = 1;
-// }
-// });
-
 
 // swiper
 const swiper1 = new Swiper('.swiper1', {
@@ -243,7 +204,7 @@ const swiper2 = new Swiper('.swiper2', {
 	on: {
 		// スライドの切り替わりアニメーションが終了した時に実行
 		slideChangeTransitionEnd: function() {
-			let num = this.realIndex + 1;
+			let num = this.activeIndex + 1;
 			const cSlide = document.querySelector('.swiper2');
 
 			 if(cSlide.classList.contains('up')) {

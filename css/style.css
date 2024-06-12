@@ -1041,7 +1041,7 @@ a {
 
 .c-sticky {
   width: 100%;
-  height: 123vh;
+  height: 100vh;
 }
 .c-sticky.is-fixed {
   position: sticky;
@@ -1066,7 +1066,6 @@ a {
   grid-column: 1/2;
   grid-row: 1/2;
   position: relative;
-  top: calc(50lvh - 41rem);
   z-index: 1;
   margin-bottom: 10rem;
 }
@@ -2199,19 +2198,23 @@ a {
 }
 
 .gallery {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 300vh;
   background-color: #231815;
-  overflow: hidden;
+  overflow: clip;
   position: relative;
+  -webkit-clip-path: inset(0);
+          clip-path: inset(0);
 }
 
 .gallery-wrapper {
   position: absolute;
   z-index: 1;
+  inset: -100lvh 0;
 }
 
 .galley-image {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2223,6 +2226,10 @@ a {
   -webkit-column-gap: 2rem;
      -moz-column-gap: 2rem;
           column-gap: 2rem;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .gallery-col {
@@ -2235,15 +2242,10 @@ a {
           flex-direction: column;
   row-gap: 2rem;
 }
-
-.gallery-col-c {
-  width: 100%;
-  height: 100%;
-}
-.scroll-down {
-  position: relative;
-  --scroll: 6213; /*カスタムプロパティ（変数）宣言*/
-  bottom: var(--scroll);
+.gallery-col img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
 }
 
 .support {
