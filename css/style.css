@@ -369,7 +369,7 @@ a {
   height: 1px;
   width: 10.5rem;
   background-color: #231815;
-  bottom: 33%;
+  bottom: 10%;
   left: 0;
   -webkit-transform: scale(0, 1);
           transform: scale(0, 1);
@@ -396,7 +396,7 @@ a {
   height: 1px;
   width: 9.4rem;
   background-color: #231815;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   -webkit-transform: scale(0, 1);
           transform: scale(0, 1);
@@ -1035,7 +1035,8 @@ a {
 }
 @media (max-width: 1023px) {
   .c-slider {
-    margin-top: 23.4rem;
+    margin-top: 4.5rem;
+    height: 150vh;
   }
 }
 
@@ -1109,6 +1110,7 @@ a {
     width: 25rem;
     aspect-ratio: 250/310;
     border-radius: 12rem;
+    margin: 8rem auto;
   }
 }
 
@@ -1183,6 +1185,8 @@ a {
     width: calc(100vw - 16rem);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
@@ -1194,22 +1198,24 @@ a {
 @media (max-width: 1023px) {
   .item-image1 {
     width: calc(100vw - 5rem);
-    height: 55.6rem;
+    height: 66.8rem;
     top: auto;
     right: 0;
-    bottom: calc(50% + 9.9rem);
+    bottom: 0;
     left: auto;
   }
 }
 
 .item-image2 {
   width: 44rem;
+  height: 28rem;
   top: 0;
-  left: calc(50% + 27rem);
+  left: calc(50% + 16rem);
 }
 @media (max-width: 1023px) {
   .item-image2 {
     width: calc(100vw - 25rem);
+    height: 14rem;
     top: calc(50% + 7.8rem);
     right: auto;
     bottom: auto;
@@ -1219,19 +1225,29 @@ a {
 
 .item-image3 {
   width: 30rem;
-  height: 28rem;
   top: 34rem;
   left: calc(50% + 23rem);
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+.item-image3 .image-pc {
+  display: block;
+}
+.item-image3 .image-sp {
+  display: none;
 }
 @media (max-width: 1023px) {
   .item-image3 {
     width: calc(100vw - 16rem);
+    height: 14.6rem;
     top: calc(50% + 14.6rem);
     right: 0;
     bottom: auto;
     left: auto;
+  }
+  .item-image3 .image-pc {
+    display: none;
+  }
+  .item-image3 .image-sp {
+    display: block;
   }
 }
 
@@ -2213,7 +2229,7 @@ a {
   inset: -100lvh 0;
 }
 
-.galley-image {
+.gallery-image {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -160,6 +160,7 @@ window.addEventListener('scroll', function() {
         right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
         if(window.scrollY > 5370) {
+			// console.log(window.scrollY);
             const gallery = document.querySelector('.gallery-image');
             gallery.style.transform = "scale("+ window.scrollY/5000 +")";
         }

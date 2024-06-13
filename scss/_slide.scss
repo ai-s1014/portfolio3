@@ -109,7 +109,8 @@
     padding-bottom: 20rem;
 
     @include m.mq(sp) {
-        margin-top: 23.4rem;
+        margin-top: 4.5rem;
+        height: 150vh;
     }
 }
 
@@ -174,6 +175,7 @@
         width: 25rem;
         aspect-ratio: 250/310;
         border-radius: 12rem;
+        margin: 8rem auto;
     }
 }
 
@@ -246,6 +248,8 @@
         width: calc(100vw - 16rem);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        box-shadow: none;
+
     }
 }
 
@@ -256,21 +260,23 @@
 
     @include m.mq(sp) {
         width: calc(100vw - 5rem);
-        height: 55.6rem;
+        height: 66.8rem;
         top: auto;
         right: 0;
-        bottom: calc(50% + 9.9rem);
+        bottom: 0;
         left: auto;
     }
 }
 
 .item-image2 {
     width: 44rem;
+    height: 28rem;
     top: 0;
-    left: calc(50% + 27rem);
+    left: calc(50% + 16rem);
 
     @include m.mq(sp) {
         width: calc(100vw - 25rem);
+        height: 14rem;
         top: calc(50% + 7.8rem);
         right: auto;
         bottom: auto;
@@ -280,17 +286,34 @@
 
 .item-image3 {
     width: 30rem;
-    height: 28rem;
+    // height: 28rem;
     top: 34rem;
     left: calc(50% + 23rem);
-    object-fit: cover;
+
+    .image-pc {
+        display: block;
+    }
+
+    .image-sp {
+        display: none;
+    }
 
     @include m.mq(sp) {
         width: calc(100vw - 16rem);
+        height: 14.6rem;
         top: calc(50% + 14.6rem);
         right: 0;
         bottom: auto;
         left: auto;
+
+        .image-pc {
+            display: none;
+        }
+
+        .image-sp {
+            display: block;
+        }
+
     }
 }
 
