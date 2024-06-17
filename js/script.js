@@ -82,45 +82,39 @@ targets1.forEach(target => {
 });
 
 // // c-slider 要素固定
-let set_position = 0;
+let options2 = {
+	root: null,
+	rootMargin: '0px 0px 0px 0px',
+	threshold: 0.7
+}
 
-window.addEventListener('scroll', function () {
-	const cSlide = document.querySelector('.swiper2');
+const target2 = document.querySelector('.c-slider');
 
-	if (set_position < document.documentElement.scrollTop) {
-		cSlide.classList.add('down');
-		cSlide.classList.remove('up');
+const c2 =function(entries, observer) {
+	entries.forEach(entry => {
+		if(entry.isIntersecting) {
+			let set_position = 0;
 
-	} else {
-		cSlide.classList.add('up');
-		cSlide.classList.remove('down');
-	}
+			window.addEventListener('scroll', function () {
+				const cSlide = document.querySelector('.c-slider');
 
-	set_position = document.documentElement.scrollTop;
-});
+				if (set_position < document.documentElement.scrollTop) {
+					cSlide.classList.add('down');
+					cSlide.classList.remove('up');
 
+				} else {
+					cSlide.classList.add('up');
+					cSlide.classList.remove('down');
+				}
 
-// let options2 = {
-// 	root: null,
-// 	rootMargin: '-50% 0px -50% 0px',
-// 	threshold: 0
-// }
+				set_position = document.documentElement.scrollTop;
+			});
+		}
+	});
+}
 
-// const target2 = document.querySelector('.c-sticky');
-
-// const c2 =function(entries, observer) {
-// 	entries.forEach(entry => {
-// 		if(entry.isIntersecting) {
-// 			entry.target.classList.add('is-fixed');
-// 		} else {
-// 			entry.target.classList.remove('is-fixed');
-// 		}
-// 	});
-// }
-
-// const io2 = new IntersectionObserver(c2, options2);
-// io2.observe(target2);
-
+const io2 = new IntersectionObserver(c2, options2);
+io2.observe(target2);
 
 // 表示時のアニメーション
 let options3 = {
@@ -206,7 +200,7 @@ const swiper2 = new Swiper('.swiper2', {
 		// スライドの切り替わりアニメーションが終了した時に実行
 		slideChangeTransitionEnd: function() {
 			let num = this.activeIndex + 1;
-			const cSlide = document.querySelector('.swiper2');
+			const cSlide = document.querySelector('.c-slider');
 
 			 if(cSlide.classList.contains('up')) {
 				if(num == 1) {
@@ -235,7 +229,7 @@ const switchThumb = (index) => {
 	// クリックされたサムネイルに thumb-slide-active クラスを追加
 	thumb[index].classList.add('thumb-slide-active');
 };
-  
+
   // サムネイル要素にクリックイベントリスナーを追加
   thumb.forEach((element, index) => {
 	element.addEventListener('click', () => {

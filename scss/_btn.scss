@@ -64,7 +64,7 @@
     text-align: right;
     padding: 0 5rem;
     position: absolute;
-    bottom: 10rem;
+    bottom: 15rem;
     right: 0;
 
     a {
@@ -87,69 +87,6 @@
             border: 1px solid v.$color-bg2;
         }
     }
-}
-
-.item-btn {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 2.5rem;
-    z-index: 3;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.1875;
-    letter-spacing: 0.03em;
-
-    &::before {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 9rem;
-        background-color: #fff;
-        bottom: 34px;
-        left: 24px;
-        transform: scale(0, 1);
-        transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
-        transition: transform 0.5s; /*変形の時間*/
-    }
-
-    @include m.mq(pc) {
-        &:hover {
-
-            &::before {
-                transform: scale(1, 1);      /*ホバー後、x軸方向に1（相対値）伸長*/
-                transform-origin: left top; /*右から左に向かう*/
-            }
-    }
-}
-
-        i {
-            width: 4rem;
-            padding: 0.8rem 0;
-            aspect-ratio: 1/1;
-            margin-left: 1.5rem;
-            border: 1px solid #FFF;
-            border-radius: 50%;
-            font-size: f.rem(21);
-            text-align: center;
-
-            @include m.mq(sp) {
-                width: 3rem;
-                padding: 0.7rem 0;
-                font-size: f.rem(14);
-            }
-
-            @include m.mq(pc) {
-                &:hover {
-                    animation: btn-arw .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-                }
-            }
-        }
- @include m.mq(sp) {
-            font-size: f.rem(14);
-        }
 }
 
 .btn-p {

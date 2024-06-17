@@ -264,7 +264,7 @@ a {
   text-align: right;
   padding: 0 5rem;
   position: absolute;
-  bottom: 10rem;
+  bottom: 15rem;
   right: 0;
 }
 .s-btn a {
@@ -282,73 +282,6 @@ a {
   background-color: #9ab49f;
   border-radius: 50%;
   border: 1px solid #9ab49f;
-}
-
-.item-btn {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 2.5rem;
-  z-index: 3;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.1875;
-  letter-spacing: 0.03em;
-}
-.item-btn::before {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 9rem;
-  background-color: #fff;
-  bottom: 34px;
-  left: 24px;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transform-origin: right top;
-          transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
-}
-@media (min-width: 1024px) {
-  .item-btn:hover::before {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
-    -webkit-transform-origin: left top;
-            transform-origin: left top; /*右から左に向かう*/
-  }
-}
-.item-btn i {
-  width: 4rem;
-  padding: 0.8rem 0;
-  aspect-ratio: 1/1;
-  margin-left: 1.5rem;
-  border: 1px solid #FFF;
-  border-radius: 50%;
-  font-size: 2.1rem;
-  text-align: center;
-}
-@media (max-width: 1023px) {
-  .item-btn i {
-    width: 3rem;
-    padding: 0.7rem 0;
-    font-size: 1.4rem;
-  }
-}
-@media (min-width: 1024px) {
-  .item-btn i:hover {
-    -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-            animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  }
-}
-@media (max-width: 1023px) {
-  .item-btn {
-    font-size: 1.4rem;
-  }
 }
 
 .btn-p {
@@ -708,6 +641,7 @@ a {
     top: 19.6rem;
     min-height: 0;
     padding-left: 0;
+    z-index: 5;
   }
 }
 
@@ -979,7 +913,7 @@ a {
 @media (max-width: 1023px) {
   .nav-images {
     width: 100%;
-    inset: auto;
+    aspect-ratio: 390/197;
   }
 }
 
@@ -987,6 +921,11 @@ a {
   width: 100%;
   height: 100vh;
   position: relative;
+}
+@media (max-width: 1023px) {
+  .swiper1 {
+    height: 19.7rem;
+  }
 }
 
 .nav-swiper-slide {
@@ -1029,9 +968,8 @@ a {
 
 .c-slider {
   width: 100%;
-  height: 100vh;
-  margin-top: 13.6rem;
-  padding-bottom: 20rem;
+  padding: 13.6rem 0 20rem;
+  overflow: clip;
 }
 @media (max-width: 1023px) {
   .c-slider {
@@ -1043,6 +981,7 @@ a {
 .c-sticky {
   width: 100%;
   height: 100vh;
+  position: sticky;
 }
 .c-sticky.is-fixed {
   position: sticky;
@@ -1051,7 +990,6 @@ a {
 
 .swiper2 {
   width: 100%;
-  height: auto;
 }
 
 .c-wrapper {
@@ -1298,7 +1236,7 @@ a {
 }
 
 .swiper-pagination-vertical.swiper-pagination-bullets {
-  top: 85%;
+  top: 79%;
 }
 
 .bg-wrapper {
@@ -2339,6 +2277,18 @@ a {
 .support-item:hover img {
   scale: 1.1;
 }
+@media (min-width: 1024px) {
+  .support-item:hover .item-btn::before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+    -webkit-transform-origin: left top;
+            transform-origin: left top; /*右から左に向かう*/
+  }
+  .support-item:hover .item-btn i::before {
+    -webkit-animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            animation: btn-arw 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  }
+}
 
 .s-item-text {
   display: -webkit-box;
@@ -2389,6 +2339,59 @@ a {
   .item-ja {
     font-size: 1.8rem;
     letter-spacing: 0.02em;
+  }
+}
+
+.item-btn {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2.5rem;
+  z-index: 3;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.1875;
+  letter-spacing: 0.03em;
+}
+.item-btn::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 9rem;
+  background-color: #fff;
+  bottom: 34px;
+  left: 24px;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /*変形の時間*/
+}
+@media (max-width: 1023px) {
+  .item-btn {
+    font-size: 1.4rem;
+  }
+}
+.item-btn i {
+  width: 4rem;
+  padding: 0.8rem 0;
+  aspect-ratio: 1/1;
+  margin-left: 1.5rem;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+  font-size: 2.1rem;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  .item-btn i {
+    width: 3rem;
+    padding: 0.7rem 0;
+    font-size: 1.4rem;
   }
 }
 
