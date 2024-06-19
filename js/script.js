@@ -85,36 +85,42 @@ targets1.forEach(target => {
 let options2 = {
 	root: null,
 	rootMargin: '0px 0px 0px 0px',
-	threshold: 0.7
-}
+	threshold: 0.8
+};
 
 const target2 = document.querySelector('.c-slider');
 
 const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
-			let set_position = 0;
-
-			window.addEventListener('scroll', function () {
-				const cSlide = document.querySelector('.c-slider');
-
-				if (set_position < document.documentElement.scrollTop) {
-					cSlide.classList.add('down');
-					cSlide.classList.remove('up');
-
-				} else {
-					cSlide.classList.add('up');
-					cSlide.classList.remove('down');
-				}
-
-				set_position = document.documentElement.scrollTop;
-			});
+			target2.classList.add('down');
+			target2.classList.remove('up');
+		} else {
+			target2.classList.add('up');
+			target2.classList.remove('down');
 		}
 	});
 }
 
 const io2 = new IntersectionObserver(c2, options2);
 io2.observe(target2);
+
+// // c-slider 要素固定
+// let set_position = 0;
+
+// window.addEventListener('scroll', function () {
+// 	const cSlide = document.querySelector('.swiper2');
+
+// 	if (set_position < document.documentElement.scrollTop) {
+// 		cSlide.classList.add('down');
+// 		cSlide.classList.remove('up');
+// 	} else {
+// 		cSlide.classList.add('up');
+// 		cSlide.classList.remove('down');
+// 	}
+// 	set_position = document.documentElement.scrollTop;
+// });
+
 
 // 表示時のアニメーション
 let options3 = {
@@ -142,8 +148,8 @@ targets3.forEach(target => {
 
 // gallery-wrapper 拡大
 window.addEventListener('scroll', function() {
-	if (window.scrollY > 5297) {
-		console.log(window.scrollY);
+	console.log(window.scrollY);
+	if (window.scrollY > 5297 || this.window.scrollY > 8333) {
 
         //左右のスクロールを取得
 	    const left = document.querySelector('.img-col-l');
@@ -153,7 +159,7 @@ window.addEventListener('scroll', function() {
         left.style.transform = "translateY("+ window.scrollY/80 +"px)";
         right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
-        if(window.scrollY > 5370) {
+        if(window.scrollY > 5370 || window.scrollY > 10984.5) {
 			// console.log(window.scrollY);
             const gallery = document.querySelector('.gallery-image');
             gallery.style.transform = "scale("+ window.scrollY/5000 +")";
@@ -202,18 +208,18 @@ const swiper2 = new Swiper('.swiper2', {
 			let num = this.activeIndex + 1;
 			const cSlide = document.querySelector('.c-slider');
 
-			 if(cSlide.classList.contains('up')) {
+			if(cSlide.classList.contains('up')) {
 				if(num == 1) {
 					$('body').css('overflow', 'auto');
-				 } else {
+				} else {
 					$('body').css('overflow', 'hidden');
-				 }
+				}
 			} else if(cSlide.classList.contains('down')) {
 				if(num == 3) {
 					$('body').css('overflow', 'auto');
-				 } else {
+				} else {
 					$('body').css('overflow', 'hidden');
-				 }
+				}
 			}
 		}
 	}

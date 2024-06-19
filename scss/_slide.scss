@@ -119,7 +119,7 @@
 
 .c-sticky {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     position: sticky;
 
     &.is-fixed {
@@ -130,6 +130,7 @@
 
 .swiper2 {
     width: 100%;
+    height: 815px;
 }
 
 .c-wrapper {
@@ -318,14 +319,6 @@
         }
 
     }
-}
-
-.empty {
-    padding-bottom: 50rem;
-}
-
-.slide-empty {
-    height: 100vh;
 }
 
 .c-pagination {
