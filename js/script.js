@@ -93,17 +93,41 @@ const target2 = document.querySelector('.c-slider');
 const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
-			target2.classList.add('down');
-			target2.classList.remove('up');
+			target2.classList.add('is-fixed');
+			console.log('ok');
+			// target2.classList.add('down');
+			// target2.classList.remove('up');
 		} else {
-			target2.classList.add('up');
-			target2.classList.remove('down');
+			target2.classList.remove('is-fixed');
+			console.log('no');
+			// target2.classList.add('up');
+			// target2.classList.remove('down');
 		}
 	});
 }
 
 const io2 = new IntersectionObserver(c2, options2);
 io2.observe(target2);
+
+window.addEventListener('scroll', function() {
+	const cSlide = document.querySelector('.c-slider');
+
+	if(cSlide.classList.contains('is-fixed')) {
+		$('body').css('overflow', 'hidden');
+	} else 	if(!cSlide.classList.contains('is-fixed')) {
+		$('body').css('overflow', 'auto');
+	}
+});
+
+// window.addEventListener('scroll', function() {
+// 	const cSlide = document.querySelector('.c-slider');
+
+// 	if(cSlide.classList.contains('is-fixed')) {
+// 		$('body').css('overflow', 'hidden');
+// 	} else {
+// 		$('body').css('overflow', 'auto');
+// 	}
+// });
 
 // // c-slider 要素固定
 // let set_position = 0;
@@ -148,7 +172,6 @@ targets3.forEach(target => {
 
 // gallery-wrapper 拡大
 window.addEventListener('scroll', function() {
-	console.log(window.scrollY);
 	if (window.scrollY > 5297 || this.window.scrollY > 8333) {
 
         //左右のスクロールを取得
@@ -202,23 +225,33 @@ const swiper2 = new Swiper('.swiper2', {
 		clickable: true,
 	},
 	effect: 'fade',
+
 	on: {
+		// beforeTransitionStart: function() {
+		// 	let num = this.activeIndex + 1;
+		// 	const cSlide = document.querySelector('.c-slider');
+
+		// 	if(cSlide.classList.contains('up')) {
+		// 		if(num == 1) {
+		// 			console.log(num);
+		// 			$('body').css('overflow', 'hidden');
+		// 		} else {
+		// 			$('body').css('overflow', 'auto');
+		// 		}
+		// 	}
+		// },
 		// スライドの切り替わりアニメーションが終了した時に実行
 		slideChangeTransitionEnd: function() {
 			let num = this.activeIndex + 1;
 			const cSlide = document.querySelector('.c-slider');
 
-			if(cSlide.classList.contains('up')) {
+			if(cSlide.classList.contains('is-fixed')) {
 				if(num == 1) {
 					$('body').css('overflow', 'auto');
-				} else {
-					$('body').css('overflow', 'hidden');
-				}
-			} else if(cSlide.classList.contains('down')) {
-				if(num == 3) {
+					cSlide.classList.remove('is-fixed');
+				} else if(num == 3) {
 					$('body').css('overflow', 'auto');
-				} else {
-					$('body').css('overflow', 'hidden');
+					cSlide.classList.remove('is-fixed');
 				}
 			}
 		}
