@@ -808,7 +808,7 @@
     inset: -100lvh 0;
 
     @include m.mq(sp) {
-        inset: 31lvh 0;
+        inset: 0;
     }
 }
 
@@ -841,9 +841,14 @@
 
 
     img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         vertical-align: top;
+
+        @include m.mq(sp) {
+            width: 367px;
+            height: 587px;
+        }
     }
 }
 

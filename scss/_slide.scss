@@ -112,25 +112,23 @@
     overflow: clip;
 
     @include m.mq(sp) {
-        margin-top: 4.5rem;
-        height: 150vh;
+        margin: 4.5rem 0 0;
+        padding: 2.6rem 0 0;
     }
 }
 
-.c-sticky {
-    width: 100%;
-    // height: 100vh;
-    position: sticky;
+.c-wrapper {
 
-    &.is-fixed {
-        position: sticky;
-        top: 0;
-    }
 }
 
 .swiper2 {
     width: 100%;
     height: 815px;
+
+    @include m.mq(sp) {
+        height: 65rem;
+    }
+
 }
 
 .c-wrapper {
@@ -356,6 +354,10 @@
 
 .swiper-pagination-vertical.swiper-pagination-bullets {
     top: 79%;
+
+    @include m.mq(sp) {
+        right: 2rem;
+    }
 }
 
 .bg-wrapper {

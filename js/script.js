@@ -15,12 +15,12 @@ const navElement = document.querySelector('.menu-btn');
 navElement.addEventListener('click', () => {
   // フラグを反転させる
   navClicked = !navClicked;
-  const hl = document.querySelector('.header-logo')
+  const logo = document.querySelector('.header-logo')
 
   // クリックされたらスクロールを無効化
   if (navClicked) {
-    document.body.style.overflow = 'hidden';
-	document.hl.style.display = 'none';
+    body.style.overflow = 'hidden';
+	logo.style.display = 'none';
   } else {
     // クリックされなかったらスクロールを有効化
     document.body.style.overflow = 'auto';
@@ -93,15 +93,10 @@ const target2 = document.querySelector('.c-slider');
 const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
+		console.log('true');
 			target2.classList.add('is-fixed');
-			console.log('ok');
-			// target2.classList.add('down');
-			// target2.classList.remove('up');
 		} else {
 			target2.classList.remove('is-fixed');
-			console.log('no');
-			// target2.classList.add('up');
-			// target2.classList.remove('down');
 		}
 	});
 }
@@ -118,33 +113,6 @@ window.addEventListener('scroll', function() {
 		$('body').css('overflow', 'auto');
 	}
 });
-
-// window.addEventListener('scroll', function() {
-// 	const cSlide = document.querySelector('.c-slider');
-
-// 	if(cSlide.classList.contains('is-fixed')) {
-// 		$('body').css('overflow', 'hidden');
-// 	} else {
-// 		$('body').css('overflow', 'auto');
-// 	}
-// });
-
-// // c-slider 要素固定
-// let set_position = 0;
-
-// window.addEventListener('scroll', function () {
-// 	const cSlide = document.querySelector('.swiper2');
-
-// 	if (set_position < document.documentElement.scrollTop) {
-// 		cSlide.classList.add('down');
-// 		cSlide.classList.remove('up');
-// 	} else {
-// 		cSlide.classList.add('up');
-// 		cSlide.classList.remove('down');
-// 	}
-// 	set_position = document.documentElement.scrollTop;
-// });
-
 
 // 表示時のアニメーション
 let options3 = {
@@ -227,19 +195,6 @@ const swiper2 = new Swiper('.swiper2', {
 	effect: 'fade',
 
 	on: {
-		// beforeTransitionStart: function() {
-		// 	let num = this.activeIndex + 1;
-		// 	const cSlide = document.querySelector('.c-slider');
-
-		// 	if(cSlide.classList.contains('up')) {
-		// 		if(num == 1) {
-		// 			console.log(num);
-		// 			$('body').css('overflow', 'hidden');
-		// 		} else {
-		// 			$('body').css('overflow', 'auto');
-		// 		}
-		// 	}
-		// },
 		// スライドの切り替わりアニメーションが終了した時に実行
 		slideChangeTransitionEnd: function() {
 			let num = this.activeIndex + 1;

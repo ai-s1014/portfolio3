@@ -62,10 +62,15 @@
 
 .s-btn {
     text-align: right;
-    padding: 0 5rem;
+    padding: 0 5rem ;
     position: absolute;
-    bottom: -12rem;
+    bottom: 8rem;
     right: 0;
+
+    @include m.mq(sp) {
+        padding: 0 1.5rem;
+        bottom: 6rem;
+    }
 
     a {
         font-size: f.rem(18);
