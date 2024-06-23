@@ -974,7 +974,7 @@ a {
 
 .c-slider {
   width: 100%;
-  padding: 13.6rem 0 20rem;
+  margin: 13.6rem 0 0;
   overflow: clip;
 }
 @media (max-width: 1023px) {
@@ -982,6 +982,10 @@ a {
     margin: 4.5rem 0 0;
     padding: 2.6rem 0 0;
   }
+}
+
+.c-wrapper {
+  padding-bottom: 20rem;
 }
 
 .swiper2 {
@@ -2170,6 +2174,11 @@ a {
     inset: 0;
   }
 }
+@media (max-width: 767px) {
+  .gallery-wrapper {
+    inset: -3rem;
+  }
+}
 
 .gallery-image {
   height: 100vh;
@@ -2194,6 +2203,7 @@ a {
     -webkit-column-gap: 0.8rem;
        -moz-column-gap: 0.8rem;
             column-gap: 0.8rem;
+    top: -5rem;
   }
 }
 
@@ -2209,7 +2219,6 @@ a {
 }
 @media (max-width: 1023px) {
   .gallery-col {
-    width: 30%;
     row-gap: 0.8rem;
   }
 }
@@ -2222,6 +2231,8 @@ a {
   .gallery-col img {
     width: 367px;
     height: 587px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 

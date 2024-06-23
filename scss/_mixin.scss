@@ -2,6 +2,7 @@ $layout-width-inner: 1280px;
 
 // ブレークポイント
 $breakpoints: (
+    "sp2": "(max-width: 767px)",
     "sp": "(max-width: 1023px)",
     "pc": "(min-width: 1024px)",
 );

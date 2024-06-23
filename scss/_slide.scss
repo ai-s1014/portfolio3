@@ -108,7 +108,7 @@
 // swiper2
 .c-slider {
     width: 100%;
-    padding: 13.6rem 0 20rem;
+    margin: 13.6rem 0 0;
     overflow: clip;
 
     @include m.mq(sp) {
@@ -118,6 +118,7 @@
 }
 
 .c-wrapper {
+    padding-bottom: 20rem;
 
 }
 

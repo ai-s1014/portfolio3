@@ -1,3 +1,12 @@
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // header ハンバーガーメニュー
 $('.menu-btn').on('click', function() {
 	$(this).toggleClass('open');
@@ -82,10 +91,25 @@ targets1.forEach(target => {
 });
 
 // // c-slider 要素固定
+// let set_position = 0;
+
+// window.addEventListener('scroll', function () {
+// 	const cSlide = document.querySelector('.swiper2');
+
+// 	if (set_position < document.documentElement.scrollTop) {
+// 		cSlide.classList.add('down');
+// 		cSlide.classList.remove('up');
+// 	} else {
+// 		cSlide.classList.add('up');
+// 		cSlide.classList.remove('down');
+// 	}
+// 	set_position = document.documentElement.scrollTop;
+// });
+
 let options2 = {
 	root: null,
 	rootMargin: '0px 0px 0px 0px',
-	threshold: 0.8
+	threshold: 1
 };
 
 const target2 = document.querySelector('.c-slider');
@@ -93,10 +117,7 @@ const target2 = document.querySelector('.c-slider');
 const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
-		console.log('true');
-			target2.classList.add('is-fixed');
-		} else {
-			target2.classList.remove('is-fixed');
+			lenis.stop();
 		}
 	});
 }
@@ -104,14 +125,20 @@ const c2 =function(entries, observer) {
 const io2 = new IntersectionObserver(c2, options2);
 io2.observe(target2);
 
-window.addEventListener('scroll', function() {
+// c-slider 要素固定
+let set_position = 0;
+
+window.addEventListener('scroll', function () {
 	const cSlide = document.querySelector('.c-slider');
 
-	if(cSlide.classList.contains('is-fixed')) {
-		$('body').css('overflow', 'hidden');
-	} else 	if(!cSlide.classList.contains('is-fixed')) {
-		$('body').css('overflow', 'auto');
+	if (set_position < document.documentElement.scrollTop) {
+		cSlide.classList.add('down');
+		cSlide.classList.remove('up');
+	} else {
+		cSlide.classList.add('up');
+		cSlide.classList.remove('down');
 	}
+	set_position = document.documentElement.scrollTop;
 });
 
 // 表示時のアニメーション
@@ -139,22 +166,70 @@ targets3.forEach(target => {
 });
 
 // gallery-wrapper 拡大
+let options4 = {
+	root: null,
+	rootMargin: '0px 0px 0px 0px',
+	threshold: 0
+}
+
+const target4 = document.querySelector('.gallery');
+
+const c4 = function(entries, observer) {
+	entries.forEach(entry => {
+		if(entry.isIntersecting) {
+			entry.target.classList.add('scale');
+		} else {
+			entry.target.classList.remove('scale');
+		}
+	});
+}
+
+const io4 = new IntersectionObserver(c4, options4);
+io4.observe(target4);
+
+
+
+const gallery = document.querySelector('.gallery');
+
 window.addEventListener('scroll', function() {
-	if (window.scrollY > 5297 || this.window.scrollY > 8333) {
+	if (gallery.classList.contains('scale')) {
+		if (window.innerWidth >= 767) {
+			// 767px以上
+			if (window.scrollY > 4812) {
 
-        //左右のスクロールを取得
-	    const left = document.querySelector('.img-col-l');
-        const right = document.querySelector('.img-col-r');
+				//左右のスクロールを取得
+				const left = document.querySelector('.img-col-l');
+				const right = document.querySelector('.img-col-r');
 
-        // それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
-        left.style.transform = "translateY("+ window.scrollY/80 +"px)";
-        right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
+				// それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
+				left.style.transform = "translateY("+ window.scrollY/80 +"px)";
+				right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
-        if(window.scrollY > 5370 || window.scrollY > 10984.5) {
-			// console.log(window.scrollY);
-            const gallery = document.querySelector('.gallery-image');
-            gallery.style.transform = "scale("+ window.scrollY/5000 +")";
-        }
+				if(window.scrollY > 6142) {
+					// console.log(window.scrollY);
+					const gallery = document.querySelector('.gallery-image');
+					gallery.style.transform = "scale("+ window.scrollY/5000 +")";
+				}
+			}
+		} else if (window.innerWidth <= 766) {
+			// 765px未満
+			if (window.scrollY > 6600) {
+
+				//左右のスクロールを取得
+				const left = document.querySelector('.img-col-l');
+				const right = document.querySelector('.img-col-r');
+
+				// それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
+				left.style.transform = "translateY("+ window.scrollY/200 +"px)";
+				right.style.transform = "translateY(-"+ window.scrollY/200 +"px)";
+
+				if(window.scrollY > 7400) {
+					// console.log(window.scrollY);
+					const gallery = document.querySelector('.gallery-image');
+					gallery.style.transform = "scale("+ window.scrollY/6000 +")";
+				}
+			}
+		}
 	}
 });
 
@@ -197,19 +272,36 @@ const swiper2 = new Swiper('.swiper2', {
 	on: {
 		// スライドの切り替わりアニメーションが終了した時に実行
 		slideChangeTransitionEnd: function() {
-			let num = this.activeIndex + 1;
+			let num = this.realIndex + 1;
 			const cSlide = document.querySelector('.c-slider');
-
-			if(cSlide.classList.contains('is-fixed')) {
+			 if(cSlide.classList.contains('up')) {
 				if(num == 1) {
-					$('body').css('overflow', 'auto');
-					cSlide.classList.remove('is-fixed');
-				} else if(num == 3) {
-					$('body').css('overflow', 'auto');
-					cSlide.classList.remove('is-fixed');
+					lenis.start();
+				} else {
+					lenis.stop();
+				}
+			} else if(cSlide.classList.contains('down')) {
+				if(num == 3) {
+					lenis.start();
+				} else {
+					lenis.stop();
 				}
 			}
 		}
+		// slideChangeTransitionEnd: function() {
+		// 	let num = this.activeIndex + 1;
+		// 	const cSlide = document.querySelector('.c-slider');
+
+		// 	if(cSlide.classList.contains('is-fixed')) {
+		// 		if(num == 1) {
+		// 			$('body').css('overflow', 'auto');
+		// 			cSlide.classList.remove('is-fixed');
+		// 		} else if(num == 3) {
+		// 			$('body').css('overflow', 'auto');
+		// 			cSlide.classList.remove('is-fixed');
+		// 		}
+		// 	}
+		// }
 	}
 });
 
