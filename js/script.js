@@ -194,15 +194,16 @@ const gallery = document.querySelector('.gallery');
 window.addEventListener('scroll', function() {
 	if (gallery.classList.contains('scale')) {
 		if (window.innerWidth >= 767) {
+			console.log(window.scrollY);
 			// 767px以上
-			if (window.scrollY > 4812) {
+			if (window.scrollY > 4800) {
 
 				//左右のスクロールを取得
 				const left = document.querySelector('.img-col-l');
 				const right = document.querySelector('.img-col-r');
 
 				// それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
-				left.style.transform = "translateY("+ window.scrollY/80 +"px)";
+				left.style.transform = "translateY("+ window.scrollY/90 +"px)";
 				right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
 				if(window.scrollY > 6142) {
@@ -212,8 +213,11 @@ window.addEventListener('scroll', function() {
 				}
 			}
 		} else if (window.innerWidth <= 766) {
+			console.log(window.scrollY);
+
 			// 765px未満
-			if (window.scrollY > 6600) {
+			if (window.scrollY > 3419.5) {
+				console.log(window.scrollY);
 
 				//左右のスクロールを取得
 				const left = document.querySelector('.img-col-l');
@@ -223,10 +227,9 @@ window.addEventListener('scroll', function() {
 				left.style.transform = "translateY("+ window.scrollY/200 +"px)";
 				right.style.transform = "translateY(-"+ window.scrollY/200 +"px)";
 
-				if(window.scrollY > 7400) {
-					// console.log(window.scrollY);
+				if(window.scrollY > 4078) {
 					const gallery = document.querySelector('.gallery-image');
-					gallery.style.transform = "scale("+ window.scrollY/6000 +")";
+					gallery.style.transform = "scale("+ window.scrollY/3000 +")";
 				}
 			}
 		}
