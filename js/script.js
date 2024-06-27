@@ -118,6 +118,8 @@ const c2 =function(entries, observer) {
 	entries.forEach(entry => {
 		if(entry.isIntersecting) {
 			lenis.stop();
+		} else {
+			lenis.start();
 		}
 	});
 }
@@ -144,7 +146,7 @@ window.addEventListener('scroll', function () {
 // 表示時のアニメーション
 let options3 = {
 	root: null,
-	rootMargin: '0px 0px 0px 0px',
+	rootMargin: '815px 0px 815px 0px',
 	threshold: 0
 }
 
@@ -207,7 +209,7 @@ window.addEventListener('scroll', function() {
 
 				if(window.scrollY > 6142) {
 					const gallery = document.querySelector('.gallery-image');
-					gallery.style.transform = "scale("+ window.scrollY/5000 +")";
+					gallery.style.transform = "scale("+ window.scrollY/6000 +")";
 				}
 			}
 		} else if (window.innerWidth <= 766) {
