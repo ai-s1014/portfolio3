@@ -204,7 +204,7 @@ window.addEventListener('scroll', function() {
 				const right = document.querySelector('.img-col-r');
 
 				// それぞれのtranslateYをスクロール量÷数値（右はマイナス）で変わっていく
-				left.style.transform = "translateY("+ window.scrollY/90 +"px)";
+				left.style.transform = "translateY("+ window.scrollY/80 +"px)";
 				right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
 				if(window.scrollY > 6142) {
