@@ -122,13 +122,13 @@ a {
 .bg::before {
   content: "";
   position: absolute;
-  background-image: url(img/bg.jpg);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
   background-repeat: repeat;
   z-index: -1;
 }
 
 .bg-fff {
-  background: url(img/bg-fff.jpg);
+  background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
   background-repeat: repeat;
   background-size: contain;
   inset: 0;
@@ -565,7 +565,7 @@ a {
   content: "";
   display: block;
   height: 100vh;
-  background-image: url(img/bg.jpg);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
   background-repeat: repeat-y;
   background-size: max(1920px, 100%) auto;
   inset: 0 0 auto;
@@ -1246,7 +1246,7 @@ a {
   overflow: clip;
   position: absolute;
   z-index: -1;
-  background-image: url(img/bg.jpg);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
   background-size: max(1920px, 100%) auto;
   background-repeat: no-repeat;
 }
@@ -1352,7 +1352,7 @@ a {
   content: "";
   display: block;
   height: 100vh;
-  background-image: url(img/bg.jpg);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
   background-repeat: repeat-y;
   background-size: max(1920px, 100%) auto;
   inset: 0 0 auto;
@@ -1918,11 +1918,11 @@ a {
   }
 }
 .product::before {
-  background-image: url(img/bg-bl.png);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-bl.png?raw=true);
   inset: 0 auto auto 0;
 }
 .product::after {
-  background-image: url(img/bg-br.png);
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-br.png?raw=true);
   inset: auto 0 0 auto;
 }
 .p-item-flex {

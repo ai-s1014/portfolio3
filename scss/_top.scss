@@ -551,12 +551,12 @@
     }
 
     &::before {
-        background-image: url(img/bg-bl.png);
+        background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-bl.png?raw=true);
         inset: 0 auto auto 0;
     }
 
     &::after {
-        background-image: url(img/bg-br.png);
+        background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-br.png?raw=true);
         inset: auto 0 0 auto;
 
         @include m.mq(sp) {
