@@ -194,7 +194,6 @@ const gallery = document.querySelector('.gallery');
 window.addEventListener('scroll', function() {
 	if (gallery.classList.contains('scale')) {
 		if (window.innerWidth >= 767) {
-			console.log(window.scrollY);
 			// 767px以上
 			if (window.scrollY > 4800) {
 
@@ -207,17 +206,14 @@ window.addEventListener('scroll', function() {
 				right.style.transform = "translateY(-"+ window.scrollY/50 +"px)";
 
 				if(window.scrollY > 6142) {
-					// console.log(window.scrollY);
 					const gallery = document.querySelector('.gallery-image');
 					gallery.style.transform = "scale("+ window.scrollY/5000 +")";
 				}
 			}
 		} else if (window.innerWidth <= 766) {
-			console.log(window.scrollY);
 
 			// 765px未満
 			if (window.scrollY > 3419.5) {
-				console.log(window.scrollY);
 
 				//左右のスクロールを取得
 				const left = document.querySelector('.img-col-l');
