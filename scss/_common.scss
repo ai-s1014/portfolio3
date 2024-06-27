@@ -117,12 +117,12 @@ a {
 
 .bg {
     position: relative;
-    
+
 
     &::before {
         content: "";
         position: absolute;
-        background-image: url(/img/bg.jpg);
+        background-image: url(../../img/bg.jpg);
         background-repeat: repeat;
         // inset: 0;
         z-index: -1;
@@ -131,7 +131,7 @@ a {
 }
 
 .bg-fff {
-    background: url(/img/bg-fff.jpg);
+    background: url(../../img/bg-fff.jpg);
     background-repeat: repeat;
     background-size: contain;
     inset: 0;

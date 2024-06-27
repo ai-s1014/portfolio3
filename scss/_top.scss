@@ -551,12 +551,12 @@
     }
 
     &::before {
-        background-image: url(/img/bg-bl.png);
+        background-image: url(../../img/bg-bl.png);
         inset: 0 auto auto 0;
     }
 
     &::after {
-        background-image: url(/img/bg-br.png);
+        background-image: url(../../img/bg-br.png);
         inset: auto 0 0 auto;
 
         @include m.mq(sp) {
