@@ -565,7 +565,7 @@ a {
   content: "";
   display: block;
   height: 100vh;
-  background-image: url(../../img/bg.jpg);
+  background-image: url(img/bg.jpg);
   background-repeat: repeat-y;
   background-size: max(1920px, 100%) auto;
   inset: 0 0 auto;
@@ -1246,7 +1246,7 @@ a {
   overflow: clip;
   position: absolute;
   z-index: -1;
-  background-image: url(../../img/bg.jpg);
+  background-image: url(img/bg.jpg);
   background-size: max(1920px, 100%) auto;
   background-repeat: no-repeat;
 }
@@ -1352,7 +1352,7 @@ a {
   content: "";
   display: block;
   height: 100vh;
-  background-image: url(../../img/bg.jpg);
+  background-image: url(img/bg.jpg);
   background-repeat: repeat-y;
   background-size: max(1920px, 100%) auto;
   inset: 0 0 auto;
@@ -1918,11 +1918,11 @@ a {
   }
 }
 .product::before {
-  background-image: url(../../img/bg-bl.png);
+  background-image: url(img/bg-bl.png);
   inset: 0 auto auto 0;
 }
 .product::after {
-  background-image: url(../../img/bg-br.png);
+  background-image: url(img/bg-br.png);
   inset: auto 0 0 auto;
 }
 .p-item-flex {
