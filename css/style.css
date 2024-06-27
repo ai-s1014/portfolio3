@@ -122,13 +122,13 @@ a {
 .bg::before {
   content: "";
   position: absolute;
-  background-image: url(../../img/bg.jpg);
+  background-image: url(img/bg.jpg);
   background-repeat: repeat;
   z-index: -1;
 }
 
 .bg-fff {
-  background: url(../../img/bg-fff.jpg);
+  background: url(img/bg-fff.jpg);
   background-repeat: repeat;
   background-size: contain;
   inset: 0;
