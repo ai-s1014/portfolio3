@@ -122,13 +122,13 @@ a {
 .bg::before {
   content: "";
   position: absolute;
-  background-image: url(../img/bg.jpg);
+  background-image: url(/img/bg.jpg);
   background-repeat: repeat;
   z-index: -1;
 }
 
 .bg-fff {
-  background: url(../img/bg-fff.jpg);
+  background: url(/img/bg-fff.jpg);
   background-repeat: repeat;
   background-size: contain;
   inset: 0;
@@ -1918,11 +1918,11 @@ a {
   }
 }
 .product::before {
-  background-image: url(../img/bg-bl.png);
+  background-image: url(/img/bg-bl.png);
   inset: 0 auto auto 0;
 }
 .product::after {
-  background-image: url(../img/bg-br.png);
+  background-image: url(/img/bg-br.png);
   inset: auto 0 0 auto;
 }
 .p-item-flex {
