@@ -90,58 +90,45 @@ targets1.forEach(target => {
 	io1.observe(target);
 });
 
-// // c-slider 要素固定
-// let set_position = 0;
+// let options2 = {
+// 	root: null,
+// 	rootMargin: '0px 0px 0px 0px',
+// 	threshold: 0.5
+// };
 
-// window.addEventListener('scroll', function () {
-// 	const cSlide = document.querySelector('.swiper2');
+// const target2 = document.querySelector('.c-slider');
 
-// 	if (set_position < document.documentElement.scrollTop) {
-// 		cSlide.classList.add('down');
-// 		cSlide.classList.remove('up');
-// 	} else {
-// 		cSlide.classList.add('up');
-// 		cSlide.classList.remove('down');
-// 	}
-// 	set_position = document.documentElement.scrollTop;
-// });
+// const c2 =function(entries, observer) {
+// 	entries.forEach(entry => {
+// 		let set_position = 0;
 
-let options2 = {
-	root: null,
-	rootMargin: '0px 0px 0px 0px',
-	threshold: 1
-};
+// 		if(entry.isIntersecting) {
+// 				lenis.stop();
+// 			} else {
+// 				lenis.start();
 
-const target2 = document.querySelector('.c-slider');
+// 			}
+// 	});
+// }
 
-const c2 =function(entries, observer) {
-	entries.forEach(entry => {
-		if(entry.isIntersecting) {
-			lenis.stop();
-		} else {
-			lenis.start();
-		}
-	});
-}
+// const io2 = new IntersectionObserver(c2, options2);
+// io2.observe(target2);
 
-const io2 = new IntersectionObserver(c2, options2);
-io2.observe(target2);
+// // // // // c-slider 要素固定
+// // // let set_position = 0;
 
-// c-slider 要素固定
-let set_position = 0;
+// // // window.addEventListener('scroll', function () {
+// // // 	const cSlide = document.querySelector('.c-slider');
 
-window.addEventListener('scroll', function () {
-	const cSlide = document.querySelector('.c-slider');
-
-	if (set_position < document.documentElement.scrollTop) {
-		cSlide.classList.add('down');
-		cSlide.classList.remove('up');
-	} else {
-		cSlide.classList.add('up');
-		cSlide.classList.remove('down');
-	}
-	set_position = document.documentElement.scrollTop;
-});
+// // // 	if (set_position < document.documentElement.scrollTop) {
+// // // 		cSlide.classList.add('down');
+// // // 		cSlide.classList.remove('up');
+// // // 	} else {
+// // // 		cSlide.classList.add('up');
+// // // 		cSlide.classList.remove('down');
+// // // 	}
+// // // 	set_position = document.documentElement.scrollTop;
+// // });
 
 // 表示時のアニメーション
 let options3 = {
@@ -249,46 +236,66 @@ const swiper1 = new Swiper('.swiper1', {
 	speed: 0,
 });
 
+// carousel
+	const item1 = $('.item1').offset().top;
+    const item2 = $('.item2').offset().top;
+    const item3 = $('.item3').offset().top;
 
-const swiper2 = new Swiper('.swiper2', {
-	direction: 'vertical',
-	centeredSlides: true,
-	mousewheel: true,
-	autoHeight: true,
-	speed: 1000,
-	keyboard: {
-	  enabled: true,
-	},
-	mousewheel: {
-		releaseOnEdges: true,
-		forceToAxis: true,
-		sensitivity: 1,
-	},
-	pagination: {
-		el: ".swiper-pagination",
-		clickable: true,
-	},
-	effect: 'fade',
+    $(window).scroll(function() {
+      const scroll = $(this).scrollTop();
 
-	on: {
-		// スライドの切り替わりアニメーションが終了した時に実行
-		slideChangeTransitionEnd: function() {
-			let num = this.realIndex + 1;
-			const cSlide = document.querySelector('.c-slider');
-			 if(cSlide.classList.contains('up')) {
-				if(num == 1) {
-					lenis.start();
-				} else {
-					lenis.stop();
-				}
-			} else if(cSlide.classList.contains('down')) {
-				if(num == 3) {
-					lenis.start();
-				} else {
-					lenis.stop();
-				}
-			}
-		}
+      if (scroll >= item1 ) {
+        $('.item').removeClass('active');
+        $('.item1').addClass('active');
+      }
+      if (scroll >= item2) {
+        $('.item').removeClass('active');
+        $('.item2').addClass('active');
+      }
+      if (scroll >= item3) {
+        $('.item').removeClass('active');
+        $('.item3').addClass('active');
+      }
+    });
+// const swiper2 = new Swiper('.swiper2', {
+// 	direction: 'vertical',
+// 	centeredSlides: true,
+// 	mousewheel: true,
+// 	autoHeight: true,
+// 	speed: 1000,
+// 	keyboard: {
+// 	  enabled: true,
+// 	},
+// 	mousewheel: {
+// 		releaseOnEdges: true,
+// 		forceToAxis: true,
+// 		sensitivity: 1,
+// 	},
+// 	pagination: {
+// 		el: ".swiper-pagination",
+// 		clickable: true,
+// 	},
+// 	effect: 'fade',
+
+// 	on: {
+// 		// スライドの切り替わりアニメーションが終了した時に実行
+// 		slideChangeTransitionEnd: function() {
+// 			let num = this.realIndex + 1;
+// 			const cSlide = document.querySelector('.c-slider');
+// 			 if(cSlide.classList.contains('up')) {
+// 				if(num == 1) {
+// 					lenis.start();
+// 				} else {
+// 					lenis.stop();
+// 				}
+// 			} else if(cSlide.classList.contains('down')) {
+// 				if(num == 3) {
+// 					lenis.start();
+// 				} else {
+// 					lenis.stop();
+// 				}
+// 			}
+// 		}
 		// slideChangeTransitionEnd: function() {
 		// 	let num = this.activeIndex + 1;
 		// 	const cSlide = document.querySelector('.c-slider');
@@ -303,8 +310,8 @@ const swiper2 = new Swiper('.swiper2', {
 		// 		}
 		// 	}
 		// }
-	}
-});
+// 	}
+// });
 
 const thumb = document.querySelectorAll('.thumb-slide');
 const switchThumb = (index) => {

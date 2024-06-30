@@ -124,6 +124,7 @@ a {
   position: absolute;
   background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
   background-repeat: repeat;
+  background-attachment: fixed;
   z-index: -1;
 }
 
@@ -976,6 +977,7 @@ a {
   width: 100%;
   margin: 13.6rem 0 0;
   overflow: clip;
+  position: relative;
 }
 @media (max-width: 1023px) {
   .c-slider {
@@ -984,26 +986,20 @@ a {
   }
 }
 
-.c-wrapper {
-  padding-bottom: 20rem;
-}
-
-.swiper2 {
-  width: 100%;
-  height: 815px;
-}
 @media (max-width: 1023px) {
-  .swiper2 {
-    height: 49.3rem;
+  .c-wrapper {
+    padding-bottom: 15rem;
   }
 }
 
-.c-wrapper {
-  display: grid;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.carousel {
+  height: 300vh;
+}
+@media (max-width: 1023px) {
+  .carousel {
+    height: 400vh;
+    padding-bottom: 10rem;
+  }
 }
 
 .item {
@@ -1012,21 +1008,23 @@ a {
   grid-row: 1/2;
   position: relative;
   z-index: 1;
-  margin-bottom: 10rem;
-}
-
-.swiper-slide-next,
-.swiper-slide-prev {
+  position: sticky;
+  top: 10rem;
   opacity: 0;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+.item.active {
+  opacity: 1;
 }
 
-.swiper-slide-active {
-  opacity: 1;
+.item3 {
+  padding-bottom: 50rem;
 }
-.swiper-slide-active .item-image {
-  opacity: 1;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+@media (max-width: 1023px) {
+  .item3 {
+    padding-bottom: 0;
+  }
 }
 
 .item-container {
@@ -1120,7 +1118,6 @@ a {
   position: absolute;
   z-index: 1;
   border-radius: 2rem;
-  opacity: 0;
   -webkit-box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);
           box-shadow: 4rem 6rem 8rem rgba(0, 0, 0, 0.2);
 }
@@ -1141,7 +1138,7 @@ a {
 }
 @media (max-width: 1023px) {
   .item-image1 {
-    width: calc(100vw - 5rem);
+    width: calc(100vw - 10rem);
     height: 66.8rem;
     top: auto;
     right: 0;
