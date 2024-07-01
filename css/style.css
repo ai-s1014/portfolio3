@@ -1017,6 +1017,11 @@ a {
 .item.active {
   opacity: 1;
 }
+@media (max-width: 767px) {
+  .item {
+    top: 20rem;
+  }
+}
 
 .item3 {
   padding-bottom: 50rem;
@@ -1144,6 +1149,12 @@ a {
     right: 0;
     bottom: 0;
     left: auto;
+  }
+}
+@media (max-width: 767px) {
+  .item-image1 {
+    width: calc(100vw - 15rem);
+    height: 49.8rem;
   }
 }
 
