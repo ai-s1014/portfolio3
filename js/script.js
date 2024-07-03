@@ -201,8 +201,6 @@ const swiper1 = new Swiper('.swiper1', {
     const item2 = $('.item2').offset().top;
     const item3 = $('.item3').offset().top;
 
-	console.log(item1);
-
     $(window).scroll(function() {
       const scroll = $(this).scrollTop();
 

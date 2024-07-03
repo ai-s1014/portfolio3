@@ -1009,7 +1009,7 @@ a {
   position: relative;
   z-index: 1;
   position: sticky;
-  top: 10rem;
+  top: 14rem;
   opacity: 0;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
