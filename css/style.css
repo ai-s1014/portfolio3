@@ -975,7 +975,6 @@ a {
 
 .c-slider {
   width: 100%;
-  margin: 13.6rem 0 0;
   overflow: clip;
   position: relative;
 }
@@ -1006,10 +1005,9 @@ a {
   width: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
-  position: relative;
   z-index: 1;
   position: sticky;
-  top: 14rem;
+  top: calc(50lvh - 37rem);
   opacity: 0;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;

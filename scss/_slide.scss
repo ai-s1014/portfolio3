@@ -108,7 +108,7 @@
 // swiper2
 .c-slider {
     width: 100%;
-    margin: 13.6rem 0 0;
+    // margin: 13.6rem 0 0;
     overflow: clip;
     position: relative;
 
@@ -137,10 +137,9 @@
     width: 100%;
     grid-column: 1/2;
     grid-row: 1/2;
-    position: relative;
     z-index : 1;
     position: sticky;
-    top: 14rem;
+    top: calc(50lvh - 37rem);
     opacity: 0;
     transition-duration: 0.4s;
 
