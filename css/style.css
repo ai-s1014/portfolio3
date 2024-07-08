@@ -129,10 +129,7 @@ a {
 }
 @media (max-width: 1023px) {
   .bg::before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    background-size: contain;
   }
 }
 
