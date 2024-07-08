@@ -127,6 +127,11 @@ a {
   background-attachment: fixed;
   z-index: -1;
 }
+@media (max-width: 1023px) {
+  .bg::before {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
 
 .bg-fff {
   background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
@@ -1819,7 +1824,7 @@ a {
 
 .side-img {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   top: 0;
 }
 .side-img.scrollUp img {

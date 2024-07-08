@@ -78,7 +78,9 @@ const c1 = function(entries, observer) {
 	entries.forEach(entry => {
 		if (entry.isIntersecting && matchMedia.matches) {
 		entry.target.classList.add('scrollUp');
-		} else if(!matchMedia.matches) {
+		} else {
+		entry.target.classList.remove('scrollUp');
+		} if(!matchMedia.matches) {
 		entry.target.classList.remove('scrollUp');
 		}
 	});

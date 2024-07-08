@@ -125,9 +125,13 @@ a {
         background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
         background-repeat: repeat;
         background-attachment: fixed;
-        // inset: 0;
         z-index: -1;
-        // border-radius: 50vw 50vw 0 0;
+    }
+
+    @include m.mq(sp) {
+        &::before {
+            clip: rect(auto, auto, auto, auto);
+        }
     }
 }
 
