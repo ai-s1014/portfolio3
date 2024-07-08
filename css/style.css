@@ -129,7 +129,10 @@ a {
 }
 @media (max-width: 1023px) {
   .bg::before {
-    clip: rect(auto, auto, auto, auto);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 }
 
