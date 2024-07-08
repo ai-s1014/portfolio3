@@ -128,7 +128,6 @@ a {
     }
 
     @include m.mq(sp) {
-        clip-path: inset(0);
 
         &::before {
             position: fixed;
@@ -136,6 +135,7 @@ a {
             left: 0;
             width: 100%;
             height: 700vh;
+            background-size: contain;
         }
     }
 }
