@@ -118,7 +118,6 @@ a {
 .bg {
     position: relative;
 
-
     &::before {
         content: "";
         position: absolute;
@@ -129,8 +128,12 @@ a {
     }
 
     @include m.mq(sp) {
+        clip-path: inset(0);
+
         &::before {
-            background-size: contain;
+            position: fixed;//固定
+            top: 0;
+            left: 0;
         }
     }
 }

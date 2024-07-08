@@ -128,8 +128,14 @@ a {
   z-index: -1;
 }
 @media (max-width: 1023px) {
+  .bg {
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+  }
   .bg::before {
-    background-size: contain;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
 
