@@ -982,6 +982,8 @@ a {
   .c-slider {
     margin: 4.5rem 0 0;
     padding: 2.6rem 0 0;
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
   .c-slider:before {
     position: fixed;
