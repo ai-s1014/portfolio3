@@ -126,12 +126,11 @@ a {
         background-attachment: fixed;
         z-index: -1;
 
-        @include m.mq(sp) {
-            position: fixed;
-            width: 100vw;
-            height: 700vh;
-            background-size:cover;
-        }
+        // @include m.mq(sp) {
+        //     position: fixed;
+        //     width: 100vw;
+        //     background-size:cover;
+        // }
     }
 }
 

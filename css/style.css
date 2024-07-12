@@ -127,14 +127,6 @@ a {
   background-attachment: fixed;
   z-index: -1;
 }
-@media (max-width: 1023px) {
-  .bg::before {
-    position: fixed;
-    width: 100vw;
-    height: 700vh;
-    background-size: cover;
-  }
-}
 
 .bg-fff {
   background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
@@ -990,6 +982,13 @@ a {
   .c-slider {
     margin: 4.5rem 0 0;
     padding: 2.6rem 0 0;
+  }
+  .c-slider:before {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
   }
 }
 
