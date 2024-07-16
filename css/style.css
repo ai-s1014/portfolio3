@@ -131,7 +131,6 @@ a {
   .bg::before {
     position: fixed;
     width: 100vw;
-    background-size: cover;
   }
 }
 

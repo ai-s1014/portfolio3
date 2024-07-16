@@ -129,7 +129,6 @@ a {
         @include m.mq(sp) {
             position: fixed;
             width: 100vw;
-            background-size:cover;
         }
     }
 }
