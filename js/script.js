@@ -55,11 +55,14 @@ $(window).on('scroll', function() {
 // scroll-contents 拡大
 window.addEventListener('scroll', function() {
 	const sc = document.querySelector('.scroll-contents');
+	const matchMedia = window.matchMedia('(min-width:1024px)');
 
-	if (window.scrollY > 350) {
-	  sc.classList.add('scale');
-	} else {
-	  sc.classList.remove('scale');
+	if(matchMedia.matches) {
+		if (window.scrollY > 350) {
+		sc.classList.add('scale');
+		} else {
+		sc.classList.remove('scale');
+		}
 	}
 });
 

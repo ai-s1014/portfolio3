@@ -199,6 +199,10 @@
         border: v.$color-text solid 2px;
         border-bottom: none;
         border-radius: 50vw 50vw 0 0;
+
+        @include m.mq(sp) {
+            inset: 0 -3.9rem;
+        }
     }
 
     &::after {
@@ -213,7 +217,7 @@
         pointer-events: none;
 
         @include m.mq(sp) {
-            inset: 1rem;
+            inset: 1rem -3rem;
         }
     }
 }
