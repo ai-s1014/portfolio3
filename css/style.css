@@ -134,6 +134,13 @@ a {
   }
 }
 
+/* Safari */
+@media (max-width: 1023px) {
+  ::-webkit-full-page-media, _:future, :root .bg {
+    background-attachment: fixed;
+  }
+}
+
 .bg-fff {
   background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
   background-repeat: repeat;
