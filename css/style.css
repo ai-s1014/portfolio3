@@ -1564,6 +1564,7 @@ a {
 }
 @media (max-width: 1023px) {
   .scroll-contents {
+    width: 100%;
     padding-top: 18rem;
   }
 }
@@ -1584,11 +1585,6 @@ a {
   border-bottom: none;
   border-radius: 50vw 50vw 0 0;
 }
-@media (max-width: 1023px) {
-  .scroll-contents::before {
-    inset: 0 -3.9rem;
-  }
-}
 .scroll-contents::after {
   position: absolute;
   content: "";
@@ -1603,7 +1599,7 @@ a {
 }
 @media (max-width: 1023px) {
   .scroll-contents::after {
-    inset: 1rem -3rem;
+    inset: 1rem;
   }
 }
 
