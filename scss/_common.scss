@@ -133,6 +133,14 @@ a {
     }
 }
 
+
+/* Safari */
+::-webkit-full-page-media, _:future, :root .bg {
+    @include m.mq(sp) {
+        background-attachment: fixed;
+    }
+}
+
 .bg-fff {
     background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
     background-repeat: repeat;
