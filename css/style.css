@@ -141,6 +141,21 @@ a {
   z-index: -1;
 }
 
+.iphone {
+  /* iPhone */
+}
+.iphone .bg {
+  position: relative;
+}
+.iphone .bg::before {
+  content: "";
+  position: absolute;
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
 .bg-fff {
   background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
   background-repeat: repeat;
