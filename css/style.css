@@ -127,19 +127,20 @@ a {
   background-attachment: fixed;
   z-index: -1;
 }
-@media (max-width: 1023px) {
-  .bg::before {
-    position: fixed;
-    width: 100vw;
-  }
-}
 
 /* Safari */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  _::-webkit-full-page-media, _:future, .bg::before {
-    background-attachment: fixed;
-  }
+:lang(x) + _:-webkit-full-screen-document, .bg {
+  position: relative;
 }
+:lang(x) + _:-webkit-full-screen-document::before, .bg::before {
+  content: "";
+  position: absolute;
+  background-image: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg.jpg?raw=true);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
 .bg-fff {
   background: url(https://github.com/ai-s1014/portfolio3/blob/main/img/bg-fff.jpg?raw=true);
   background-repeat: repeat;
