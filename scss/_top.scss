@@ -228,6 +228,7 @@
 
     @include m.mq(sp) {
         text-align: left;
+        clip-path: inset(0);
     }
 }
 

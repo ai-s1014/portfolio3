@@ -142,8 +142,8 @@ a {
     background-image: url(../img/bg.jpg);
     background-repeat: repeat;
     width: 100%;
-    height: 100vh;
-    z-index: -1;
+    height: 100%;
+    z-index: -2;
     top: 0;
     left: 0;
   }
@@ -1037,7 +1037,6 @@ a {
 @media (max-width: 1023px) {
   .c-wrapper {
     padding-bottom: 15rem;
-    clear: rect(auto, auto, auto, auto);
   }
 }
 
@@ -1655,6 +1654,8 @@ a {
 @media (max-width: 1023px) {
   .concept {
     text-align: left;
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
 }
 
