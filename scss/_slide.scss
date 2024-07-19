@@ -121,6 +121,7 @@
 .c-wrapper {
     @include m.mq(sp) {
         padding-bottom: 15rem;
+        clear: rect(auto, auto, auto, auto);
     }
 }
 
