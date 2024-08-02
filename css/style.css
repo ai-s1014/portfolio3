@@ -146,8 +146,6 @@ a {
     z-index: -2;
     top: 0;
     left: 0;
-    -webkit-clip-path: polygon(0 58%, 100% 59%, 100% 100%, 0 100%);
-            clip-path: polygon(0 58%, 100% 59%, 100% 100%, 0 100%);
   }
 }
 
